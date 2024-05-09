@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { MousePosition, useMousePosition } from '../hooks/useMousePosition';
+import { useRef, useCallback } from 'react';
+import { MousePosition, MouseCallback, useMousePosition } from '../hooks/useMousePosition';
 
 export type DrawCallback = {
   (context: CanvasRenderingContext2D, position: MousePosition): void
@@ -15,10 +15,11 @@ export default function CanvasMouseAnimation({ draw, width, height, ...props }: 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const context = canvasRef.current?.getContext('2d');
 
-  useMousePosition(position => {
+  const callback = useCallback<MouseCallback>(position => {
     if (!context) return;
     draw(context, position);
-  });
+  }, [draw])
+  useMousePosition(callback);
 
   return (
     <canvas
