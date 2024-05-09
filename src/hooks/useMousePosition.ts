@@ -1,13 +1,22 @@
 import { useEffect } from 'react';
 
+export type MousePosition = {
+  x: number;
+  y: number;
+};
+
 export type MouseCallback = {
-  (x: number, y: number): void;
+  (position: MousePosition): void;
 }
 
 export function useMousePosition(callback: MouseCallback) {
   useEffect(() => {
     const listener = (event: MouseEvent) => {
-      callback(event.clientX, event.clientY);
+      const position: MousePosition = {
+        x: event.clientX,
+        y: event.clientY,
+      };
+      callback(position);
     };
     window.addEventListener('mousemove', listener);
 
