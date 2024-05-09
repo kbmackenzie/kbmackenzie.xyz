@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 export type MouseCallback = {
-  (x: number, y: number): void
+  (x: number, y: number): void;
 }
 
 export function useMousePosition(callback: MouseCallback) {

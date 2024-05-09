@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
 export type ImageDetails = {
-  key: string,
-  path: string,
+  key: string;
+  path: string;
 }
 
 export type ImageTable = {
-  [key: string]: ImageBitmap
+  [key: string]: ImageBitmap;
 }
 
 async function loadImage(path: string) {
