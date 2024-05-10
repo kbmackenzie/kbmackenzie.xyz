@@ -28,7 +28,7 @@ async function loadSprites(imagePath: string, spriteRects: Sprite[]): Promise<Sp
   return table;
 }
 
-export function useSpritesheet(imagePath: string, spriteRects: Sprite[]) {
+export function useSpritesheet(imagePath: string, spriteRects: Sprite[]): SpriteTable | null {
   const [sprites, setSprites] = useState<SpriteTable | null>(null);
 
   useEffect(() => {
