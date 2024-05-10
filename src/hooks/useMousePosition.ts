@@ -7,9 +7,9 @@ export type MousePosition = {
 
 export type MouseCallback = {
   (position: MousePosition): void;
-}
+};
 
-export function useMousePosition(callback: MouseCallback) {
+export function useMousePosition(callback: MouseCallback): void {
   useEffect(() => {
     const listener = (event: MouseEvent) => {
       const position: MousePosition = {
