@@ -4,7 +4,7 @@ import CanvasMouseAnimation from '@components/animation/CanvasMouseAnimation';
 import { DrawCallback } from '@components/animation/CanvasMouseAnimation';
 import alpacaPeek from '@assets/alpaca-peek.png';
 
-const alpacaFrames: SpriteDetails[] = [
+const alpacaSprites: SpriteDetails[] = [
   { key: 'base', rect: { x: 0, y: 0  , width: 800, height: 357 } },
   { key: 'eyes', rect: { x: 0, y: 357, width: 800, height: 357 } },
   { key: 'hair', rect: { x: 0, y: 714, width: 800, height: 357 } },
@@ -19,7 +19,7 @@ function transformX(x: number, max: number): number {
 }
 
 export default function AlpacaAnimation({...props}) {
-  const sprites = useSpritesheet(alpacaPeek, alpacaFrames);
+  const sprites = useSpritesheet(alpacaPeek, alpacaSprites);
 
   const drawAlpaca = useCallback<DrawCallback>((context, mouse) => {
     if (!sprites) return;
