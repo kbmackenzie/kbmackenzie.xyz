@@ -22,6 +22,7 @@
 
     /* Paths */
     "paths": {
+      "@assets/*": ["./src/assets/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@components/*": ["./src/components/*"]
     },
