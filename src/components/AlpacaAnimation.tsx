@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { SpriteDetails, useSpritesheet } from "@hooks/useSpritesheet";
+import { SpriteDetails, useSpritesheet } from '@hooks/useSpritesheet';
 import CanvasMouseAnimation from '@components/animation/CanvasMouseAnimation';
 import { DrawCallback } from '@components/animation/CanvasMouseAnimation';
 import alpacaPeek from '@assets/alpaca-peek.png';

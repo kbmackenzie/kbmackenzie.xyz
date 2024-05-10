@@ -1,4 +1,4 @@
-import AlpacaAnimation from "@components/AlpacaAnimation"
+import AlpacaAnimation from '@components/AlpacaAnimation'
 
 export default function App() {
   return (
