@@ -1,10 +1,9 @@
-import AlpacaAnimation from '@components/AlpacaAnimation'
+import Header from "./pages/Header"
 
 export default function App() {
   return (
     <>
-      <h1>under construction! :3</h1>
-      <AlpacaAnimation />
+      <Header />
     </>
   )
 }
