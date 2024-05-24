@@ -5,14 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      night:      '#160924',
-      moon:       '#231136',
-      space:      '#10061a',
-      hotpink:    '#ef476f',
-      bubblegum:  '#ca416d',
+    extend: {
+      colors: {
+        night:      '#160924',
+        moon:       '#231136',
+        space:      '#10061a',
+        hotpink:    '#ef476f',
+        bubblegum:  '#ca416d',
+      },
     },
-    extend: {},
   },
   plugins: [],
 }
