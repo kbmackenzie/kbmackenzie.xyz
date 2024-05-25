@@ -8,11 +8,7 @@ export type ButtonData = {
   onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-type ButtonProps = DOMAttributes<HTMLButtonElement> & {
-  key: string;
-};
-
-function ButtonRegular({ children, key, ...props }: ButtonProps) {
+function ButtonRegular({ children, ...props }: DOMAttributes<HTMLButtonElement>) {
   return (
     <button className="min-w-24 rounded-3xl px-8 py-4 bg-indigo-500 hover:bg-indigo-400" {...props}>
       <span className="text-white font-firamono text-md">{children}</span>
@@ -20,7 +16,7 @@ function ButtonRegular({ children, key, ...props }: ButtonProps) {
   )
 }
 
-function ButtonFocus({ children, key, ...props }: ButtonProps) {
+function ButtonFocus({ children, ...props }: DOMAttributes<HTMLButtonElement>) {
   return (
     <button className="min-w-24 rounded-3xl px-8 py-4 bg-rose-500 hover:bg-rose-400" {...props}>
       <span className="text-white font-firamono text-md">{children}</span>
