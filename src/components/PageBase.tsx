@@ -1,11 +1,7 @@
-import { ReactNode } from 'react';
+import { DOMAttributes } from 'react';
 import Header from "@components/Header";
 
-type Props = {
-  children: ReactNode;
-};
-
-export default function PageBase({ children }: Props) {
+export default function PageBase({ children }: DOMAttributes<HTMLElement>) {
   return (
     <>
       <Header />
