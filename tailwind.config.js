@@ -13,6 +13,9 @@ export default {
         hotpink:    '#ef476f',
         bubblegum:  '#ca416d',
       },
+      fontFamily: {
+        firamono: ['"Fira Mono"', 'monospace']
+      },
     },
   },
   plugins: [],
