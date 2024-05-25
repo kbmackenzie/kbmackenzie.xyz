@@ -1,9 +1,9 @@
-import Home from "./pages/Home"
+import PageBase from "@components/PageBase"
 
 export default function App() {
   return (
-    <>
-      <Home />
-    </>
+    <PageBase>
+      <p>Hello world!</p>
+    </PageBase>
   )
 }
