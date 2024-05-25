@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 
-export type AnimationCallback = {
-  (delta: number): void;
-};
+export type AnimationCallback = (delta: number) => void;
 
 export function useAnimation(callback: AnimationCallback): void {
   useEffect(() => {

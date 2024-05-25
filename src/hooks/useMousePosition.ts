@@ -5,9 +5,7 @@ export type MousePosition = {
   y: number;
 };
 
-export type MouseCallback = {
-  (position: MousePosition): void;
-};
+export type MouseCallback = (position: MousePosition) => void;
 
 export function useMousePosition(callback: MouseCallback): void {
   useEffect(() => {
