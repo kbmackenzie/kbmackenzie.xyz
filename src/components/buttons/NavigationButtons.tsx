@@ -14,16 +14,16 @@ type ButtonProps = DOMAttributes<HTMLButtonElement> & {
 
 function ButtonRegular({ children, key, ...props }: ButtonProps) {
   return (
-    <button className="w-6 h-4 rounded-xl bg-indigo-500 hover:bg-indigo-400" {...props}>
-      <span className="text-white font-firamono">{children}</span>
+    <button className="min-w-24 rounded-3xl px-8 py-4 bg-indigo-500 hover:bg-indigo-400" {...props}>
+      <span className="text-white font-firamono text-md">{children}</span>
     </button>
   )
 }
 
 function ButtonFocus({ children, key, ...props }: ButtonProps) {
   return (
-    <button className="w-6 h-4 rounded-xl bg-rose-500 hover:bg-rose-400" {...props}>
-      <span className="text-white font-firamono">{children}</span>
+    <button className="min-w-24 rounded-3xl px-8 py-4 bg-rose-500 hover:bg-rose-400" {...props}>
+      <span className="text-white font-firamono text-md">{children}</span>
     </button>
   )
 }
