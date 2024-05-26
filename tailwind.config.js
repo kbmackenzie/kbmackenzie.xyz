@@ -7,11 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        night:      '#160924',
-        moon:       '#231136',
-        space:      '#10061a',
-        hotpink:    '#ef476f',
-        bubblegum:  '#ca416d',
+        space: {
+          DEFAULT: '#10061a',
+          soft:    '#160924',
+          button: {
+            DEFAULT: '#3f225b',
+            hover:   '#633b83',
+          },
+        },
+        bubblegum: {
+          DEFAULT: '#ef476f',
+          button: {
+            hover: '#fd7b9a',
+          },
+        },
       },
       fontFamily: {
         firamono: ['"Fira Mono"', 'monospace']

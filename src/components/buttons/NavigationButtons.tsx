@@ -10,7 +10,7 @@ export type ButtonData = {
 
 function ButtonRegular({ children, ...props }: DOMAttributes<HTMLButtonElement>) {
   return (
-    <button className="min-w-24 rounded-3xl px-8 py-4 bg-indigo-500 hover:bg-indigo-400" {...props}>
+    <button className="min-w-32 rounded-3xl p-4 bg-space-button hover:bg-space-button-hover" {...props}>
       <span className="text-white font-firamono text-md">{children}</span>
     </button>
   )
@@ -18,7 +18,7 @@ function ButtonRegular({ children, ...props }: DOMAttributes<HTMLButtonElement>)
 
 function ButtonFocus({ children, ...props }: DOMAttributes<HTMLButtonElement>) {
   return (
-    <button className="min-w-24 rounded-3xl px-8 py-4 bg-rose-500 hover:bg-rose-400" {...props}>
+    <button className="min-w-32 rounded-3xl p-4 bg-bubblegum hover:bg-bubblegum-button-hover" {...props}>
       <span className="text-white font-firamono text-md">{children}</span>
     </button>
   )

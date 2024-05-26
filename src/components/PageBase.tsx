@@ -6,7 +6,7 @@ export default function PageBase({ children }: DOMAttributes<HTMLElement>) {
   return (
     <>
       <Header />
-      <hr className="w-full h-4 bg-hotpink border-none xl:rounded-t-xl" />
+      <hr className="w-full h-4 bg-bubblegum border-none xl:rounded-t-xl" />
       <Navigation />
       {children}
     </>
