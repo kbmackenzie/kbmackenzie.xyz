@@ -11,9 +11,11 @@ export default {
           DEFAULT: '#10061a',
           soft:    '#160924',
           button: {
-            DEFAULT: '#3f225b',
-            hover:   '#633b83',
+            DEFAULT: '#231136',
           },
+        },
+        moon: {
+          light: '#bf9ee0',
         },
         bubblegum: {
           DEFAULT: '#ef476f',
