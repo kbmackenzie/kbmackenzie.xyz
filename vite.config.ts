@@ -10,7 +10,7 @@ const __dirname  = dirname(__filename);
 export default defineConfig({
   resolve: {
     alias: {
-      '@style': resolve(__dirname, 'src/style'),
+      '@styles': resolve(__dirname, 'src/styles'),
     },
   },
   plugins: [react(), tsconfigPaths()],
