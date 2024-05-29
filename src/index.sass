@@ -3,17 +3,29 @@
 @import '@styles/_colors'
 @import '@styles/_screens'
 
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
 html, body
   height: 100%
 
 body
-  background-color: $deep-space
   @media screen and (min-width: $xl)
     display: flex
     justify-content: center
 
 #root
-  background-color: $moon-dark
   width: 100%
   @media (min-width: $xl)
     width: 80%
+
+.bg-deep-space
+  background-color: $deep-space
+
+.bg-moon-dark
+  background-color: $moon-dark
+
+.bg-moon-light
+  background-color: $moon-light

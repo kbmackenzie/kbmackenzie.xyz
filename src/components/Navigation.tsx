@@ -1,5 +1,6 @@
 import NavigationButtons from "@components/buttons/NavigationButtons";
 import { ButtonData } from "@components/buttons/NavigationButtons";
+import '@components/Navigation.sass'
 
 const buttons: ButtonData[] = [
   {
@@ -21,7 +22,7 @@ const buttons: ButtonData[] = [
 
 export default function Navigation() {
   return (
-    <nav className="w-full flex justify-end gap-4 p-6">
+    <nav className="navigation">
       <NavigationButtons buttons={buttons} />
     </nav>
   )

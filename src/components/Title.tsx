@@ -1,11 +1,10 @@
-import '@components/Title.css';
+import '@components/Title.sass'
 
 export default function Title({...props}) {
   return (
-    <h1 {...props}>
-      <span className="text-bubblegum">echo </span>
-      <span className="text-white">kbmackenzie</span>
+    <h1 className="title" {...props}>
+      <span className="title-echo">echo </span>
+      <span className="title-name">kbmackenzie</span>
     </h1>
-    //<img src={kbm} alt='kbm logo' {...props}/>
   );
 }

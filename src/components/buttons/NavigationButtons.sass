@@ -1,0 +1,27 @@
+@import '@styles/_colors'
+
+.nav-button
+  min-width: 8rem  
+  padding: 1rem
+  border-radius: 1rem
+  transition: color, background-color 0.5s
+
+  &.regular
+    background-color: transparent
+    border: solid 4px $moon-light
+    color: $starlight
+
+    &:hover
+      background-color: $moon-light
+      border: none
+      color: white
+      
+  &.focus
+    background-color: $bubblegum
+    border: none
+    color: white
+
+    &:hover
+      background-color: transparent
+      border: solid 4px $bubblegum
+      // color: $bubblegum
