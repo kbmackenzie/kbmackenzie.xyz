@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap')
+@use '@styles/colors'
+@use '@styles/screens'
 
-@import '@styles/_colors'
-@import '@styles/_screens'
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap')
 
 *
   padding: 0
@@ -12,23 +12,23 @@ html, body
   height: 100%
 
 body
-  @media screen and (min-width: $xl)
+  @media screen and (min-width: screens.$xl)
     display: flex
     justify-content: center
 
 #root
   width: 100%
-  @media (min-width: $xl)
+  @media (min-width: screens.$xl)
     width: 80%
 
 .bg-deep-space
-  background-color: $deep-space
+  background-color: colors.$deep-space
 
 .bg-moon-dark
-  background-color: $moon-dark
+  background-color: colors.$moon-dark
 
 .bg-moon-light
-  background-color: $moon-light
+  background-color: colors.$moon-light
 
 .fira-mono
   font-family: "Fira Mono", monospace

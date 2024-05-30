@@ -1,4 +1,4 @@
-@import '@styles/_colors'
+@use '@styles/colors'
 
 .nav-button
   min-width: 8rem  
@@ -9,20 +9,19 @@
 
   &.regular
     background-color: transparent
-    border: solid 4px $moon-light
-    color: $starlight
+    border: solid 4px colors.$moon-light
+    color: colors.$starlight
 
     &:hover
-      background-color: $moon-light
+      background-color: colors.$moon-light
       border: none
       color: white
       
   &.focus
-    background-color: $bubblegum
+    background-color: colors.$bubblegum
     border: none
     color: white
 
     &:hover
       background-color: transparent
-      border: solid 4px $bubblegum
-      // color: $bubblegum
+      border: solid 4px colors.$bubblegum
