@@ -1,12 +1,21 @@
 @use '@styles/colors'
+@use '@styles/typewrite'
 
 .title
   font-weight: normal
+  display: inline-block
 
-  &-echo
-    font: inherit
-    color: colors.$bubblegum
+  &-type
+    display: inline-block
+    overflow: hidden
+    white-space: nowrap
+    border-right: solid 2px white
+    @include typewrite.type('$ echo kbmackenzie')
 
-  &-name
-    font: inherit
-    color: white
+    &-echo
+      font: inherit
+      color: colors.$bubblegum
+
+    &-name
+      font: inherit
+      color: white
