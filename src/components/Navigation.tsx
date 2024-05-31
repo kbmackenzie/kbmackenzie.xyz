@@ -5,12 +5,12 @@ import '@components/Navigation.sass'
 const buttons: ButtonData[] = [
   {
     type: 'regular',
-    name: 'Blog',
+    name: 'Home',
     onClick: () => undefined,
   },
   {
     type: 'regular',
-    name: 'About',
+    name: 'Blog',
     onClick: () => undefined,
   },
   {
