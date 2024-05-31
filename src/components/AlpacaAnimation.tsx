@@ -13,9 +13,9 @@ const alpacaSprites: SpriteDetails[] = [
 const canvasWidth  = 800;
 const canvasHeight = 357;
 
-function transformX(x: number, max: number): number {
+function interpolateX(x: number, max: number): number {
   const clientWidth = document.documentElement.clientWidth;
-  return (max * x) / clientWidth;
+  return Math.max(0, (max * x) / clientWidth);
 }
 
 export default function AlpacaAnimation({...props}) {
@@ -26,7 +26,7 @@ export default function AlpacaAnimation({...props}) {
     context.clearRect(0, 0, canvasWidth, canvasHeight);
     context.drawImage(sprites.base, 0, 0);
 
-    const eyeX = transformX(mouse.x, 70);
+    const eyeX = interpolateX(mouse.x, 70);
     context.drawImage(sprites.eyes, eyeX, 0);
 
     context.drawImage(sprites.hair, 0, 0);
