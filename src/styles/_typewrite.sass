@@ -1,16 +1,14 @@
 @use 'sass:string'
 
-@mixin type($str, $cursor: false, $duration: 0)
+@mixin type($str, $duration: 0)
   $len: string.length($str)
-  @debug 'len:' $len
   @if $duration <= 0
     $duration: $len * 0.08
-    @debug 'duration:' $duration
 
   $typing-animation: #{$duration}s steps(#{$len}, end) typewrite-animation forwards
   $cursor-animation: 0.8s step-end typewrite-cursor infinite
 
-  animation:  $typing-animation, $cursor-animation
+  animation: $typing-animation, $cursor-animation
 
 @keyframes typewrite-animation
   from
