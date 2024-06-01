@@ -1,3 +1,44 @@
-.home-intro
-  margin: 0 2rem
-  border-radius: 1rem
+@use '@styles/typewrite'
+
+.greeting
+  display: inline-block
+
+  &-type
+    display: inline-block
+    max-width: 0
+
+    overflow: hidden
+    white-space: nowrap
+
+    border-color: currentColor
+    border-width: 2px
+    @include typewrite.type('Hi, I\'m Kelly!')
+    animation-delay: 1.5s
+
+.introduction
+  background-color: black
+  min-height: 12rem // todo: remove
+
+  display: grid
+  grid-template-columns: 1fr 3fr
+  grid-template-areas: 'intro-image intro-desc'
+
+  &-image
+    grid-area: intro-image
+    background-color: white
+
+  &-desc
+    grid-area: intro-desc
+    padding: 2rem
+    color: white
+
+    display: flex
+    flex-flow: column nowrap
+
+    justify-content: center
+    align-content: center
+
+    h1
+      font-size: 1.5rem
+    p
+      margin: 0.5rem 0
