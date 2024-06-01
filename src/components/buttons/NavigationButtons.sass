@@ -2,29 +2,29 @@
 
 .nav-button
   min-width: 8rem  
-  padding: 1rem
-  border-radius: 1rem
+  padding: 0.8rem
+
   font-size: 1rem
   transition: color, background-color 0.5s
+
+  border: solid 4px transparent
+  border-radius: 1rem
 
   &:hover
     cursor: pointer
 
   &.regular
     background-color: transparent
-    border: solid 4px colors.$moon-light
     color: colors.$starlight
 
     &:hover
       background-color: colors.$moon-light
-      border: none
       color: white
       
   &.focus
     background-color: colors.$bubblegum
-    border: none
     color: white
 
     &:hover
       background-color: transparent
-      border: solid 4px colors.$bubblegum
+      border-color: colors.$bubblegum
