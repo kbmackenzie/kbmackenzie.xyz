@@ -1,20 +1,5 @@
 @use '@styles/typewrite'
 
-.greeting
-  display: inline-block
-
-  &-type
-    display: inline-block
-    max-width: 0
-
-    overflow: hidden
-    white-space: nowrap
-
-    border-color: currentColor
-    border-width: 2px
-    @include typewrite.type('Hi, I\'m Kelly!')
-    animation-delay: 1.5s
-
 .introduction
   background-color: black
   min-height: 12rem // todo: remove
@@ -22,6 +7,8 @@
   display: grid
   grid-template-columns: 1fr 3fr
   grid-template-areas: 'intro-image intro-desc'
+
+  font-family: sans-serif
 
   &-image
     grid-area: intro-image
