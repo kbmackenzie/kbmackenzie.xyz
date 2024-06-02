@@ -1,23 +1,24 @@
-@use '@styles/typewrite'
+@use '@styles/screens'
 
 .introduction
   background-color: black
   min-height: 12rem // todo: remove
 
-  display: grid
-  grid-template-columns: 1fr 3fr
-  grid-template-areas: 'intro-image intro-desc'
+  display: flex
+  flex-direction: row
 
-  font-family: sans-serif
+  @media (max-width: screens.$sm)
+    flex-direction: column
 
   &-image
-    grid-area: intro-image
+    flex: 0 1 25%
+    min-height: 1rem
     background-color: white
 
   &-desc
-    grid-area: intro-desc
-    padding: 2rem
+    flex: 1 1 75% 
     color: white
+    padding: 2rem
 
     display: flex
     flex-flow: column nowrap
