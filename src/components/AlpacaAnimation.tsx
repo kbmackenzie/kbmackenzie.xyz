@@ -3,6 +3,8 @@ import { SpriteDetails, useSpritesheet } from '@hooks/useSpritesheet';
 import CanvasMouseAnimation from '@components/animation/CanvasMouseAnimation';
 import { DrawCallback } from '@components/animation/CanvasMouseAnimation';
 import alpacaPeek from '@assets/alpaca-peek.png';
+import { lerp, easeInQuad } from '@utils/animation';
+import { clamp } from '@utils/math';
 
 const alpacaSprites: SpriteDetails[] = [
   { key: 'base', rect: { x: 0, y: 0  , width: 800, height: 357 } },
@@ -15,7 +17,9 @@ const canvasHeight = 357;
 
 function interpolateX(x: number, max: number): number {
   const clientWidth = document.documentElement.clientWidth;
-  return Math.max(0, (max * x) / clientWidth);
+  const target = lerp(0, max, easeInQuad(x / clientWidth));
+
+  return clamp(target, 0, max);
 }
 
 export default function AlpacaAnimation({...props}) {
