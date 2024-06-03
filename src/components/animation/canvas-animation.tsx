@@ -16,7 +16,7 @@ export default function CanvasAnimation({ draw, width, height, ...props }: Props
   const callback = useCallback<AnimationCallback>(delta => {
     if (!context) return;
     draw(context, delta);
-  }, [draw]);
+  }, [context, draw]);
   useAnimation(callback);
 
   return (

@@ -16,7 +16,7 @@ export default function CanvasMouseAnimation({ draw, width, height, ...props }: 
   const callback = useCallback<MouseCallback>(mouse => {
     if (!context) return;
     draw(context, mouse);
-  }, [draw])
+  }, [context, draw])
   useMousePosition(callback);
 
   useEffect(() => { callback({ x: 0, y: 0 }); }, [callback]);
