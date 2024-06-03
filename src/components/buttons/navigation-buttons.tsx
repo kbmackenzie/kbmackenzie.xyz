@@ -1,5 +1,5 @@
-import { MouseEventHandler, DOMAttributes, JSX } from "react";
-import "@components/buttons/NavigationButtons.sass"
+import { MouseEventHandler, DOMAttributes, JSX } from 'react';
+import '@components/buttons/navigation-buttons.sass'
 
 export type ButtonType = 'regular' | 'focus';
 

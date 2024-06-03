@@ -1,5 +1,5 @@
 import { useRef, useCallback, useEffect } from 'react';
-import { MousePosition, MouseCallback, useMousePosition } from '@hooks/useMousePosition';
+import { MousePosition, MouseCallback, useMousePosition } from '@hooks/use-mouse-position';
 
 export type DrawCallback = (context: CanvasRenderingContext2D, mouse: MousePosition) => void;
 

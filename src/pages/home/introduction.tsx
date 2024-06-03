@@ -1,4 +1,4 @@
-import '@pages/Home/Introduction.sass';
+import '@pages/home/introduction.sass';
 
 function Description({...props}) {
   return (

@@ -1,5 +1,5 @@
 import { useRef, useCallback } from 'react';
-import { AnimationCallback, useAnimation } from '@hooks/useAnimation';
+import { AnimationCallback, useAnimation } from '@hooks/use-animation';
 
 export type DrawCallback = (context: CanvasRenderingContext2D, delta: number) => void;
 

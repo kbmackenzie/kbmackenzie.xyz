@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
-import { SpriteDetails, useSpritesheet } from '@hooks/useSpritesheet';
-import CanvasMouseAnimation from '@components/animation/CanvasMouseAnimation';
-import { DrawCallback } from '@components/animation/CanvasMouseAnimation';
+import { SpriteDetails, useSpritesheet } from '@hooks/use-spritesheet';
+import CanvasMouseAnimation from '@components/animation/canvas-mouse-animation';
+import { DrawCallback } from '@components/animation/canvas-mouse-animation';
 import alpacaPeek from '@assets/alpaca-peek.png';
 import { lerp, easeInQuad } from '@utils/animation';
 import { clamp } from '@utils/math';

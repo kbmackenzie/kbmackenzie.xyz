@@ -1,6 +1,6 @@
-import PageBase from "@components/PageBase";
-import '@pages/Home/index.sass';
-import Introduction from "@pages/Home/Introduction";
+import PageBase from '@components/page-base';
+import '@pages/home/index.sass';
+import Introduction from '@pages/home/introduction';
 
 export default function Home() {
   return (

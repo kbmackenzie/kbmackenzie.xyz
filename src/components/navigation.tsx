@@ -1,6 +1,6 @@
-import NavigationButtons from "@components/buttons/NavigationButtons";
-import { ButtonData } from "@components/buttons/NavigationButtons";
-import '@components/Navigation.sass'
+import NavigationButtons from '@components/buttons/navigation-buttons';
+import { ButtonData } from '@components/buttons/navigation-buttons';
+import '@components/navigation.sass'
 
 const buttons: ButtonData[] = [
   {
