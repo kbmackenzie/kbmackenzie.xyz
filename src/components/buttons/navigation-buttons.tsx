@@ -1,5 +1,6 @@
 import { MouseEventHandler, DOMAttributes, JSX } from 'react';
 import '@components/buttons/navigation-buttons.sass'
+import classNames from 'classnames';
 
 export type ButtonType = 'regular' | 'focus';
 
@@ -13,7 +14,7 @@ type ButtonProps = DOMAttributes<HTMLButtonElement> & { type: string };
 
 function Button({ children, type, ...props }: ButtonProps) {
   return (
-    <button className={`nav-button ${type}`} {...props}>
+    <button className={classNames('nav-button', type)} {...props}>
       <span className="fira-mono">{children}</span>
     </button>
   )
