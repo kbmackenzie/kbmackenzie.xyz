@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 import { SpriteDetails, useSpritesheet } from '@hooks/use-spritesheet';
 import CanvasMouseAnimation from '@components/animation/canvas-mouse-animation';
 import { DrawCallback } from '@components/animation/canvas-mouse-animation';
-import alpacaPeek from '@assets/alpaca-peek.png';
 import { lerp, easeInQuad } from '@utils/animation';
 import { clamp } from '@utils/math';
+import alpacaPeek from '@layouts/base/assets/alpaca-peek.png';
 
 const alpacaSprites: SpriteDetails[] = [
   { key: 'base', rect: { x: 0, y: 0  , width: 800, height: 357 } },

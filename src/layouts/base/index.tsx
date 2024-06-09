@@ -1,7 +1,7 @@
 import { DOMAttributes } from 'react';
-import Header from '@components/header';
-import Navigation from '@components/navigation';
-import '@components/page-base.sass'
+import Header from '@layouts/base/components/header';
+import Navigation from '@layouts/base/components/navigation';
+import '@layouts/base/index.sass'
 
 export default function PageBase({ children }: DOMAttributes<HTMLElement>) {
   return (

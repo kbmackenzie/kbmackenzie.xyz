@@ -1,5 +1,4 @@
-import { MouseEventHandler, DOMAttributes, JSX } from 'react';
-import '@components/buttons/navigation-buttons.sass'
+import { MouseEventHandler, JSX } from 'react';
 import classNames from 'classnames';
 
 export type ButtonType = 'regular' | 'focus';
@@ -10,22 +9,29 @@ export type ButtonData = {
   onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-type ButtonProps = DOMAttributes<HTMLButtonElement> & { type: string };
+type ButtonProps = {
+  data: ButtonData;
+  classes: string[];
+};
 
-function Button({ children, type, ...props }: ButtonProps) {
+function Button({ data, classes }: ButtonProps) {
+  const { type, name, onClick } = data;
   return (
-    <button className={classNames('nav-button', `nav-button-${type}`)} {...props}>
-      <span className="fira-mono">{children}</span>
+    <button className={classNames(type, classes)} onClick={onClick}>
+      <span>{name}</span>
     </button>
   )
 }
 
-function generateButton({ type, name, onClick }: ButtonData): JSX.Element {
-  return <Button key={name} type={type} onClick={onClick}>{name}</Button>;
+function generateButton(data: ButtonData, classes: string[]): JSX.Element {
+  return <Button key={data.name} data={data} classes={classes} />;
 }
 
-type NavigationButtonsProps = { buttons: ButtonData[] };
+type NavigationButtonsProps = {
+  buttons: ButtonData[]
+  classes: string[],
+};
 
-export default function NavigationButtons({ buttons }: NavigationButtonsProps) {
-  return <>{buttons.map(generateButton)}</>
+export default function NavigationButtons({ buttons, classes }: NavigationButtonsProps) {
+  return <>{buttons.map(button => generateButton(button, classes))}</>
 }

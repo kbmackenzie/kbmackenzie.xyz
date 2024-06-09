@@ -1,6 +1,6 @@
-import AlpacaAnimation from '@components/alpaca-animation'
-import Title from '@components/title'
-import '@components/header.sass'
+import AlpacaAnimation from '@layouts/base/components/alpaca-animation'
+import Title from '@layouts/base/components/title'
+import '@layouts/base/components/header.sass'
 
 export default function Header() {
   return (

@@ -1,4 +1,4 @@
-import '@components/title.sass'
+import '@layouts/base/components/title.sass'
 
 export default function Title({...props}) {
   return (
