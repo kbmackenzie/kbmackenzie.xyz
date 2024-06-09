@@ -1,6 +1,6 @@
 import '@layouts/base/components/title.sass'
 
-export default function Title({...props}) {
+export function Title({...props}) {
   return (
     <h1 {...props}>
       <span className="fira-mono title">

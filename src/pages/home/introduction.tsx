@@ -9,7 +9,7 @@ function Description({...props}) {
   );
 }
 
-export default function Introduction() {
+export function Introduction() {
   return (
     <section className="introduction">
       <div className="introduction-image"></div>

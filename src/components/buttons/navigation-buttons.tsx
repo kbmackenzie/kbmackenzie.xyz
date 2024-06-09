@@ -32,6 +32,6 @@ type NavigationButtonsProps = {
   classes: string[],
 };
 
-export default function NavigationButtons({ buttons, classes }: NavigationButtonsProps) {
+export function NavigationButtons({ buttons, classes }: NavigationButtonsProps) {
   return <>{buttons.map(button => generateButton(button, classes))}</>
 }

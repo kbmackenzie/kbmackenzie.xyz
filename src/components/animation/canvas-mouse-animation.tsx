@@ -9,7 +9,7 @@ type Props = {
   height: number;
 };
 
-export default function CanvasMouseAnimation({ draw, width, height, ...props }: Props) {
+export function CanvasMouseAnimation({ draw, width, height, ...props }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const context = canvasRef.current?.getContext('2d');
 

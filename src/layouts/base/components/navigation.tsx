@@ -1,5 +1,4 @@
-import { ButtonData } from '@components/buttons/navigation-buttons';
-import NavigationButtons from '@components/buttons/navigation-buttons';
+import { NavigationButtons, ButtonData } from '@components/buttons/navigation-buttons';
 import '@layouts/base/components/navigation.sass'
 
 const buttons: ButtonData[] = [
@@ -20,7 +19,7 @@ const buttons: ButtonData[] = [
   },
 ];
 
-export default function Navigation() {
+export function Navigation() {
   const buttonClasses = [
     'header-nav-button',
     'fira-mono',

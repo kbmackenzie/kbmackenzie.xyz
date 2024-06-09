@@ -1,8 +1,8 @@
-import PageBase from '@layouts/base';
+import { PageBase } from '@layouts/base';
 import '@pages/home/index.sass';
-import Introduction from '@pages/home/introduction';
+import { Introduction } from '@pages/home/introduction';
 
-export default function Home() {
+export function Home() {
   return (
     <PageBase>
       <div className="home">
