@@ -17,6 +17,13 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    '@stylistic/js/quotes': ["error", "single"]
+    '@stylistic/js/quotes': ['error', 'single'],
+    'no-restricted-syntax': [
+      'error',
+      {
+        'selector': 'ExportDefaultDeclaration',
+        'message': 'Prefer named exports.'
+      },
+    ]
   },
 }
