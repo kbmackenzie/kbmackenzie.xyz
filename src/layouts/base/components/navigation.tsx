@@ -21,7 +21,7 @@ const buttons: ButtonData[] = [
 
 export function Navigation() {
   const buttonClasses = [
-    'header-nav-button',
+    'header-navigation-button',
     'fira-mono',
   ];
   return (
