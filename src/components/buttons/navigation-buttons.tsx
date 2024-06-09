@@ -14,7 +14,7 @@ type ButtonProps = DOMAttributes<HTMLButtonElement> & { type: string };
 
 function Button({ children, type, ...props }: ButtonProps) {
   return (
-    <button className={classNames('nav-button', type)} {...props}>
+    <button className={classNames('nav-button', `nav-button-${type}`)} {...props}>
       <span className="fira-mono">{children}</span>
     </button>
   )
