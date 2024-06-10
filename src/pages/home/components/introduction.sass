@@ -1,32 +1,23 @@
 @use '@styles/screens'
 
 .introduction
-  background-color: black
-  min-height: 12rem // todo: remove
-
-  display: flex
-  flex-direction: row
-
-  @media (max-width: screens.$sm)
-    flex-direction: column
-
-.alpaca-icon
-  flex: 0 1 25%
-  min-height: 1rem
-  background-color: white
-
-.description
-  flex: 1 1 75% 
   color: white
-  padding: 2rem
-
-  display: flex
-  flex-flow: column nowrap
-
-  justify-content: center
-  align-content: center
+  min-height: 12rem
 
   h1
     font-size: 1.5rem
   p
     margin: 0.5rem 0
+
+  &-description
+    height: 100%
+    padding: 2rem
+    background-color: black
+
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+
+  &-alpaca
+    height: 100%
+    background-color: white
