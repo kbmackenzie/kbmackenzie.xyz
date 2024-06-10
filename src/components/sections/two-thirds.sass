@@ -1,0 +1,21 @@
+@use '@styles/screens'
+
+.two-thirds
+  display: flex
+  flex-direction: row
+
+  @media (max-width: screens.$md)
+    flex-direction: column
+
+.two-thirds-reverse
+  display: flex
+  flex-direction: row-reverse
+
+  @media (max-width: screens.$md)
+    flex-direction: column-reverse
+
+.two-thirds-aside
+  flex: 1 1 25%
+
+.two-thirds-content
+  flex: 1 1 75%
