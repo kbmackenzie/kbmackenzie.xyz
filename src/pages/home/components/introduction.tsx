@@ -1,4 +1,4 @@
-import '@pages/home/introduction.sass';
+import '@pages/home/components/introduction.sass';
 
 function AlpacaIcon() {
   return (
