@@ -1,0 +1,39 @@
+@use 'sass:map'
+@use 'sass:math'
+@use '@styles/screens'
+
+$transforms = (
+  'center':       ( 'x': 0%   , 'y': 0%    ),
+  'top':          ( 'x': 0%   , 'y': -110% ),
+  'top-right':    ( 'x': 80%  , 'y': -55%  ),
+  'bottom-right': ( 'x': 80%  , 'y': -55%  ),
+  'bottom':       ( 'x': 0%   , 'y': 110%  ),
+  'bottom-left':  ( 'x': -80% , 'y': 55%   ),
+  'top-left':     ( 'x': -80% , 'y': 55%   ),
+)
+
+@each $key, $point in $transforms
+  $x: map.get($point, 'x')
+  $y: map.get($point, 'y')
+
+  .honeycomb-#{$key}
+    animation: 1s ease-out 1s honeycomb-animation-#{$key} forwards
+
+  @keyframes honeycomb-animation-#{$key}
+    from
+      transform: translate(0, 0)
+    to
+      transform: translate($x, $y)
+
+.honeycomb
+  width: 100%
+  height: 100%
+  
+  &-slot:
+    $slot-width: 12rem
+    width: $slot-width
+    height: ($slot-width / 2) * math.sqrt(3)
+
+    position: absolute
+    inset: 0
+    clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
