@@ -5,7 +5,7 @@
   @if $duration <= 0
     $duration: $len * 0.08
 
-  $typing-animation: #{$duration}s steps(#{$len}, end) typewrite-animation forwards
+  $typing-animation: ($duration * 1s) steps($len, end) typewrite-animation forwards
   $cursor-animation: 0.8s step-end typewrite-cursor infinite
 
   animation: $typing-animation, $cursor-animation
