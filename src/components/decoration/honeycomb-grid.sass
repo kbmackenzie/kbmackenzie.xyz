@@ -1,23 +1,27 @@
 @use 'sass:map'
+@use 'sass:list'
 @use 'sass:math'
 @use '@styles/screens'
 
 $transforms = (
-  'center':       ( 'x': 0%   , 'y': 0%    ),
-  'top':          ( 'x': 0%   , 'y': -110% ),
-  'top-right':    ( 'x': 80%  , 'y': -55%  ),
-  'bottom-right': ( 'x': 80%  , 'y': -55%  ),
-  'bottom':       ( 'x': 0%   , 'y': 110%  ),
-  'bottom-left':  ( 'x': -80% , 'y': 55%   ),
-  'top-left':     ( 'x': -80% , 'y': 55%   ),
+  ( key: 'center'       , 'x': 0%   , 'y': 0%    ),
+  ( key: 'top':         , 'x': 0%   , 'y': -110% ),
+  ( key: 'top-right'    , 'x': 80%  , 'y': -55%  ),
+  ( key: 'bottom-right' , 'x': 80%  , 'y': -55%  ),
+  ( key: 'bottom'       , 'x': 0%   , 'y': 110%  ),
+  ( key: 'bottom-left'  , 'x': -80% , 'y': 55%   ),
+  ( key: 'top-left'     , 'x': -80% , 'y': 55%   ),
 )
 
-@each $key, $point in $transforms
-  $x: map.get($point, 'x')
-  $y: map.get($point, 'y')
+@for $i from 0 to list.length($transforms)
+  $transform: list.nth($transforms, $i)
+
+  $key: map.get($transform, 'key')
+  $x: map.get($transform, 'x')
+  $y: map.get($transform, 'y')
 
   .honeycomb-#{$key}
-    animation: 1s ease-out 1s honeycomb-animation-#{$key} forwards
+    animation: 1s ease-out (1s + 0.2s * $i) honeycomb-animation-#{$key} forwards
 
   @keyframes honeycomb-animation-#{$key}
     from
