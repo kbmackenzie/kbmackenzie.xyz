@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import '@components/decoration/honeycomb-grid.sass';
 
-type Slots =
+type Slot =
   | 'center'
   | 'top'
   | 'top-right'
@@ -16,7 +16,7 @@ type Icon = {
 };
 
 type Props = {
-  icons: Map<Slots, Icon>;
+  icons: Map<Slot, Icon>;
   classes: string[];
 };
 
