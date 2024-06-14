@@ -44,13 +44,17 @@ $transforms: generate_transforms()
   min-height: $slot-height * 4
   position: relative
 
+  $slot-shrink: 3rem
+  @media (max-width: screens.$xl)
+    min-height: get-slot-height($slot-width - $slot-shrink) * 4
+
   &-slot
     width: $slot-width
     height: $slot-height
 
     @media (max-width: screens.$xl)
-      width: $slot-width - 1rem
-      height: get-slot-height($slot-width - 1rem)
+      width: $slot-width - $slot-shrink
+      height: get-slot-height($slot-width - $slot-shrink)
 
     position: absolute
     inset: 0
