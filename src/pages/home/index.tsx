@@ -1,12 +1,12 @@
 import { PageBase } from '@layouts/base';
 import '@pages/home/index.sass';
-import { Introduction } from '@pages/home/components/introduction';
+import { Intro } from '@pages/home/components/intro';
 
 export function Home() {
   return (
     <PageBase>
       <div className="home">
-        <Introduction />
+        <Intro />
       </div>
     </PageBase>
   )

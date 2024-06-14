@@ -1,0 +1,52 @@
+@use 'sass:color'
+@use '@styles/colors'
+@use '@styles/screens'
+
+.intro
+  padding: 0 2rem  
+
+.skill-icons
+  .honeycomb-slot
+    background-color: colors.$moon-light
+    transition: background-color 1s
+
+    &:hover
+      background-color: color.scale(colors.$moon-light, $lightness: 10%)
+      transition: background-color 1s
+
+    & > img
+      filter: brightness(0) invert(1) opacity(30%)
+
+.about-me
+  height: 100%
+  color: white
+  text-align: right
+  font-weight: 200
+
+  @media (max-width: screens.$md)
+    text-align: center
+
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+
+  h1
+    font-size: 2rem
+    font-weight: 200
+
+  strong
+    font-weight: 700
+
+  hr
+    margin: 0.5rem 0
+    border: none
+    height: 0.1rem
+    $transparent: rgba(255 255 255 / 0%)
+    $cloudy: rgba(255 255 255 / 60%)
+    background: linear-gradient(to right, $transparent, $cloudy)
+
+    @media (max-width: screens.$md)
+      background: linear-gradient(to right, $transparent, $cloudy, $transparent)
+
+  p
+    margin: 0.5rem 0
