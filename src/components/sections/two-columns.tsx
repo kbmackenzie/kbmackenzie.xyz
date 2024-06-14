@@ -9,12 +9,12 @@ type Props = {
   classes?: string[];
 };
 
-export function TwoColumns({ aside, reverse, children, classes}: Props) {
+export function TwoColumns({ aside, reverse, children, classes }: Props) {
+  const twoColumns = reverse ? 'two-columns-reverse' : 'two-columns';
   return (
-    <section className={classNames('two-columns', classes)}>
-      {(reverse)
-        ? <>{aside}{children}</>
-        : <>{children}{aside}</>}
+    <section className={classNames(twoColumns, classes)}>
+      <div className="two-columns-aside">{aside}</div>
+      <div className="two-columns-content">{children}</div>
     </section>
   );
 }
