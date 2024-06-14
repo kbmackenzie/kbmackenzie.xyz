@@ -26,7 +26,7 @@ $transforms: generate_transforms()
   @debug 'writing:' $key
 
   .honeycomb-#{$key}
-    animation: 0.5s ease-out (0.5s + 0.1s * $i) honeycomb-animation-#{$key} forwards
+    animation: 0.5s ease-out (0.1s * $i) honeycomb-animation-#{$key} forwards
 
   @keyframes honeycomb-animation-#{$key}
     from
@@ -40,7 +40,7 @@ $transforms: generate_transforms()
   position: relative
   
   &-slot
-    $slot-width: 12rem
+    $slot-width: 11rem
     width: $slot-width
     height: math.div($slot-width, 2) * math.sqrt(3)
 
