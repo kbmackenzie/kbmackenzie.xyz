@@ -7,23 +7,26 @@
   $center:        ( key: 'center'       , 'x': 0%   , 'y': 0%    )
   $top:           ( key: 'top'          , 'x': 0%   , 'y': -110% )
   $top-right:     ( key: 'top-right'    , 'x': 80%  , 'y': -55%  )
-  $bottom-right:  ( key: 'bottom-right' , 'x': 80%  , 'y': -55%  )
+  $bottom-right:  ( key: 'bottom-right' , 'x': 80%  , 'y': 55%   )
   $bottom:        ( key: 'bottom'       , 'x': 0%   , 'y': 110%  )
   $bottom-left:   ( key: 'bottom-left'  , 'x': -80% , 'y': 55%   )
-  $top-left:      ( key: 'top-left'     , 'x': -80% , 'y': 55%   )
-  @return $center, $top, $top-right, $bottom, $bottom-left, $top-left
+  $top-left:      ( key: 'top-left'     , 'x': -80% , 'y': -55%  )
+  @return $center, $top, $top-right, $bottom-right, $bottom, $bottom-left, $top-left
 
 $transforms: generate_transforms()
+@debug $transforms
 
-@for $i from 1 to list.length($transforms)
+@for $i from 1 to (list.length($transforms) + 1)
   $transform: list.nth($transforms, $i)
 
   $key: map.get($transform, 'key')
   $x: map.get($transform, 'x')
   $y: map.get($transform, 'y')
 
+  @debug 'writing:' $key
+
   .honeycomb-#{$key}
-    animation: 1s ease-out (1s + 0.2s * $i) honeycomb-animation-#{$key} forwards
+    animation: 0.5s ease-out (0.5s + 0.1s * $i) honeycomb-animation-#{$key} forwards
 
   @keyframes honeycomb-animation-#{$key}
     from
@@ -34,6 +37,7 @@ $transforms: generate_transforms()
 .honeycomb
   width: 100%
   height: 100%
+  position: relative
   
   &-slot
     $slot-width: 12rem
