@@ -16,7 +16,7 @@
 $transforms: generate_transforms()
 @debug $transforms
 
-@for $i from 1 to (list.length($transforms) + 1)
+@for $i from 1 to list.length($transforms) + 1
   $transform: list.nth($transforms, $i)
 
   $key: map.get($transform, 'key')
@@ -27,6 +27,7 @@ $transforms: generate_transforms()
 
   .honeycomb-#{$key}
     animation: 0.5s ease-out (0.1s * $i) honeycomb-animation-#{$key} forwards
+    z-index: list.length($transforms) + 1 - $i
 
   @keyframes honeycomb-animation-#{$key}
     from
