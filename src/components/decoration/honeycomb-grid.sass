@@ -38,21 +38,21 @@ $transforms: generate_transforms()
   @return math.div($width, 2) * math.sqrt(3)
 
 .honeycomb
-  $slot-width: 11rem
+  $slot-width: 9rem
   $slot-height: get-slot-height($slot-width)
 
-  min-height: $slot-height * 4
+  min-height: $slot-height * 3.5
   position: relative
 
-  $slot-shrink: 3rem
-  @media (max-width: screens.$xl)
+  $slot-shrink: 1rem
+  @media (max-width: screens.$md)
     min-height: get-slot-height($slot-width - $slot-shrink) * 4
 
   &-slot
     width: $slot-width
     height: $slot-height
 
-    @media (max-width: screens.$xl)
+    @media (max-width: screens.$md)
       width: $slot-width - $slot-shrink
       height: get-slot-height($slot-width - $slot-shrink)
 
