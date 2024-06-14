@@ -23,7 +23,7 @@ $transforms: generate_transforms()
   $x: map.get($transform, 'x')
   $y: map.get($transform, 'y')
 
-  @debug 'writing:' $key
+  @debug 'writing: #{$key}'
 
   .honeycomb-#{$key}
     animation: 0.5s ease-out (0.1s * $i) honeycomb-animation-#{$key} forwards
@@ -34,15 +34,23 @@ $transforms: generate_transforms()
     to
       transform: translate($x, $y)
 
+@function get-slot-height($width)
+  @return math.div($width, 2) * math.sqrt(3)
+
 .honeycomb
-  width: 100%
-  height: 100%
+  $slot-width: 11rem
+  $slot-height: get-slot-height($slot-width)
+
+  min-height: $slot-height * 4
   position: relative
-  
+
   &-slot
-    $slot-width: 11rem
     width: $slot-width
-    height: math.div($slot-width, 2) * math.sqrt(3)
+    height: $slot-height
+
+    @media (max-width: screens.$xl)
+      width: $slot-width - 1rem
+      height: get-slot-height($slot-width - 1rem)
 
     position: absolute
     inset: 0
