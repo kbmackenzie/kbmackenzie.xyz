@@ -10,13 +10,11 @@ type Props = {
 };
 
 export function TwoColumns({ aside, reverse, children, classes}: Props) {
-  const nodes = (reverse)
-    ? [aside, children]
-    : [children, aside];
-
   return (
     <section className={classNames('two-columns', classes)}>
-      {nodes}
+      {(reverse)
+        ? <>{aside}{children}</>
+        : <>{children}{aside}</>}
     </section>
   );
 }
