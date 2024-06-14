@@ -26,8 +26,8 @@ export function HoneycombGrid({ icons, classes }: Props) {
       {Array.from(icons.entries()).map(([key, icon]) => {
         const classes = classNames('honeycomb-slot', `honeycomb-${key}`);
         return (
-          <div className={classes}>
-            <img key={key} src={icon.src} alt={icon.alt} />
+          <div className={classes} key={key}>
+            <img src={icon.src} alt={icon.alt} />
           </div>
         );
       })}
