@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import '@components/decoration/honeycomb-grid.sass';
 
-type Slot =
+export type Slot =
   | 'center'
   | 'top'
   | 'top-right'
@@ -10,7 +10,7 @@ type Slot =
   | 'bottom-left'
   | 'top-left';
 
-type Icon = {
+export type Icon = {
   src: string;
   alt: string;
 };
