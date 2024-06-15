@@ -12,15 +12,12 @@
 html, body
   height: 100%
 
-body
-  @media screen and (min-width: screens.$xl)
-    display: flex
-    justify-content: center
-
 #root
-  width: 100%
-  @media (min-width: screens.$xl)
-    width: 80%
+  margin: 0 auto
+  width: 80%
+
+  @media (max-width: screens.$xl)
+    width: 100%
 
 .bg-deep-space
   background-color: colors.$deep-space
