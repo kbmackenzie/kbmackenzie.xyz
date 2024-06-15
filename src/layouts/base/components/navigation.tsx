@@ -1,21 +1,21 @@
-import { NavigationButtons, ButtonData } from '@components/buttons/navigation-buttons';
+import { NavigationLinks, LinkData } from '@components/links/navigation-links';
 import '@layouts/base/components/navigation.sass'
 
-const buttons: ButtonData[] = [
+const buttons: LinkData[] = [
   {
     type: 'regular',
     name: 'Home',
-    onClick: () => undefined,
+    url: '#',
   },
   {
     type: 'regular',
     name: 'Blog',
-    onClick: () => undefined,
+    url: '#',
   },
   {
     type: 'focus',
     name: 'Projects',
-    onClick: () => undefined,
+    url: '#',
   },
 ];
 
@@ -26,7 +26,7 @@ export function Navigation() {
   ];
   return (
     <nav className="header-navigation">
-      <NavigationButtons buttons={buttons} classes={buttonClasses} />
+      <NavigationLinks buttons={buttons} classes={buttonClasses} />
     </nav>
   )
 }
