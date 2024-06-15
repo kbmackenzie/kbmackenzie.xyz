@@ -1,8 +1,9 @@
+@use 'sass:color'
 @use '@styles/colors'
 
 .header-navigation-button
   min-width: 8rem  
-  padding: 0.8rem
+  padding: 0.5rem
 
   font-size: 1rem
   transition: color, background-color 0.5s
@@ -22,19 +23,20 @@
 
     &:hover
       background-color: colors.$moon-light
-      color: white
+      color: color.scale(colors.$starlight, $lightness: 60%)
       
   &.focus
     background-color: colors.$bubblegum
     color: white
+    //font-weight: bold
 
     &:hover
-      background-color: transparent
-      border-color: colors.$bubblegum
+      background-color: white
+      color: colors.$bubblegum
 
 .header-navigation
   width: 100%
   display: flex
   justify-content: flex-end
-  gap: 1rem
+  gap: 0.5rem
   padding: 1rem
