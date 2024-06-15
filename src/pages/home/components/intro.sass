@@ -31,7 +31,7 @@
   justify-content: center
 
   h1
-    font-size: 2rem
+    font-size: 3rem
     font-weight: 200
 
   strong
@@ -50,3 +50,9 @@
 
   p
     margin: 0.5rem 0
+    opacity: 0
+    animation: 1s linear fade-in-animation forwards
+
+    @for $i from 1 to 3
+      &:nth-of-type(#{$i})
+        animation-delay: 0.2s * $i

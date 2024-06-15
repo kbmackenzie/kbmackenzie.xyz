@@ -19,12 +19,12 @@ function SkillIcons() {
       alt: skill,
     }])
   );
-  return <HoneycombGrid classes={['skill-icons']} icons={icons} />;
+  return <HoneycombGrid classes={['fade-in', 'skill-icons']} icons={icons} />;
 }
 
 function AboutMe() {
   return (
-    <section className="about-me open-sans">
+    <section className="open-sans about-me">
       <h1>Hi, I'm Kelly!</h1>
       <hr />
       <p>I’m a <strong>full-stack web developer</strong>, <strong>language tinkerer</strong> and cat enthusiast. I’m fascinated by <strong>compilers</strong>, <strong>interpreters</strong> and <strong>text parsing</strong>.</p>
