@@ -4,8 +4,22 @@
 
 .intro
   padding: 0 2rem  
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  @media (max-width: screens.$xl)
+    flex-direction: column
 
 .skill-icons
+  flex: 1 1 50%
+
+  display: flex 
+  justify-content: flex-start
+
+  @media (max-width: screens.$xl)
+    justify-content: center
+
   .honeycomb-slot
     background-color: colors.$moon-light
     transition: background-color 1s
@@ -18,23 +32,24 @@
       filter: brightness(0) invert(1) opacity(30%)
 
 .about-me
-  height: 100%
+  flex: 1 1 50%
+
   color: white
   text-align: right
   font-weight: 200
 
-  @media (max-width: screens.$md)
+  @media (max-width: screens.$xl)
     text-align: center
 
   display: flex
-  flex-flow: column nowrap
+  flex-direction: column
   justify-content: center
 
   h1
     font-size: 3rem
     font-weight: 200
 
-    @media (max-width: screens.$md)
+    @media (max-width: screens.$xl)
       font-size: 2rem
 
   strong
@@ -49,7 +64,7 @@
     $cloudy: rgba(255 255 255 / 60%)
     background: linear-gradient(to right, $transparent, $cloudy)
 
-    @media (max-width: screens.$md)
+    @media (max-width: screens.$xl)
       background: linear-gradient(to right, $transparent, $cloudy, $transparent)
 
   p

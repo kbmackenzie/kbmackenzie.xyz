@@ -1,5 +1,4 @@
 import { HoneycombGrid, Slot, Icon } from '@components/decoration/honeycomb-grid';
-import { TwoColumns } from '@components/sections/two-columns';
 import { Socials } from '@pages/home/components/socials';
 import { skillIcons, Skill } from '@store/skill-icons';
 import '@pages/home/components/intro.sass';
@@ -20,7 +19,11 @@ function SkillIcons() {
       alt: skill,
     }])
   );
-  return <HoneycombGrid classes={['fade-in', 'skill-icons']} icons={icons} />;
+  return (
+    <aside className="skill-icons">
+      <HoneycombGrid classes={['fade-in', 'skill-icons-grid']} icons={icons} />;
+    </aside>
+  );
 }
 
 function AboutMe() {
@@ -38,8 +41,9 @@ function AboutMe() {
 
 export function Intro() {
   return (
-    <TwoColumns aside={<SkillIcons />} reverse={true} classes={['intro']}>
+    <section className="intro">
       <AboutMe />
-    </TwoColumns>
+      <SkillIcons />
+    </section>
   );
 }
