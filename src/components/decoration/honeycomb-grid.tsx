@@ -22,7 +22,7 @@ type Props = {
 
 export function HoneycombGrid({ icons, classes }: Props) {
   return (
-    <section className={classNames('honeycomb', classes)}>
+    <div className={classNames('honeycomb', classes)}>
       {Array.from(icons.entries()).map(([key, icon]) => {
         const classes = classNames('honeycomb-slot', `honeycomb-${key}`);
         return (
@@ -31,6 +31,6 @@ export function HoneycombGrid({ icons, classes }: Props) {
           </div>
         );
       })}
-    </section>
+    </div>
   );
 }
