@@ -25,3 +25,9 @@ dist-ssr
 
 # Personal
 scraps/
+
+# Temporary
+*.svg
+*.txt
+*.png
+*.jpg
