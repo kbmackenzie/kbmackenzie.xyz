@@ -26,14 +26,17 @@ type SideMenuProps = {
 
 export function SideMenu({ buttons, classes, destination, onExit }: SideMenuProps) {
   return createPortal(
-    <nav className={classNames('side-menu', classes)}>
-      <button className="side-menu-exit" onClick={onExit}>
-        <img src={exitIcon} alt="exit side menu" />
-      </button>
-      {buttons.map(button => (
-        <Button key={button.name} data={button} />
-      ))}
-    </nav>,
+    <>
+      <div className="shadow-overlay"></div>
+      <nav className={classNames('side-menu', classes)}>
+        <button className="side-menu-exit" onClick={onExit}>
+          <img src={exitIcon} alt="exit side menu" />
+        </button>
+        {buttons.map(button => (
+          <Button key={button.name} data={button} />
+        ))}
+      </nav>
+    </>,
     document.getElementById(destination)!
   );
 }

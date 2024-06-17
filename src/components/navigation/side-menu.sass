@@ -2,9 +2,9 @@
   position: fixed
   right: 0
 
+  z-index: 20
   height: 100vh
-  width: 60vw
-  z-index: 100
+  min-width: 80vw
 
   display: flex
   flex-direction: column
@@ -12,7 +12,7 @@
   justify-content: center
   align-items: center
 
-  animation: 1s ease-out side-menu-slide-in forwards
+  animation: 0.5s ease-out side-menu-slide-in forwards
 
   &-exit
     position: absolute
@@ -49,3 +49,11 @@
     transform: translate(100%)
   to
     transform: translate(0)
+
+.shadow-overlay
+  position: fixed
+  width: 100vw
+  height: 100vh
+  background-color: black
+  opacity: 80%
+  z-index: 10
