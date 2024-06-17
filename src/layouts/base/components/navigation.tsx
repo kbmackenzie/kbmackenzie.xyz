@@ -21,13 +21,9 @@ const buttons: LinkData[] = [
 ];
 
 export function Navigation() {
-  const buttonClasses = [
-    'header-navigation-button',
-    'fira-mono',
-  ];
   return (
-    <nav className="header-navigation">
-      <NavigationButtons buttons={buttons} classes={buttonClasses} />
-    </nav>
+    <>
+      <NavigationButtons buttons={buttons} classes={['header-navigation', 'fira-mono']} />
+    </>
   )
 }

@@ -1,7 +1,8 @@
 @use 'sass:color'
 @use '@styles/colors'
+@use '@styles/screens'
 
-.header-navigation-button
+.header-navigation > .navigation-button
   min-width: 8rem  
   padding: 0.5rem
 
@@ -40,3 +41,6 @@
   justify-content: flex-end
   gap: 0.5rem
   padding: 1rem
+
+  @media (max-width: screens.$md)
+    display: none

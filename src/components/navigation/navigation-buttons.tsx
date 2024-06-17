@@ -3,14 +3,13 @@ import { LinkData } from '@shared/link';
 
 type ButtonProps = {
   data: LinkData;
-  classes: string[];
 };
 
-function Button({ data, classes }: ButtonProps) {
+function Button({ data }: ButtonProps) {
   const { type, name, url } = data;
   return (
-    <a className={classNames(type, classes)} href={url}>
-      <span>{name}</span>
+    <a className={classNames('navigation-button', type)} href={url}>
+      {name}
     </a>
   )
 }
@@ -21,7 +20,11 @@ type NavigationButtonsProps = {
 };
 
 export function NavigationButtons({ buttons, classes }: NavigationButtonsProps) {
-  return <>{buttons.map(data => (
-    <Button key={data.name} data={data} classes={classes} />
-  ))}</>
+  return (
+    <nav className={classNames(classes)}>
+      {buttons.map(data => (
+        <Button key={data.name} data={data} />
+      ))}
+    </nav>
+  );
 }
