@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 import { LinkData } from '@shared/link';
 
-type AnchorProps = {
+type ButtonProps = {
   data: LinkData;
   classes: string[];
 };
 
-function Anchor({ data, classes }: AnchorProps) {
+function Button({ data, classes }: ButtonProps) {
   const { type, name, url } = data;
   return (
     <a className={classNames(type, classes)} href={url}>
@@ -15,15 +15,13 @@ function Anchor({ data, classes }: AnchorProps) {
   )
 }
 
-function generateButton(data: LinkData, classes: string[]) {
-  return <Anchor key={data.name} data={data} classes={classes} />;
-}
-
 type NavigationButtonsProps = {
   buttons: LinkData[]
   classes: string[],
 };
 
 export function NavigationButtons({ buttons, classes }: NavigationButtonsProps) {
-  return <>{buttons.map(button => generateButton(button, classes))}</>
+  return <>{buttons.map(data => (
+    <Button key={data.name} data={data} classes={classes} />
+  ))}</>
 }
