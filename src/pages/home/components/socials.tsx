@@ -1,4 +1,5 @@
-import { RoundIcon, IconData } from '@components/navigation/round-icon';
+import { RoundIcon } from '@components/navigation/round-icon';
+import { IconData } from '@shared/icon';
 import '@pages/home/components/socials.sass';
 
 const github: IconData = {

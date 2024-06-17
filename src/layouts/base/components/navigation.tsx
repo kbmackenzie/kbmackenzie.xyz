@@ -1,4 +1,5 @@
-import { NavigationLinks, LinkData } from '@components/navigation/navigation-buttons';
+import { NavigationLinks } from '@components/navigation/navigation-buttons';
+import { LinkData } from '@shared/link';
 import '@layouts/base/components/navigation.sass'
 
 const buttons: LinkData[] = [

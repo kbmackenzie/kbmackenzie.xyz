@@ -27,8 +27,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
+      "@shared/*": ["./src/shared/*"],
       "@store/*": ["./src/store/*"],
-      "@types/*": ["./src/types/*"],
       "@utils/*": ["./src/utils/*"]
     },
   },

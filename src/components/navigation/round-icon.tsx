@@ -1,12 +1,7 @@
 import { DOMAttributes } from 'react'
 import classNames from 'classnames';
+import { IconData } from '@shared/icon';
 import '@components/navigation/round-icon.sass';
-
-export type IconData = {
-  src: string;
-  alt: string;
-  url: string;
-};
 
 type Props = DOMAttributes<HTMLAnchorElement> & {
   icon: IconData;

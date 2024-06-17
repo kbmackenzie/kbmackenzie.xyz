@@ -1,13 +1,6 @@
 import { JSX, DOMAttributes } from 'react';
 import classNames from 'classnames';
-
-export type LinkType = 'regular' | 'focus';
-
-export type LinkData = {
-  type: LinkType;
-  name: string;
-  url: string;
-};
+import { LinkData } from '@shared/link';
 
 type AnchorProps = DOMAttributes<HTMLAnchorElement> & {
   data: LinkData;
