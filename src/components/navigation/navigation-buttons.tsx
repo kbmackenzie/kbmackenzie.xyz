@@ -15,15 +15,15 @@ function Anchor({ data, classes }: AnchorProps) {
   )
 }
 
-function generateLink(data: LinkData, classes: string[]) {
+function generateButton(data: LinkData, classes: string[]) {
   return <Anchor key={data.name} data={data} classes={classes} />;
 }
 
-type NavigationLinksProps = {
+type NavigationButtonsProps = {
   buttons: LinkData[]
   classes: string[],
 };
 
-export function NavigationLinks({ buttons, classes }: NavigationLinksProps) {
-  return <>{buttons.map(button => generateLink(button, classes))}</>
+export function NavigationButtons({ buttons, classes }: NavigationButtonsProps) {
+  return <>{buttons.map(button => generateButton(button, classes))}</>
 }

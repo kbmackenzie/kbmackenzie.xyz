@@ -1,4 +1,4 @@
-import { NavigationLinks } from '@components/navigation/navigation-buttons';
+import { NavigationButtons } from '@components/navigation/navigation-buttons';
 import { LinkData } from '@shared/link';
 import '@layouts/base/components/navigation.sass'
 
@@ -27,7 +27,7 @@ export function Navigation() {
   ];
   return (
     <nav className="header-navigation">
-      <NavigationLinks buttons={buttons} classes={buttonClasses} />
+      <NavigationButtons buttons={buttons} classes={buttonClasses} />
     </nav>
   )
 }
