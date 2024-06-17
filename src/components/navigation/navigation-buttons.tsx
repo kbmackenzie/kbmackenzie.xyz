@@ -1,8 +1,7 @@
-import { JSX, DOMAttributes } from 'react';
 import classNames from 'classnames';
 import { LinkData } from '@shared/link';
 
-type AnchorProps = DOMAttributes<HTMLAnchorElement> & {
+type AnchorProps = {
   data: LinkData;
   classes: string[];
 };
@@ -16,7 +15,7 @@ function Anchor({ data, classes }: AnchorProps) {
   )
 }
 
-function generateLink(data: LinkData, classes: string[]): JSX.Element {
+function generateLink(data: LinkData, classes: string[]) {
   return <Anchor key={data.name} data={data} classes={classes} />;
 }
 
