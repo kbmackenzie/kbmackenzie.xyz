@@ -30,7 +30,12 @@ function MobileNavigation() {
       <button className="header-mobile-hamburger" onClick={() => setShowMenu(x => !x)}>
         <img src={menuIcon} alt="hamburger icon"></img>
       </button>
-      {showMenu && <SideMenu buttons={buttons} classes={['header-mobile-side-menu', 'fira-mono']}/>}
+      {showMenu &&
+        <SideMenu
+          buttons={buttons}
+          destination={'side-menu'}
+          classes={['header-mobile-side-menu', 'fira-mono']}
+          onExit={() => { setShowMenu(false); }} />}
     </nav>
   );
 }
@@ -41,5 +46,5 @@ export function Navigation() {
       <NavigationButtons buttons={buttons} classes={['header-navigation', 'fira-mono']} />
       <MobileNavigation />
     </>
-  )
+  );
 }
