@@ -79,3 +79,34 @@
 
   @media (max-width: screens.$md)
     display: block
+
+.header-mobile-side-menu
+  background-color: colors.$deep-space
+
+  .side-menu-button
+    min-width: 60%
+    padding: 1rem
+    margin: 1rem 0
+
+    font-size: 1.5rem
+    text-align: center
+
+    border: none
+    border-radius: 2rem
+
+    transition: color, background-color 0.5s
+
+    &.regular
+      color: colors.$starlight
+      background-color: colors.$moon-light
+
+      &:hover
+        color: white
+
+    &.focus
+      color: white
+      background-color: colors.$bubblegum
+
+      &:hover
+        color: colors.$bubblegum
+        background-color: white
