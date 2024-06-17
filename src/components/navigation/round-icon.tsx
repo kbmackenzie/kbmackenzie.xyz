@@ -1,6 +1,6 @@
 import { DOMAttributes } from 'react'
 import classNames from 'classnames';
-import '@components/links/round-icon.sass';
+import '@components/navigation/round-icon.sass';
 
 export type IconData = {
   src: string;
