@@ -3,7 +3,7 @@ import { Socials } from '@pages/home/components/socials';
 import { skillIcons, Skill } from '@store/skill-icons';
 import '@pages/home/components/intro.sass';
 
-const skills: [Slot, Skill][] = [
+const skills: ReadonlyArray<[Slot, Skill]> = [
   ['top'          , 'haskell'     ],
   ['top-right'    , 'linux'       ],
   ['bottom-right' , 'neovim'      ],
