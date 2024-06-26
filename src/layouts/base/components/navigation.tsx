@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavigationButtons } from '@components/navigation/navigation-buttons';
 import { SideMenu } from '@components/navigation/side-menu';
-import { LinkData } from '@shared/link';
+import { LinkData } from '@typings/link';
 import '@layouts/base/components/navigation.sass'
 import menuIcon from '@layouts/base/assets/menu-icon.svg';
 

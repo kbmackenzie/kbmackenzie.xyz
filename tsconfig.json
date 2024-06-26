@@ -28,8 +28,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
-      "@shared/*": ["./src/shared/*"],
       "@store/*": ["./src/store/*"],
+      "@typings/*": ["./src/typings/*"],
       "@utils/*": ["./src/utils/*"]
     },
   },

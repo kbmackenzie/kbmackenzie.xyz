@@ -1,6 +1,6 @@
 import { DOMAttributes } from 'react'
 import classNames from 'classnames';
-import { IconData } from '@shared/icon';
+import { IconData } from '@typings/icon';
 import '@components/navigation/round-icon.sass';
 
 type Props = DOMAttributes<HTMLAnchorElement> & {

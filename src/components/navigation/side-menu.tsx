@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import classNames from 'classnames';
-import { LinkData } from '@shared/link';
+import { LinkData } from '@typings/link';
 import '@components/navigation/side-menu.sass';
 import exitIcon from '@assets/x-icon.svg';
 

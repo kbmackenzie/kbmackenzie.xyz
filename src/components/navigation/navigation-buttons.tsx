@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { LinkData } from '@shared/link';
+import { LinkData } from '@typings/link';
 
 type ButtonProps = {
   data: LinkData;
