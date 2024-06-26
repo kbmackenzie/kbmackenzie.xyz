@@ -1,6 +1,6 @@
 import { Project } from '@typings/project'
 
-export const projects: Project[] = [
+export const projects: ReadonlyArray<Project> = [
   {
     name: 'mewlix',
     url: 'https://github.com/kbmackenzie/mewlix',

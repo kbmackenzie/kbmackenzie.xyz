@@ -9,7 +9,7 @@ export type Skill =
   | 'neovim'
   | 'csharp';
 
-export const skillIcons: Record<Skill, string> = {
+export const skillIcons: Readonly<Record<Skill, string>> = {
   haskell:    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-plain.svg',
   linux:      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-plain.svg',
   typescript: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg',
