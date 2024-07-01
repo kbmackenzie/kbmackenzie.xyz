@@ -4,11 +4,7 @@ import { LinkData } from '@typings/link';
 import '@components/navigation/side-menu.sass';
 import exitIcon from '@assets/x-icon.svg';
 
-type ButtonProps = {
-  data: LinkData;
-};
-
-function Button({ data }: ButtonProps) {
+function Button({ data }: { data: LinkData }) {
   const { type, name, url } = data;
   return (
     <a href={url} className={classNames('side-menu-button', type)}>
