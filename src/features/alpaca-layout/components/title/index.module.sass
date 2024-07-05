@@ -1,0 +1,23 @@
+@use '@styles/colors'
+@use '@styles/typewrite'
+
+.title
+  font-weight: normal
+  display: inline-block
+
+.typing
+  display: inline-block
+  overflow: hidden
+  white-space: nowrap
+  border-right: solid 2px white
+  max-width: 0
+  @include typewrite.type('$ echo kbmackenzie')
+  animation-delay: 0.5s
+
+.echo
+  font: inherit
+  color: colors.$bubblegum
+
+.name
+  font: inherit
+  color: white
