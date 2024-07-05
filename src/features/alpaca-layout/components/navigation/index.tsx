@@ -44,9 +44,9 @@ function MobileNavigation() {
 
 export function Navigation() {
   return (
-    <div>
+    <>
       <Buttons buttons={buttons} />
       <MobileNavigation />
-    </div>
+    </>
   );
 }
