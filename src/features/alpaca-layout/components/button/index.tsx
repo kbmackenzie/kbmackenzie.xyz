@@ -1,16 +1,11 @@
 import { Fira_Mono } from 'next/font/google';
+import { ButtonData } from '@/features/alpaca-layout/types/button-data';
 import styles from '@/features/alpaca-layout/components/button/index.module.sass';
 
 const firaMono = Fira_Mono({
   weight:  ['400', '500', '700'],
   subsets: ['latin'],
 });
-
-type ButtonData = {
-  type: 'regular' | 'focus';
-  text: string;
-  url: string;
-};
 
 function Button({ data }: { data: ButtonData }) {
   const { type, text, url } = data;
