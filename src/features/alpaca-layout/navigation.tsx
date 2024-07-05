@@ -37,7 +37,7 @@ function MobileNavigation() {
         <SideMenu
           buttons={buttons}
           portalTarget={'side-menu'}
-          onExit={() => { setShowMenu(false); }} />}
+          exit={() => { setShowMenu(false); }} />}
     </nav>
   );
 }

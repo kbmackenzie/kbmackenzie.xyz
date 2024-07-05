@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,15 +17,31 @@ function Button({ data }: { data: ButtonData }) {
 type Props = {
   buttons: ButtonData[];
   portalTarget: string;
-  onExit: () => void;
+  exit: () => void;
 };
 
-export function SideMenu({ buttons, portalTarget, onExit }: Props) {
+const exitDelay = 400;
+
+export function SideMenu({ buttons, portalTarget, exit }: Props) {
+  const [shouldClose, setShouldClose] = useState<boolean>(false);
+
+  useEffect(() => {
+    /* Add a small delay for exit animation. */
+    if (!shouldClose) return;
+    const timeout = setTimeout(exit, exitDelay);
+    return () => clearTimeout(timeout);
+  }, [shouldClose, exit]);
+
+  const menuClasses = [
+    styles.menu,
+    shouldClose && styles.close
+  ].filter(x => !!x).join(' ');
+
   return createPortal(
     <>
       <div className={styles.overlay}></div>
-      <nav className={styles.menu}>
-        <button className={styles.exit} onClick={onExit}>
+      <nav className={menuClasses}>
+        <button className={styles.exit} onClick={() => setShouldClose(true)}>
           <Image src={exitIcon} alt="exit menu" />
         </button>
         {buttons.map(button => (

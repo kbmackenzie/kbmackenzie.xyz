@@ -1,11 +1,11 @@
 @use '@styles/colors'
 @use '@styles/screens'
+@use '@styles/transitions'
 
-@keyframes side-menu-slide-in
-  from
-    transform: translate(100%)
-  to
-    transform: translate(0)
+@include transitions.slide('side-menu')
+
+$slide-in-duration:  0.5s
+$slide-out-duration: 0.3s
 
 .menu
   position: fixed
@@ -21,8 +21,11 @@
   justify-content: center
   align-items: center
 
-  animation: 0.5s ease-out side-menu-slide-in forwards
+  animation: $slide-in-duration ease-out side-menu-slide-in forwards
   background-color: colors.$deep-space
+
+  &.close
+    animation: $slide-out-duration ease-out side-menu-slide-out forwards
 
 .exit
   position: absolute
