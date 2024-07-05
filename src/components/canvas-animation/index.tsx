@@ -1,11 +1,11 @@
 'use client';
 
-import { useRef, useCallback } from 'react';
+import { useRef, useCallback, DOMAttributes } from 'react';
 import { AnimationCallback, useAnimation } from '@/hooks/use-animation';
 
 export type DrawCallback = (context: CanvasRenderingContext2D, delta: number) => void;
 
-type Props = {
+type Props = DOMAttributes<HTMLCanvasElement> & {
   draw: DrawCallback;
   width: number;
   height: number;
