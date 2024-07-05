@@ -1,0 +1,23 @@
+@use 'sass:string'
+
+@mixin type($str, $duration: 0)
+  $len: string.length($str)
+  @if $duration <= 0
+    $duration: $len * 0.08
+
+  $typing-animation: ($duration * 1s) steps($len, end) typewrite-animation forwards
+  $cursor-animation: 0.8s step-end typewrite-cursor infinite
+
+  animation: $typing-animation, $cursor-animation
+
+@keyframes typewrite-animation
+  from
+    max-width: 0
+  to
+    max-width: 100%
+
+@keyframes typewrite-cursor
+  from, to
+    border-right-style: none
+  50%
+    border-right-style: solid
