@@ -1,5 +1,15 @@
 @use '@styles/colors'
 
+.buttons
+  width: 100%
+  display: flex
+  justify-content: flex-end
+  gap: 0.5rem
+  padding: 1rem
+
+  @media (max-width: screens.$md)
+    display: none
+
 .button
   min-width: 8rem  
   padding: 0.5rem

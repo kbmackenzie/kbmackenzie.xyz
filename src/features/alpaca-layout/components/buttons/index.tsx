@@ -10,11 +10,12 @@ const firaMono = Fira_Mono({
 
 function Button({ data }: { data: ButtonData }) {
   const { type, text, url } = data;
-  return <Link className={styles[type]} href={url}>{text}</Link>;
+  const classes = [styles.button, styles[type]].join(' ');
+  return <Link className={classes} href={url}>{text}</Link>;
 }
 
 export function Buttons({ buttons }: { buttons: ButtonData[] }) {
-  const classes = [firaMono.className, styles.button].join(' ');
+  const classes = [firaMono.className, styles.buttons].join(' ');
   return (
     <nav className={classes}>
       {buttons.map(data => (
