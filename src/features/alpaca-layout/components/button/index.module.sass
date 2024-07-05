@@ -1,0 +1,33 @@
+@use '@styles/colors'
+
+.button
+  min-width: 8rem  
+  padding: 0.5rem
+
+  font-size: 1rem
+  text-align: center
+  text-decoration: none
+
+  border: solid 4px transparent
+  border-radius: 1rem
+
+  transition: color, background-color 0.5s
+
+  &:hover
+    cursor: pointer
+
+.regular
+  background-color: transparent
+  color: colors.$starlight
+
+  &:hover
+    background-color: colors.$moon-light
+    color: color.scale(colors.$starlight, $lightness: 60%)
+      
+.focus
+  background-color: colors.$bubblegum
+  color: white
+
+  &:hover
+    background-color: white
+    color: colors.$bubblegum
