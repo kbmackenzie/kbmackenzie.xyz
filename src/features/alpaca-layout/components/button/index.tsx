@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Fira_Mono } from 'next/font/google';
 import { ButtonData } from '@/features/alpaca-layout/types/button-data';
 import styles from '@/features/alpaca-layout/components/button/index.module.sass';
@@ -9,7 +10,7 @@ const firaMono = Fira_Mono({
 
 function Button({ data }: { data: ButtonData }) {
   const { type, text, url } = data;
-  return <a className={styles[type]} href={url}>{text}</a>;
+  return <Link className={styles[type]} href={url}>{text}</Link>;
 }
 
 export function NavigationButtons({ buttons }: { buttons: ButtonData[] }) {
