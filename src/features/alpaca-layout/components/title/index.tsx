@@ -1,7 +1,8 @@
 import { DOMAttributes } from 'react';
+import { PipedProps } from '@/types/piped-props';
 import styles from '@/features/alpaca-layout/components/title/index.module.sass';
 
-export function Title({ ...props }: DOMAttributes<HTMLHeadingElement>) {
+export function Title({ ...props }: PipedProps<HTMLHeadingElement>) {
   return (
     <h1 {...props}>
       <span className={styles.title}>
