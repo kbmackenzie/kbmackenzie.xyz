@@ -8,8 +8,8 @@ export function AlpacaLayout({ children }: { children: ReactNode }) {
   return (
     <div className={styles.root}>
       <header className={styles.header}>
-        <Alpaca className={styles.alpaca} />
         <Title className={styles.title} />
+        <Alpaca className={styles.alpaca} />
       </header>
       <hr className={styles.divider} />
       <Navigation />
