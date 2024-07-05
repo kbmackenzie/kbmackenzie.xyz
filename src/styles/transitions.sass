@@ -1,0 +1,14 @@
+@mixin slide($id, $start: 100%, $end: 0)
+  @debug 'Creating transiton #{$id}-slide-in'
+  @keyframes #{$id}-slide-in
+    from
+      transform: translate($start)
+    to
+      transform: translate($end)
+
+  @debug 'Creating transiton #{$id}-slide-out'
+  @keyframes #{$id}-slide-out
+    from
+      transform: translate($end)
+    to
+      transform: translate($start)
