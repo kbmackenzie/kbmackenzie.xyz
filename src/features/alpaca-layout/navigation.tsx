@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Buttons } from '@/features/alpaca-layout/components/buttons';
 import { SideMenu } from '@/features/alpaca-layout/components/side-menu';
 import { ButtonData } from '@/features/alpaca-layout/types/button-data';
-import styles from '@/features/alpaca-layout/components/navigation/index.module.sass';
+import styles from '@/features/alpaca-layout/navigation.module.sass';
 import menuIcon from '@/features/alpaca-layout/assets/menu-icon.svg';
 
 const buttons: ButtonData[] = [
