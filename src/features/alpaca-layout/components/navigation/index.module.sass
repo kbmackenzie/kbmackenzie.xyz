@@ -1,0 +1,33 @@
+@use '@styles/colors'
+@use '@styles/screens'
+
+.mobile
+  display: none
+
+  @media (max-width: screens.$md)
+    display: flex
+    justify-content: flex-end
+
+.hamburger
+  position: relative
+  height: 2.5rem
+  width: 2.5rem
+  
+  text-decoration: none
+  background-color: colors.$bubblegum
+
+  margin: 1rem
+  padding: 0.5rem
+
+  border: none
+  border-radius: 0.5rem
+
+  &:hover
+    cursor: pointer
+
+  & > img
+    position: absolute
+    inset: 0
+    margin: auto
+    width: 80%
+    height: 80%
