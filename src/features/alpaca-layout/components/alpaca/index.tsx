@@ -1,6 +1,7 @@
 'use client';
 
-import { useCallback, DOMAttributes } from 'react';
+import { useCallback } from 'react';
+import { PipedProps } from '@/types/piped-props';
 import { SpriteDetails, useSpritesheet } from '@/hooks/use-spritesheet';
 import { CanvasMouseAnimation, DrawCallback } from '@/components/canvas-mouse-animation';
 import { lerp, easeInQuad } from '@/utils/animation';
@@ -23,7 +24,7 @@ function interpolateX(x: number, max: number): number {
   return clamp(target, 0, max);
 }
 
-export function Alpaca({...props}: DOMAttributes<HTMLCanvasElement>) {
+export function Alpaca({...props}: PipedProps<HTMLCanvasElement>) {
   const sprites = useSpritesheet(alpacaPeek.src, alpacaSprites);
 
   const drawAlpaca = useCallback<DrawCallback>((context, mouse) => {
