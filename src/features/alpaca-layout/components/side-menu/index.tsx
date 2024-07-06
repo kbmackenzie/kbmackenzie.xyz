@@ -6,6 +6,7 @@ import { Fira_Mono } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ButtonData } from '@/features/alpaca-layout/types/button-data';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/alpaca-layout/components/side-menu/index.module.sass';
 import exitIcon from '@/features/alpaca-layout/assets/exit-icon.svg';
 
@@ -16,7 +17,7 @@ const firaMono = Fira_Mono({
 
 function Button({ data }: { data: ButtonData }) {
   const { type, text, url } = data;
-  const classes = [firaMono.className, styles.button, styles[type]].join(' ');
+  const classes = styleClasses(firaMono.className, styles.button, styles[type]);
   return <Link href={url} className={classes}>{text}</Link>;
 }
 
@@ -38,10 +39,7 @@ export function SideMenu({ buttons, portalTarget, exit }: Props) {
     return () => clearTimeout(timeout);
   }, [shouldClose, exit]);
 
-  const menuClasses = [
-    styles.menu,
-    shouldClose && styles.close
-  ].filter(x => !!x).join(' ');
+  const menuClasses = styleClasses(styles.menu, shouldClose && styles.close);
 
   return createPortal(
     <>

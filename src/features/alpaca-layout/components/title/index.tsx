@@ -1,4 +1,5 @@
 import { PipedProps } from '@/types/piped-props';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/alpaca-layout/components/title/index.module.sass';
 
 import { Fira_Mono } from 'next/font/google';
@@ -8,7 +9,7 @@ const firaMono = Fira_Mono({
 });
 
 export function Title({ ...props }: PipedProps<HTMLHeadingElement>) {
-  const classes = [firaMono.className, styles.title].join(' ');
+  const classes = styleClasses(firaMono.className, styles.title);
   return (
     <h1 {...props}>
       <span className={classes}>

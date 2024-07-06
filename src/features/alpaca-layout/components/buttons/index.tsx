@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Fira_Mono } from 'next/font/google';
 import { ButtonData } from '@/features/alpaca-layout/types/button-data';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/alpaca-layout/components/buttons/index.module.sass';
 
 const firaMono = Fira_Mono({
@@ -10,12 +11,12 @@ const firaMono = Fira_Mono({
 
 function Button({ data }: { data: ButtonData }) {
   const { type, text, url } = data;
-  const classes = [styles.button, styles[type]].join(' ');
+  const classes = styleClasses(styles.button, styles[type]);
   return <Link className={classes} href={url}>{text}</Link>;
 }
 
 export function Buttons({ buttons }: { buttons: ButtonData[] }) {
-  const classes = [firaMono.className, styles.buttons].join(' ');
+  const classes = styleClasses(firaMono.className, styles.buttons);
   return (
     <nav className={classes}>
       {buttons.map(data => (
