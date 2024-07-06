@@ -1,0 +1,36 @@
+@use '@styles/screens'
+
+.greeting
+  width: 90%
+  color: white
+  text-align: right
+
+  @media (max-width: screens.$md)
+    text-align: center
+
+  h1
+    font-size: 2rem
+
+  hr
+    margin: 0.5rem 0
+    border: none
+    height: 0.1rem
+
+    $transparent: rgba(255 255 255 / 0%)
+    $cloudy: rgba(255 255 255 / 60%)
+    background: linear-gradient(to right, $transparent, $cloudy)
+
+    @media (max-width: screens.$md)
+      background: linear-gradient(to right, $transparent, $cloudy, $transparent)
+
+  p
+    font-weight: 300
+    font-size: 1.1rem
+    strong
+      font-weight: 600
+
+.socials
+  justify-content: flex-end
+
+  @media (max-width: screens.$md)
+    justify-content: center
