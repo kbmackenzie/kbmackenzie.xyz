@@ -7,7 +7,7 @@ import styles from '@/features/alpaca-layout/index.module.sass';
 export function AlpacaLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      {/* Target for the SideMenu component's portal. */}
+      {/* Target for the Navigation component's portal. */}
       <div id="side-menu"></div>
 
       {/* Root of all content. */}
