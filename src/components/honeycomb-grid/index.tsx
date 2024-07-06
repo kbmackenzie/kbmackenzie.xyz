@@ -18,14 +18,15 @@ export type HoneycombIcon = {
 
 type Props = {
   icons: ReadonlyMap<HoneycombSlot, HoneycombIcon>;
-  className?: string;
+  gridStyle?: string;
+  slotStyle: string;
 };
 
-export function HoneycombGrid({ icons, className }: Props) {
+export function HoneycombGrid({ icons, gridStyle, slotStyle }: Props) {
   return (
-    <div className={styleClasses(styles.honeycomb, className)}>
+    <div className={styleClasses(styles.honeycomb, gridStyle)}>
       {Array.from(icons.entries()).map(([key, icon]) => {
-        const classes = styleClasses(styles.slot, styles[`slot-${key}`]);
+        const classes = styleClasses(styles.slot, styles[`slot-${key}`], slotStyle);
         return (
           <div className={classes} key={key}>
             <Image src={icon.src} alt={icon.alt} />
