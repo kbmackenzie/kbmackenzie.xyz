@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/components/honeycomb-grid/index.module.sass';
 
 export type HoneycombSlot =
@@ -23,7 +24,7 @@ export function HoneycombGrid({ icons }: Props) {
   return (
     <div className={styles.honeycomb}>
       {Array.from(icons.entries()).map(([key, icon]) => {
-        const classes = [styles.slot, styles[`slot-${key}`]].join(' ');
+        const classes = styleClasses(styles.slot, styles[`slot-${key}`]);
         return (
           <div className={classes} key={key}>
             <Image src={icon.src} alt={icon.alt} />
