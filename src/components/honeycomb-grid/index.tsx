@@ -18,11 +18,12 @@ export type HoneycombIcon = {
 
 type Props = {
   icons: Map<HoneycombSlot, HoneycombIcon>;
+  className?: string;
 };
 
-export function HoneycombGrid({ icons }: Props) {
+export function HoneycombGrid({ icons, className }: Props) {
   return (
-    <div className={styles.honeycomb}>
+    <div className={styleClasses(styles.honeycomb, className)}>
       {Array.from(icons.entries()).map(([key, icon]) => {
         const classes = styleClasses(styles.slot, styles[`slot-${key}`]);
         return (
