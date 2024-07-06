@@ -1,3 +1,4 @@
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/components/honeycomb-grid/index.module.sass';
@@ -12,7 +13,7 @@ export type HoneycombSlot =
   | 'top-left';
 
 export type HoneycombIcon = {
-  src: string;
+  src: string | StaticImport;
   alt: string;
 };
 
