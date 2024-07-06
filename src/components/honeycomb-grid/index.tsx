@@ -17,7 +17,7 @@ export type HoneycombIcon = {
 };
 
 type Props = {
-  icons: Map<HoneycombSlot, HoneycombIcon>;
+  icons: ReadonlyMap<HoneycombSlot, HoneycombIcon>;
   className?: string;
 };
 
