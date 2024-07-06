@@ -30,7 +30,7 @@ export function HoneycombGrid({ icons, gridStyle, slotStyle }: Props) {
         const classes = styleClasses(styles.slot, styles[`slot-${key}`], slotStyle);
         return (
           <div className={classes} key={key}>
-            <Image src={icon.src} alt={icon.alt} />
+            <Image src={icon.src} alt={icon.alt} width={128} height={128} />
           </div>
         );
       })}
