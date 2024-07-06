@@ -1,4 +1,13 @@
 @use '@styles/screens'
+@use '@styles/easing'
+
+@keyframes fade-in
+  from
+    opacity: 0
+    transform: translateY(5%)
+  to
+    opacity: 100%
+    transform: translateY(0)
 
 .greeting
   color: white
@@ -6,6 +15,9 @@
 
   @media (max-width: screens.$md)
     text-align: center
+
+  opacity: 0
+  animation: 0.3s easing.$overshoot 0.2s fade-in forwards
 
   h1
     font-size: 2rem
