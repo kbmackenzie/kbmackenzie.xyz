@@ -6,6 +6,8 @@ export type Project = {
   image: {
     src: string | StaticImport;
     alt: string;
+    width?: number;
+    height?: number;
   }
   url: string;
 }
