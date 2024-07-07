@@ -1,0 +1,24 @@
+@use '@styles/colors'
+
+.card
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-areas: 'image info'
+  padding: 2rem
+  border-radius: 3rem
+  background-color: colors.$moon-light
+
+.image
+  grid-area: image
+  padding: 1rem
+
+.info
+  grid-area: info
+  color: white
+
+  h1
+    font-size: 2rem
+    font-weight: 600
+  p
+    font-size: 1.1rem
+    font-weight: 300
