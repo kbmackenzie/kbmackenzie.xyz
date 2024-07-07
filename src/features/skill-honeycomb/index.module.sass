@@ -3,10 +3,11 @@
 
 .slot
   background-color: colors.$moon-light
-  transition: background-color 1s
+  transition: background-color 1.5s
 
   &:hover
-    background-color: color.scale(colors.$moon-light, $lightness: 10%)
+    background-color: color.scale(colors.$moon-light, $lightness: 5%)
+    transition: background-color 0.5s
 
   & > img
     filter: brightness(0) invert(1) opacity(30%)
