@@ -1,11 +1,12 @@
 'use client';
 
-import { useRef, useCallback, useEffect, DOMAttributes } from 'react';
+import { useRef, useCallback, useEffect } from 'react';
+import { PipedProps } from '@/types/piped-props';
 import { MousePosition, MouseCallback, useMousePosition } from '@/hooks/use-mouse-position';
 
 export type DrawCallback = (context: CanvasRenderingContext2D, mouse: MousePosition) => void;
 
-type Props = DOMAttributes<HTMLCanvasElement> & {
+type Props = PipedProps<HTMLCanvasElement> & {
   draw: DrawCallback;
   width: number;
   height: number;
