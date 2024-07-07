@@ -5,12 +5,16 @@ import styles from '@/features/project-showcase/index.module.sass';
 
 export function ProjectShowcase({ className }: { className?: string }) {
   return (
-    <ul className={styleClasses(styles.cards, className)}>
-      {projects.map(project => (
-        <li key={project.name}>
-          <ProjectCard className={styles.card} project={project} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <h2 className={styles.title}>Projects</h2>
+      <ul className={styleClasses(styles.showcase, className)}>
+        {projects.map(project => (
+          <li key={project.name}>
+            <ProjectCard className={styles.card} project={project} />
+          </li>
+        ))}
+      </ul>
+      <nav></nav>
+    </>
   );
 }
