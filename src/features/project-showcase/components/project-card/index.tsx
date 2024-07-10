@@ -17,8 +17,8 @@ export function ProjectCard({ project, className }: Props) {
       <Image
         src={project.image.src}
         alt={project.image.alt}
-        width={project.image.width ?? 128}
-        height={project.image.height ?? 128}
+        width={project.image.width ?? 256}
+        height={project.image.height ?? 256}
         className={styles.image} />
       <div className={styles.info}>
         <h1>{project.name}</h1>
