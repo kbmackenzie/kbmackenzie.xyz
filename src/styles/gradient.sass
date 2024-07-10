@@ -1,4 +1,7 @@
 @function cloudy($side: 'left')
+  @if $side != 'left' and $side != 'right' and $side != 'center'
+    @error 'Invalid \'side\' value for gradient: #{$side}'
+
   $direction: 'to #{$side}'
   @if $side == 'center'
     $direction: 'to left'
