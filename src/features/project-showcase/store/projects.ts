@@ -5,7 +5,7 @@ import mewlixLogo from '@/features/project-showcase/assets/mewlix.png';
 export const projects: Project[] = [
   {
     name: 'mewlix',
-    description: 'A cat-themed esoteric programming language written in pure Haskell.',
+    description: 'A cat-themed esoteric programming language for creating small pixel games.',
     image: {
       src: mewlixLogo,
       alt: 'mewlix logo',
@@ -14,7 +14,7 @@ export const projects: Project[] = [
   },
   {
     name: 'kbmackenzie.xyz',
-    description: 'The website you\'re currently browsing! Written in TypeScript with Next.js.',
+    description: 'The website you\'re currently browsing! Written in TypeScript with React, Sass and Next.js.',
     image: {
       src: kbmLogo,
       alt: 'kbmackenzie.xyz logo',
