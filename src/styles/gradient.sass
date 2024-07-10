@@ -1,0 +1,12 @@
+@function cloudy($side: 'left')
+  $direction: 'to #{$side}'
+  @if $side == 'center'
+    $direction: 'to left'
+
+  $transparent: rgba(255 255 255 / 0%)
+  $cloud: rgba(255 255 255 / 60%)
+
+  @if $side != 'center'
+    @return linear-gradient(#{$direction}, $transparent, $cloud)
+  @else
+    @return linear-gradient(#{$direction}, $transparent, $cloud, $transparent)
