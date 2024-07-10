@@ -1,12 +1,12 @@
 'use client';
 
 import { useRef, useCallback } from 'react';
-import { PipedProps } from '@/types/piped-props';
+import { AttrsAndStyle } from '@/types/attrs-and-style';
 import { AnimationCallback, useAnimation } from '@/hooks/use-animation';
 
 export type DrawCallback = (context: CanvasRenderingContext2D, delta: number) => void;
 
-type Props = PipedProps<HTMLCanvasElement> & {
+type Props = AttrsAndStyle<HTMLCanvasElement> & {
   draw: DrawCallback;
   width: number;
   height: number;

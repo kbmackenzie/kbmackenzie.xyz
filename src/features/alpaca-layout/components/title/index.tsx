@@ -1,4 +1,4 @@
-import { PipedProps } from '@/types/piped-props';
+import { AttrsAndStyle } from '@/types/attrs-and-style';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/alpaca-layout/components/title/index.module.sass';
 
@@ -8,7 +8,7 @@ const firaMono = Fira_Mono({
   subsets: ['latin'],
 });
 
-export function Title({ ...props }: PipedProps<HTMLHeadingElement>) {
+export function Title({ ...props }: AttrsAndStyle<HTMLHeadingElement>) {
   const classes = styleClasses(firaMono.className, styles.title);
   return (
     <h1 {...props}>
