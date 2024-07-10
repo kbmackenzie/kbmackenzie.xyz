@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "globby": "^14.0.2",
+    "gray-matter": "^4.0.3",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
