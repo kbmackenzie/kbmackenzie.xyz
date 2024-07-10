@@ -14,7 +14,7 @@ export const projects: Project[] = [
   },
   {
     name: 'kbmackenzie.xyz',
-    description: 'The website you\'re currently browsing! Written in TypeScript with React, Sass and Next.js.',
+    description: 'This website! Written in TypeScript with React, Sass and Next.js.',
     image: {
       src: kbmLogo,
       alt: 'kbmackenzie.xyz logo',
