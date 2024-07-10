@@ -12,16 +12,19 @@
   padding: 1rem
   border-radius: 3rem
 
-  $dark: colors.$moon-dark
-  $light: colors.$moon-light
+  $dark: color.scale(colors.$moon-dark, $lightness: 2%)
+  $light: color.scale(colors.$moon-dark, $lightness: 5%)
   background: linear-gradient(to right top, $dark, $light, $dark) 
 
+  opacity: 80%
   text-decoration: none
+  box-shadow: 0 5px 5px colors.$deep-space
 
   transform: none
-  transition: transform 1s
+  transition: opacity 0.5s, transform 1s
 
   &:hover
+    opacity: 100%
     transform: scale(102%)
 
 .image
