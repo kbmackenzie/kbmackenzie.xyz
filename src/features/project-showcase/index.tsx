@@ -13,15 +13,20 @@ import arrowRight from '@/features/project-showcase/assets/arrow-right.svg';
 export function ProjectShowcase({ className }: { className?: string }) {
   const listRef = useRef<HTMLUListElement | null>(null);
 
-  function scroll(amount: number): void {
+  function scroll(side: 'left' | 'right'): void {
     if (!listRef.current) return;
+
+    const modifier = side === 'left' ? -1 : 1;
+
+    const width  = listRef.current.children?.[0]?.clientWidth ?? 300;
+    const amount = width * modifier;
+
     listRef.current.scrollBy({
       top: 0,
       left: amount,
       behavior: 'smooth',
     });
   }
-  const scrollAmount = 500; /* In pixels! */
 
   return (
     <div className={styleClasses(styles.showcase, className)}>
@@ -34,10 +39,10 @@ export function ProjectShowcase({ className }: { className?: string }) {
             </li>
           ))}
         </ul>
-        <Arrow className={styles.prev} onClick={() => scroll(-scrollAmount)}>
+        <Arrow className={styles.prev} onClick={() => scroll('left')}>
           <Image src={arrowLeft} alt="previous" />
         </Arrow>
-        <Arrow className={styles.next} onClick={() => scroll(scrollAmount)}>
+        <Arrow className={styles.next} onClick={() => scroll('right')}>
           <Image src={arrowRight} alt="next" />
         </Arrow>
       </div>
