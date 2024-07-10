@@ -29,7 +29,7 @@ export function ProjectShowcase({ className }: { className?: string }) {
   }
 
   return (
-    <div className={styleClasses(styles.showcase, className)}>
+    <section className={styleClasses(styles.showcase, className)}>
       <h2 className={styles.title}>Projects</h2>
       <div className={styles.content}>
         <ul ref={listRef} className={styles.projects}>
@@ -46,6 +46,6 @@ export function ProjectShowcase({ className }: { className?: string }) {
           <Image src={arrowRight} alt="next" />
         </Arrow>
       </div>
-    </div>
+    </section>
   );
 }
