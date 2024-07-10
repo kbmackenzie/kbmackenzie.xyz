@@ -8,7 +8,7 @@ import { dirname, resolve } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename)
 
-export async function fetchPosts() {
+export async function fetchPosts(): Promise<BlogPost[]> {
   const postDirectory = resolve(__dirname, '../../posts');
   const pattern = '*.md';
 
