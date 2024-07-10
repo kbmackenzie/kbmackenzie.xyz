@@ -10,16 +10,10 @@ export default function Home() {
     <AlpacaLayout>
       <main>
         <section className={styles.focus}>
-          <section className={styles.about}>
-            <AboutMe />
-          </section>
-          <aside className={styles.skills}>
-            <SkillHoneycomb />
-          </aside>
+          <AboutMe className={styles.about} />
+          <SkillHoneycomb className={styles.skills} />
         </section>
-        <section>
-          <ProjectShowcase />
-        </section>
+        <ProjectShowcase />
       </main>
     </AlpacaLayout>
   );
