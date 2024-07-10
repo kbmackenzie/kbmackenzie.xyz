@@ -1,12 +1,39 @@
-.title
-  color: white
-  font-size: 3rem
-  margin: 1rem 0
+$arrow-width:  4rem
+$arrow-height: 4rem
 
 .showcase
+  position: relative
+  padding: 2rem
+
+.title
+  font-size: 2rem
+  color: white
+  margin: 1rem 0
+
+.content
+  position: relative
+
+.projects
   display: flex
   flex-direction: row
   gap: 1rem
-  padding: 2rem
+
+  margin: 0 6rem
 
   overflow-x: scroll
+  border-radius: 3rem
+
+.prev, .next
+  width: $arrow-width
+  height: $arrow-height
+
+  position: absolute
+  top: 0
+  bottom: 0
+  margin: auto 0
+
+.prev
+  left: 0
+
+.next
+  right: 0
