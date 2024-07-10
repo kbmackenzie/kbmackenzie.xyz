@@ -1,4 +1,5 @@
 @use '@styles/colors'
+@use '@styles/gradient'
 @use 'sass:color'
 
 .card
@@ -56,10 +57,7 @@
     height: 0.1rem
     border: none
     margin: 0.5rem 0
-
-    $transparent: rgba(255 255 255 / 0%)
-    $cloudy: rgba(255 255 255 / 60%)
-    background: linear-gradient(to left, $transparent, $cloudy)
+    background: gradient.cloudy('left')
   p
     font-size: 1rem
     font-weight: 300

@@ -1,5 +1,6 @@
 @use '@styles/screens'
 @use '@styles/easing'
+@use '@styles/gradient'
 
 @keyframes fade-in
   from
@@ -26,13 +27,10 @@
     margin: 1rem 0
     border: none
     height: 0.1rem
-
-    $transparent: rgba(255 255 255 / 0%)
-    $cloudy: rgba(255 255 255 / 60%)
-    background: linear-gradient(to right, $transparent, $cloudy)
+    background: gradient.cloudy('right')
 
     @media (max-width: screens.$md)
-      background: linear-gradient(to right, $transparent, $cloudy, $transparent)
+      background: gradient.cloudy('center')
 
   p
     font-weight: 300
