@@ -1,3 +1,6 @@
+@use '@styles/colors'
+@use '@styles/screens'
+
 $arrow-width:  4rem
 $arrow-height: 4rem
 
@@ -14,14 +17,17 @@ $arrow-height: 4rem
   position: relative
 
 .projects
+  position: relative
+
   display: flex
   flex-direction: row
   gap: 1rem
 
   margin: 0 6rem
+  padding: 1rem 0
 
   overflow-x: scroll
-  border-radius: 3rem
+  overflow-y: visible
 
 .prev, .next
   width: $arrow-width
@@ -34,6 +40,8 @@ $arrow-height: 4rem
 
 .prev
   left: 0
+  box-shadow: 3px 3px 5px colors.$deep-space
 
 .next
   right: 0
+  box-shadow: -3px 3px 5px colors.$deep-space
