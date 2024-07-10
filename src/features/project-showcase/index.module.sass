@@ -16,6 +16,9 @@ $arrow-height: 4rem
 .content
   position: relative
 
+  @media (max-width: screens.$md)
+    padding-bottom: $arrow-height * 1.2
+
 .projects
   position: relative
 
@@ -23,11 +26,14 @@ $arrow-height: 4rem
   flex-direction: row
   gap: 1rem
 
+  overflow-x: scroll
+  overflow-y: visible
+
   margin: 0 6rem
   padding: 1rem 0
 
-  overflow-x: scroll
-  overflow-y: visible
+  @media (max-width: screens.$md)
+    margin: 0
 
 .prev, .next
   width: $arrow-width
@@ -37,6 +43,10 @@ $arrow-height: 4rem
   top: 0
   bottom: 0
   margin: auto 0
+
+  @media (max-width: screens.$md)
+    top: auto
+    margin: 0
 
 .prev
   left: 0
