@@ -14,14 +14,16 @@ export function ProjectCard({ project, className }: Props) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer">
-      <Image
-        src={project.image.src}
-        alt={project.image.alt}
-        width={project.image.width ?? 256}
-        height={project.image.height ?? 256}
-        className={styles.image} />
+      <div className={styles.image}>
+        <Image
+          src={project.image.src}
+          alt={project.image.alt}
+          width={project.image.width ?? 256}
+          height={project.image.height ?? 256} />
+      </div>
       <div className={styles.info}>
         <h1>{project.name}</h1>
+        <hr />
         <p>{project.description}</p>
       </div>
     </a>
