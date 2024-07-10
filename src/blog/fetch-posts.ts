@@ -9,8 +9,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename)
 
 export async function fetchPosts() {
-  const pattern = resolve(__dirname, '../../posts') + '/*.md';
-  const files = await globby(pattern);
+  const postDirectory = resolve(__dirname, '../../posts');
+  const pattern = '*.md';
+
+  const files = await globby(pattern, {
+    cwd: postDirectory,
+  });
 
   const posts: BlogPost[] = [];
 
