@@ -15,8 +15,13 @@ export function ProjectShowcase({ className }: { className?: string }) {
 
   function scroll(amount: number): void {
     if (!listRef.current) return;
-    listRef.current.scrollBy(amount, 0);
+    listRef.current.scrollBy({
+      top: 0,
+      left: amount,
+      behavior: 'smooth',
+    });
   }
+  const scrollAmount = 500; /* In pixels! */
 
   return (
     <div className={styleClasses(styles.showcase, className)}>
@@ -29,10 +34,10 @@ export function ProjectShowcase({ className }: { className?: string }) {
             </li>
           ))}
         </ul>
-        <Arrow className={styles.prev} onClick={() => scroll(-20)}>
+        <Arrow className={styles.prev} onClick={() => scroll(-scrollAmount)}>
           <Image src={arrowLeft} alt="previous" />
         </Arrow>
-        <Arrow className={styles.next} onClick={() => scroll(20)}>
+        <Arrow className={styles.next} onClick={() => scroll(scrollAmount)}>
           <Image src={arrowRight} alt="next" />
         </Arrow>
       </div>
