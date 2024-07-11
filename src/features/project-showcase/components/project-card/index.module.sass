@@ -1,54 +1,50 @@
 @use '@styles/colors'
+@use '@styles/screens'
 @use '@styles/gradient'
 @use 'sass:color'
 
-.card
-  width: 24rem
-  height: 12rem
+@function purple-gradient()
+  $dark:  color.scale(colors.$moon-dark, $lightness: 2%)
+  $light: color.scale(colors.$moon-dark, $lightness: 5%)
+  @return linear-gradient(to right, $dark, $light, $dark)
 
-  display: grid
-  grid-template-columns: 1fr 2fr
-  grid-template-areas: 'image info'
+.card
+  min-height: 12rem
+
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
 
   padding: 1rem
   border-radius: 3rem
 
-  $dark: color.scale(colors.$moon-dark, $lightness: 2%)
-  $light: color.scale(colors.$moon-dark, $lightness: 5%)
-  background: linear-gradient(to right top, $dark, $light, $dark) 
-
-  opacity: 80%
   text-decoration: none
-  box-shadow: 0 5px 5px colors.$deep-space
+  box-shadow: 5px 5px 5px colors.$deep-space
 
-  transform: none
-  transition: opacity 0.2s, transform 0.5s
-
+  background: purple-gradient()
+  transition: transform 0.5s ease-out
+  
   &:hover
-    opacity: 100%
-    transform: scale(102%)
+    transform: scale(105%)
+
+  @media (max-width: screens.$md)
+    flex-direction: column
 
 .image
-  grid-area: image
+  flex: 1 1 25%
+
   display: flex
+  justify-content: center
   align-items: center
 
-  img
-    width: 100%
-    height: auto
+  > img
+    width: auto
+    height: 100%
 
 .info
-  grid-area: info
+  flex: 1 1 75%
   color: white
-
-  display: flex
-  flex-direction: column
-  justify-content: center
-
-  padding: 0 1rem
-
-  &:hover, &:focus
-    text-decoration: none
 
   h1
     font-size: 1.3rem
@@ -58,6 +54,13 @@
     border: none
     margin: 0.5rem 0
     background: gradient.cloudy('left')
+
+    @media (max-width: screens.$md)
+      background: gradient.cloudy('center')
   p
     font-size: 1rem
     font-weight: 300
+    white-space: pre-wrap
+
+  @media (max-width: screens.$md)
+    text-align: center
