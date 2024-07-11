@@ -1,8 +1,9 @@
 import { Project } from '@/features/project-showcase/types/project';
+import { Skill } from '@/features/project-showcase/types/skill';
 import kbmLogo from '@/features/project-showcase/assets/kbm.png';
 import mewlixLogo from '@/features/project-showcase/assets/mewlix.png';
 
-function joinLines(...lines: string[]) {
+function joinLines(...lines: string[]): string {
   return lines.join('\n');
 }
 
@@ -18,6 +19,7 @@ export const projects: Project[] = [
       alt: 'mewlix logo',
     },
     url: 'https://github.com/kbmackenzie/mewlix',
+    skills: [Skill.Haskell, Skill.TypeScript, Skill.Sass],
   },
   {
     name: 'kbmackenzie.xyz',
@@ -30,6 +32,7 @@ export const projects: Project[] = [
       alt: 'kbmackenzie.xyz logo',
     },
     url: 'https://github.com/kbmackenzie/kbmackenzie.xyz',
+    skills: [Skill.TypeScript, Skill.React, Skill.Sass, Skill.NextJS],
   },
   {
     name: 'Inscryption Mods',
@@ -39,6 +42,7 @@ export const projects: Project[] = [
       alt: 'inscryption logo',
     },
     url: 'https://thunderstore.io/c/inscryption/p/KellyBetty/',
+    skills: [Skill.CSharp],
   },
   {
     name: 'Cult of the Lamb Mods',
@@ -48,5 +52,6 @@ export const projects: Project[] = [
       alt: 'cult of the lamb logo',
     },
     url: 'https://thunderstore.io/c/cult-of-the-lamb/p/KellyBetty/',
+    skills: [Skill.CSharp],
   },
 ];
