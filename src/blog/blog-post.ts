@@ -5,3 +5,8 @@ export type PostMetadata = Readonly<{
   description: string;
   tags: string[];
 }>;
+
+export type BlogPost = Readonly<{
+  metadata: PostMetadata;
+  body: string;
+}>;
