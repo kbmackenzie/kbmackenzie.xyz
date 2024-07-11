@@ -2,10 +2,17 @@ import { Project } from '@/features/project-showcase/types/project';
 import kbmLogo from '@/features/project-showcase/assets/kbm.png';
 import mewlixLogo from '@/features/project-showcase/assets/mewlix.png';
 
+function joinLines(...lines: string[]) {
+  return lines.join('\n');
+}
+
 export const projects: Project[] = [
   {
     name: 'mewlix',
-    description: 'A cat-themed esoteric programming language for creating small pixel games.',
+    description: joinLines(
+      'A cat-themed esoteric programming language, with templates for creating pixel games!',
+      'The compiler is written in pure Haskell.',
+    ),
     image: {
       src: mewlixLogo,
       alt: 'mewlix logo',
@@ -14,7 +21,10 @@ export const projects: Project[] = [
   },
   {
     name: 'kbmackenzie.xyz',
-    description: 'This website! Written in TypeScript with React, Sass and Next.js.',
+    description: joinLines(
+      'This website! A personal website + statically compiled blog.',
+      'Written in TypeScript with React, Sass and Next.js.',
+    ),
     image: {
       src: kbmLogo,
       alt: 'kbmackenzie.xyz logo',
