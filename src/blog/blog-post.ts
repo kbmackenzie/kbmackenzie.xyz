@@ -1,5 +1,6 @@
 export type PostMetadata = Readonly<{
-  name: string;
+  title: string;
+  id: string;
   date: Date;
   description: string;
   tags: string[];
