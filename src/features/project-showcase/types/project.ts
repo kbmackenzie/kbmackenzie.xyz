@@ -1,4 +1,5 @@
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { Skill } from '@/features/project-showcase/types/skill';
 
 export type Project = {
   name: string;
@@ -10,4 +11,5 @@ export type Project = {
     height?: number;
   }
   url: string;
+  skills: Skill[];
 }
