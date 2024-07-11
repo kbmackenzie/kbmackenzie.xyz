@@ -1,19 +1,27 @@
 @use '@styles/colors'
 @use '@styles/screens'
+@use '@styles/gradient'
+
+.showcase
+  margin: 1rem 0
+
+.divider
+  margin: 0.5rem 10%
+  border: none
+  height: 0.1rem
+  background: gradient.cloudy('center')
 
 .title
-  position: relative
-  left: 0
-  right: 0
-  margin: 0 auto
+  font-size: 2rem
+  font-weight: 300
+  text-align: center
+   
+  padding: 0.5rem 2rem
+  border-radius: 2rem
 
-  padding: 1rem 3rem
-  border-radius: 3rem
-
-  font-size: 1.5rem
-  font-weight: normal
-  color: colors.$moon-light
-  background-color: white
+  color: white
+  //color: colors.$moon-light
+  //background-color: white
 
 .content
   position: relative
@@ -30,4 +38,4 @@
   > li
     width: 80%
     @media (max-width: screens.$md)
-      width: 100%
+      width: 90%

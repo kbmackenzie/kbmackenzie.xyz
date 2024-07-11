@@ -7,6 +7,7 @@ export function ProjectShowcase({ className }: { className?: string }) {
   return (
     <section className={styleClasses(styles.showcase, className)}>
       <h2 className={styles.title}>Projects</h2>
+      <hr className={styles.divider} />
       <ul className={styles.projects}>
         {projects.map(project => (
           <li key={project.name}>
