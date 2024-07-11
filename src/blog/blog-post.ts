@@ -1,7 +1,6 @@
-export type BlogPost = Readonly<{
+export type PostMetadata = Readonly<{
   name: string;
   date: Date;
   description: string;
   tags: string[];
-  body: string;
 }>;
