@@ -19,7 +19,7 @@ export const projects: Project[] = [
       alt: 'mewlix logo',
     },
     url: 'https://github.com/kbmackenzie/mewlix',
-    skills: [Skill.Haskell, Skill.TypeScript, Skill.Sass],
+    skills: [Skill.Haskell, Skill.TypeScript, Skill.HTML, Skill.Sass],
   },
   {
     name: 'kbmackenzie.xyz',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
       alt: 'inscryption logo',
     },
     url: 'https://thunderstore.io/c/inscryption/p/KellyBetty/',
-    skills: [Skill.CSharp],
+    skills: [Skill.CSharp, Skill.Unity],
   },
   {
     name: 'Cult of the Lamb Mods',
@@ -52,6 +52,6 @@ export const projects: Project[] = [
       alt: 'cult of the lamb logo',
     },
     url: 'https://thunderstore.io/c/cult-of-the-lamb/p/KellyBetty/',
-    skills: [Skill.CSharp],
+    skills: [Skill.CSharp, Skill.Unity],
   },
 ];
