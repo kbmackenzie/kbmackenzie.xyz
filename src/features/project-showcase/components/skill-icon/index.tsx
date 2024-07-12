@@ -14,13 +14,11 @@ export function SkillIcon({ skill, className }: Props) {
   const name = Skill[skill].toLowerCase();
 
   return (
-    <span className={styleClasses(styles.container, className)}>
-      <Image
-        src={icon}
-        alt={name}
-        width={128}
-        height={128}
-        className={styles.icon} />
-    </span>
+    <Image
+      src={icon}
+      alt={name}
+      width={128}
+      height={128}
+      className={styles.icon} />
   );
 }
