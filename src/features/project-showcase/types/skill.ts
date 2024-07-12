@@ -2,7 +2,6 @@ export enum Skill {
   Haskell,
   JavaScript,
   TypeScript,
-  Scheme,
   Elixir,
   CSS,
   Sass,
@@ -10,4 +9,8 @@ export enum Skill {
   React,
   NextJS,
   CSharp,
+  FSharp,
+  Python,
+  Ruby,
+  Java,
 }
