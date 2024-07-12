@@ -1,4 +1,5 @@
 import { Project } from '@/features/project-showcase/types/project';
+import { SkillIcon } from '@/features/project-showcase/components/skill-icon';
 import Image from 'next/image';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/project-showcase/components/project-card/index.module.sass';
@@ -25,6 +26,13 @@ export function ProjectCard({ project, className }: Props) {
         <h1>{project.name}</h1>
         <hr />
         <p>{project.description}</p>
+        <ul className={styles.skills}>
+          {project.skills.map(skill => (
+            <li key={skill}>
+              <SkillIcon skill={skill} />
+            </li>
+          ))}
+        </ul>
       </div>
     </a>
   );
