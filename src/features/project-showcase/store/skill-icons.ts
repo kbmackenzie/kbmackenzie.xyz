@@ -46,6 +46,22 @@ export const skillIcons: ReadonlyMap<Skill, string> = new Map([
     'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fsharp/fsharp-plain.svg',
   ],
   [
+    Skill.C,
+    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-plain.svg',
+  ],
+  [
+    Skill.CPlusPlus,
+    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-plain.svg',
+  ],
+  [
+    Skill.Godot,
+    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-plain.svg',
+  ],
+  [
+    Skill.Unity,
+    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-plain.svg',
+  ],
+  [
     Skill.Python,
     'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-plain.svg',
   ],
