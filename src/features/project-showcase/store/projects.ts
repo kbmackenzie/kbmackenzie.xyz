@@ -36,7 +36,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Inscryption Mods',
-    description: 'An assortment of mods I made for the game "Inscryption."',
+    description: 'An assortment of mods I made for the game "Inscryption".',
     image: {
       src: kbmLogo,
       alt: 'inscryption logo',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Cult of the Lamb Mods',
-    description: 'An assortment of mods I made for the game "Cult of the Lamb."',
+    description: 'An assortment of mods I made for the game "Cult of the Lamb".',
     image: {
       src: kbmLogo,
       alt: 'cult of the lamb logo',
