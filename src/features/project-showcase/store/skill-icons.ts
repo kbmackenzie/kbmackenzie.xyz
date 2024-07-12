@@ -31,7 +31,7 @@ export const skillIcons: ReadonlyMap<Skill, string> = new Map([
   ],
   [
     Skill.NextJS,
-    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
+    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-plain.svg',
   ],
   [
     Skill.Elixir,
