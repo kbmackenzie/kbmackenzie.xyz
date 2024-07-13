@@ -16,7 +16,7 @@ const blogDirectory = path.resolve(__dirname, '../../blog');
  * It's expected that the content inside 'posts/' is valid at runtime. */
 
 export async function fetchPost(year: string, id: string): Promise<BlogPost> {
-  const postPath = path.join(blogDirectory, 'posts/', year, `${id}.md`);
+  const postPath = path.join(blogDirectory, year, `${id}.md`);
 
   const contents = await readFile(postPath);
   const post = matter(contents);
