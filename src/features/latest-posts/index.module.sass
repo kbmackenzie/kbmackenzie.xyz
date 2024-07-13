@@ -1,6 +1,7 @@
 @use '@styles/colors'
 @use '@styles/screens'
 @use '@styles/gradient'
+@use 'sass:color'
 
 .latest
   padding: 1rem
@@ -41,21 +42,26 @@
   display: flex
   flex-flow: row wrap
 
-  .name
-    font-size: 1.3rem
-    flex: 6 0
+  transition: background-color 0.3s
 
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
+  &:hover
+    background-color: color.scale(colors.$moon-light, $lightness: 5%)
 
-    margin-right:  1rem
-    margin-bottom: 0.5rem
+.name
+  font-size: 1.3rem
+  flex: 6 0
 
-  .date
-    font-size: 1rem
-    opacity: 60%
-    color: colors.$starlight
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
 
-  .description
-    flex: 1 1 100%
+  margin-right:  1rem
+  margin-bottom: 0.5rem
+
+.date
+  font-size: 1rem
+  opacity: 60%
+  color: colors.$starlight
+
+.description
+  flex: 1 1 100%
