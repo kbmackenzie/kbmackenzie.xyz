@@ -3,7 +3,7 @@ import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/latest-posts/index.module.sass';
 
 export function LatestPosts({ className }: { className?: string; }) {
-  const predicate: PostPredicate = posts => posts
+  const predicate: PostPredicate = posts => [...posts]
     .sort((a, b) => a.timestamp - b.timestamp)
     .slice(0, 10);
 
