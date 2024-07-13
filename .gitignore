@@ -42,5 +42,5 @@ next-env.d.ts
 *.png
 *.jpg
 *.svg
-blog/
+/blog/
 _assets/
