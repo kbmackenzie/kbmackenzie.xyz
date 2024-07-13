@@ -5,6 +5,7 @@
 
 .latest
   padding: 1rem
+  margin-bottom: 1rem
 
 .title
   font-size: 2rem
@@ -25,7 +26,7 @@
 
 .posts
   display: flex
-  gap: 1.5rem
+  gap: 1rem
   flex-direction: column
 
   width: 80%
@@ -45,10 +46,11 @@
   display: flex
   flex-flow: row wrap
 
-  transition: background-color 0.3s
+  transition: transform 0.5s ease, background-color 0.3s
 
   &:hover
     background-color: color.scale(colors.$moon-light, $lightness: 5%)
+    transform: scale(105%)
 
 .name
   font-size: 1.3rem
