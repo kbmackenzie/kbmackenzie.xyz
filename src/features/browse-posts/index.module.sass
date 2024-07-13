@@ -1,0 +1,47 @@
+@use '@styles/colors'
+@use '@styles/screens'
+@use 'sass:color'
+
+.posts
+  display: flex
+  gap: 1rem
+  flex-direction: column
+
+  padding: 0
+  margin: 0 auto
+
+.post
+  padding: 1rem 2rem
+  border-radius: 2rem
+  text-decoration: none
+
+  color: white
+  background-color: colors.$moon-light
+
+  display: flex
+  flex-flow: row wrap
+
+  transition: transform 0.5s ease, background-color 0.3s
+
+  &:hover
+    background-color: color.scale(colors.$moon-light, $lightness: 5%)
+    transform: scale(105%)
+
+.title
+  font-size: 1.3rem
+  flex: 6 0
+
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+  margin-right:  1rem
+  margin-bottom: 0.5rem
+
+.date
+  font-size: 1rem
+  opacity: 60%
+  color: colors.$starlight
+
+.description
+  flex: 1 1 100%
