@@ -12,17 +12,17 @@ const buttons: ButtonData[] = [
   {
     type: 'regular',
     text: 'Home',
-    url: '#',
+    url: '/',
   },
   {
     type: 'regular',
     text: 'Blog',
-    url: '#',
+    url: '/blog',
   },
   {
     type: 'focus',
     text: 'Projects',
-    url: '#',
+    url: '/projects',
   },
 ];
 
