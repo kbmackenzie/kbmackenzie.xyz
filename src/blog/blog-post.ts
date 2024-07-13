@@ -1,7 +1,7 @@
 export type PostMetadata = Readonly<{
   title: string;
   id: string;
-  date: Date;
+  timestamp: number;
   description: string;
   tags: string[];
 }>;

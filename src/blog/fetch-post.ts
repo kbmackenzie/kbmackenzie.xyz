@@ -24,7 +24,7 @@ export async function fetchPost(year: string, id: string): Promise<BlogPost> {
   const metadata: PostMetadata = {
     title:        post.data.title,
     id:           post.data.id,
-    date:         post.data.date,
+    timestamp:    post.data.timestamp,
     description:  post.data.description,
     tags:         post.data.tags ?? [],
   };

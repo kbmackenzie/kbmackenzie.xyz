@@ -10,7 +10,7 @@ export async function generateStaticParams(): Promise<PostParams[]> {
   const metadata = await fetchMetadata();
 
   return metadata.map(data => ({
-    year: data.date.getFullYear().toString(),
+    year: new Date(data.timestamp).getFullYear().toString(),
     id:   data.id,
   }));
 }
