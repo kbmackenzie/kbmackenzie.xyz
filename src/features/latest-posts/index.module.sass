@@ -1,0 +1,61 @@
+@use '@styles/colors'
+@use '@styles/screens'
+@use '@styles/gradient'
+
+.latest
+  padding: 1rem
+
+.title
+  font-size: 2rem
+  font-weight: 300
+  text-align: center
+   
+  padding: 0.5rem 2rem
+  border-radius: 2rem
+
+  color: white
+
+.divider
+  margin: 0.5rem 10%
+  border: none
+  height: 0.1rem
+  background: gradient.cloudy('center')
+
+.posts
+  display: flex
+  flex-direction: column
+
+  width: 80%
+  margin: 0 auto
+  @media (max-width: screens.$md)
+    width: 90%
+
+.post
+  margin: 1rem
+  padding: 1rem 2rem
+  border-radius: 2rem
+
+  color: white
+  background-color: colors.$moon-light
+
+  display: flex
+  flex-flow: row wrap
+
+  .name
+    font-size: 1.3rem
+    flex: 6 0
+
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+    margin-right:  1rem
+    margin-bottom: 0.5rem
+
+  .date
+    font-size: 1rem
+    opacity: 60%
+    color: colors.$starlight
+
+  .description
+    flex: 1 1 100%
