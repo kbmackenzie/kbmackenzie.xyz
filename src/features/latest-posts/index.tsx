@@ -1,4 +1,3 @@
-import { PostMetadata } from '@/blog/blog-post';
 import { fetchPostMetadata } from '@/blog/fetch-post';
 import { styleClasses } from '@/utils/style-classes';
 import Link from 'next/link';
@@ -6,7 +5,11 @@ import styles from '@/features/latest-posts/index.module.sass';
 
 export async function LatestPosts({ className }: { className?: string; }) {
   const currentYear = new Date().getFullYear();
-  const posts = await fetchPostMetadata();
+  const metadata = await fetchPostMetadata();
+
+  const posts = metadata
+    .sort((a, b) => a.timestamp - b.timestamp)
+    .slice(0, 6);
 
   function linkToPost(date: Date, id: string): string {
     return `/blog/${date.getFullYear()}/${id}`;
