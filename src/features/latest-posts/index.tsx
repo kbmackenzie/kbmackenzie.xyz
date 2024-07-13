@@ -4,7 +4,6 @@ import Link from 'next/link';
 import styles from '@/features/latest-posts/index.module.sass';
 
 export async function LatestPosts({ className }: { className?: string; }) {
-  const currentYear = new Date().getFullYear();
   const metadata = await fetchPostMetadata();
 
   const posts = metadata
