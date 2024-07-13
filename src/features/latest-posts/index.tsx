@@ -1,10 +1,12 @@
 import { PostMetadata } from '@/blog/blog-post';
+import { fetchPostMetadata } from '@/blog/fetch-post';
 import { styleClasses } from '@/utils/style-classes';
 import Link from 'next/link';
 import styles from '@/features/latest-posts/index.module.sass';
 
-export function LatestPosts({ className }: { className?: string; }) {
+export async function LatestPosts({ className }: { className?: string; }) {
   const currentYear = new Date().getFullYear();
+  const posts = await fetchPostMetadata();
 
   function linkToPost(date: Date, id: string): string {
     return `/blog/${date.getFullYear()}/${id}`;
@@ -17,7 +19,7 @@ export function LatestPosts({ className }: { className?: string; }) {
       </h2>
       <hr className={styles.divider} />
       <ul className={styles.posts}>
-        {dummyPosts.map(post => {
+        {posts.map(post => {
           const date = new Date(post.timestamp);
           return (
             <li key={post.id}>
