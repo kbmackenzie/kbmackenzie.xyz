@@ -35,7 +35,7 @@ export async function fetchPost(year: string, id: string): Promise<BlogPost> {
   };
 }
 
-export async function fetchMetadata(): Promise<PostMetadata[]> {
+export async function fetchPostMetadata(): Promise<PostMetadata[]> {
   const metaPath = path.join(blogDirectory, 'posts.json');
   const contents = await readFile(metaPath);
   return JSON.parse(contents.toString()) as PostMetadata[];

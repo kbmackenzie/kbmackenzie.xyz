@@ -1,4 +1,4 @@
-import { fetchPost, fetchMetadata } from '@/blog/fetch-post';
+import { fetchPost, fetchPostMetadata } from '@/blog/fetch-post';
 import ReactMarkdown from 'react-markdown';
 
 type PostParams = {
@@ -7,7 +7,7 @@ type PostParams = {
 };
 
 export async function generateStaticParams(): Promise<PostParams[]> {
-  const metadata = await fetchMetadata();
+  const metadata = await fetchPostMetadata();
 
   return metadata.map(data => ({
     year: new Date(data.timestamp).getFullYear().toString(),
