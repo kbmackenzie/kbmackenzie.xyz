@@ -1,12 +1,7 @@
 import { AttrsAndStyle } from '@/types/attrs-and-style';
+import { firaMono } from '@/fonts';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/alpaca-layout/components/title/index.module.sass';
-
-import { Fira_Mono } from 'next/font/google';
-const firaMono = Fira_Mono({
-  weight:  ['400', '500', '700'],
-  subsets: ['latin'],
-});
 
 export function Title({ ...props }: AttrsAndStyle<HTMLHeadingElement>) {
   const classes = styleClasses(firaMono.className, styles.title);
