@@ -1,6 +1,15 @@
 @use '@styles/colors'
+@use '@styles/easing'
 @use '@styles/screens'
 @use 'sass:color'
+
+@keyframes post-slide-in
+  from
+    opacity: 0
+    transform: translateX(-5%)
+  to
+    opacity: 100%
+    transform: translateX(0)
 
 .posts
   display: flex
@@ -9,6 +18,10 @@
 
   padding: 0
   margin: 0 auto
+
+.container
+  opacity: 0
+  animation: 0.3s easing.$overshoot post-slide-in forwards
 
 .post
   padding: 1rem 2rem
