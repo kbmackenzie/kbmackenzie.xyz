@@ -10,7 +10,7 @@ type Props = {
 
 export function TitledSection({ className, title, children }: Props) {
   return (
-    <section className={styleClasses(className)}>
+    <section className={styleClasses(styles.section, className)}>
       <h2 className={styles.title}>{title}</h2>
       <hr className={styles.divider} />
       {children}

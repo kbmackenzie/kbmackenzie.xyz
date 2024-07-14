@@ -1,5 +1,15 @@
 @use '@styles/gradient'
 
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 100%
+
+.section
+  opacity: 0
+  animation: 0.25s fade-in forwards
+
 .title
   font-size: 2rem
   font-weight: 300
