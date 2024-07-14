@@ -1,20 +1,14 @@
 import { PostMetadata } from '@/blog/blog-post';
-import { fetchPostMetadata } from '@/blog/fetch-post';
 import Link from 'next/link';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/browse-posts/index.module.sass';
 
-export type PostPredicate = (posts: PostMetadata[]) => PostMetadata[];
-
 type Props = {
+  posts: ReadonlyArray<PostMetadata>;
   className?: string;
-  predicate: PostPredicate;
 };
 
-export async function BrowsePosts({ className, predicate }: Props) {
-  const metadata = await fetchPostMetadata();
-  const posts = predicate(metadata);
-
+export async function BrowsePosts({ className, posts }: Props) {
   function linkToPost(date: Date, id: string): string {
     return `/blog/${date.getFullYear()}/${id}`;
   }
