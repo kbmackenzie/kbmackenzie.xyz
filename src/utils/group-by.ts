@@ -3,10 +3,13 @@ export function groupyBy<T1, T2>(array: T1[], groupOf: (t: T1) => T2): [T2, T1[]
 
   for (const value of array) {
     const group = groupOf(value);
-    if (!groups.has(group)) {
-      groups.set(group, []);
+    let groupArray = groups.get(group);
+
+    if (groupArray === undefined) {
+      groupArray = [];
+      groups.set(group, groupArray);
     }
-    groups.get(group)!.push(value);
+    groupArray.push(value);
   }
 
   return Array.from(groups.entries());
