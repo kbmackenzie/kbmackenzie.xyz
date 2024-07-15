@@ -35,16 +35,9 @@ export async function fetchPost({ year, id }: PostQuery): Promise<BlogPost> {
   };
 }
 
-/* Cache I/O operation. (Static file never changes.) */
-let metadataCache: PostMetadata[] | null = null;
-
 export async function fetchPostMetadata(): Promise<PostMetadata[]> {
-  if (metadataCache !== null) return metadataCache;
-
   const metaPath = path.join(blogDirectory, 'posts.json');
   const contents = await readFile(metaPath);
   const metadata = JSON.parse(contents.toString()) as PostMetadata[];
-
-  metadataCache  = metadata;
   return metadata;
 }
