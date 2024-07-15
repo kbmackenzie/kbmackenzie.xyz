@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import matter from 'gray-matter';
-import { PostMetadata, BlogPost } from '@/blog/blog-post';
+import { PostMetadata, BlogPost, PostQuery, } from '@/blog/blog-post';
 import url from 'url';
 import path from 'path';
 
@@ -15,8 +15,8 @@ const blogDirectory = path.resolve(__dirname, '../../blog');
  *
  * It's expected that the content inside 'posts/' is valid at runtime. */
 
-export async function fetchPost(year: string, id: string): Promise<BlogPost> {
-  const postPath = path.join(blogDirectory, year, `${id}.md`);
+export async function fetchPost({ year, id }: PostQuery): Promise<BlogPost> {
+  const postPath = path.join(blogDirectory, year.toString(), `${id}.md`);
 
   const contents = await readFile(postPath);
   const post = matter(contents);
