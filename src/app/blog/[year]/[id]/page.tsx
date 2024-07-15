@@ -1,5 +1,5 @@
-import { PostQuery, yearOfPost, isQueriedPost, BlogPost } from '@/blog/blog-post';
-import { fetchPost, fetchPostMetadata } from '@/blog/fetch-post';
+import { PostQuery, yearOfPost } from '@/blog/blog-post';
+import { fetchPostMetadata, postExists, fetchPost } from '@/blog/fetch-post';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import styles from '@/app/blog/[year]/[id]/page.module.sass';
@@ -27,24 +27,16 @@ function NotFound() {
 }
 
 export default async function Post({ params }: { params: PostParams }) {
-  const metadata = await fetchPostMetadata();
   const query: PostQuery = {
     year: Number(params.year),
     id: params.id,
   };
 
-  if (!metadata.some(post => isQueriedPost(query, post))) {
+  if (!postExists(query)) {
     return <NotFound />;
   }
 
-  let post: BlogPost;
-  try {
-    post = await fetchPost(query);
-  }
-  catch (error) {
-    return <NotFound />;
-  }
-
+  const post = await fetchPost(query);
   return (
     <>
       <h2>{post.metadata.title}</h2>
