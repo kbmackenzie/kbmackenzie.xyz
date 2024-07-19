@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "author": "kbmackenzie <kelly.a.betty@gmail.com>",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "gray-matter": "^4.0.3",
     "next": "14.2.4",
