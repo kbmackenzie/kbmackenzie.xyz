@@ -1,7 +1,8 @@
 import { Project } from '@/features/project-showcase/types/project';
 import { Skill } from '@/features/project-showcase/types/skill';
-import kbmLogo from '@/features/project-showcase/assets/kbm.png';
 import mewlixLogo from '@/features/project-showcase/assets/mewlix.png';
+import alpacaLogo from '@/features/project-showcase/assets/alpaca.png';
+import terminalIcon from '@/features/project-showcase/assets/terminal.png';
 
 function joinLines(...lines: string[]): string {
   return lines.join('\n');
@@ -24,11 +25,11 @@ export const projects: Project[] = [
   {
     name: 'kbmackenzie.xyz',
     description: joinLines(
-      'This website! A personal website + statically compiled blog.',
+      'This website! A personal website + statically compiled blog. It\'s entirely open-source.',
       'Written in TypeScript with React, Sass and Next.js.',
     ),
     image: {
-      src: kbmLogo,
+      src: alpacaLogo,
       alt: 'kbmackenzie.xyz logo',
     },
     url: 'https://github.com/kbmackenzie/kbmackenzie.xyz',
@@ -38,8 +39,8 @@ export const projects: Project[] = [
     name: 'Inscryption Mods',
     description: 'An assortment of mods I made for the game "Inscryption".',
     image: {
-      src: kbmLogo,
-      alt: 'inscryption logo',
+      src: terminalIcon,
+      alt: 'terminal icon',
     },
     url: 'https://thunderstore.io/c/inscryption/p/KellyBetty/',
     skills: [Skill.CSharp, Skill.Unity],
@@ -48,8 +49,8 @@ export const projects: Project[] = [
     name: 'Cult of the Lamb Mods',
     description: 'An assortment of mods I made for the game "Cult of the Lamb".',
     image: {
-      src: kbmLogo,
-      alt: 'cult of the lamb logo',
+      src: terminalIcon,
+      alt: 'terminal icon',
     },
     url: 'https://thunderstore.io/c/cult-of-the-lamb/p/KellyBetty/',
     skills: [Skill.CSharp, Skill.Unity],
