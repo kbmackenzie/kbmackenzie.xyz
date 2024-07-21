@@ -6,6 +6,7 @@ import { yearOfPost } from '@/blog/blog-post';
 import { BrowsePosts } from '@/features/browse-posts';
 import { Observer } from '@/components/observer';
 import { useSearchParams } from 'next/navigation';
+import { Search } from '@/app/blog/search';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/blog/posts.module.sass';
 
@@ -26,6 +27,7 @@ export function Posts({ posts, className }: { posts: PostMetadata[], className?:
   return (
     <div className={styleClasses(styles.container, className)}>
       <h1 className={styles.title}>Posts</h1>
+      <Search className={styles.search} />
       {filterByTag &&
         <h3 className={styles.status}>
           Filtering by tag: <span className={styles.tag}>"{tag}"</span>
