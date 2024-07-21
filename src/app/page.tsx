@@ -4,6 +4,7 @@ import { SkillHoneycomb } from '@/features/skill-honeycomb';
 import { ProjectShowcase } from '@/features/project-showcase';
 import { TitledSection } from '@/components/titled-section';
 import { BrowsePosts } from '@/features/browse-posts';
+import { Observer } from '@/components/observer';
 import { fetchPostMetadata } from '@/blog/fetch-post';
 import styles from '@/app/page.module.sass';
 
@@ -20,13 +21,17 @@ export default async function Home() {
         <SkillHoneycomb className={styles.skills} />
       </section>
       <TitledSection title="Projects">
-        <ProjectShowcase
-          className={styles.projects} />
+        <Observer threshold={0.2}>
+          <ProjectShowcase
+            className={styles.projects} />
+        </Observer>
       </TitledSection>
       <TitledSection title="Latest Posts">
-        <BrowsePosts
-          posts={latest}
-          className={styles.posts} />
+        <Observer threshold={0.2}>
+          <BrowsePosts
+            posts={latest}
+            className={styles.posts} />
+        </Observer>
       </TitledSection>
     </main>
   );
