@@ -8,10 +8,10 @@ import { CSSProperties } from 'react';
 
 export type {
   Project,
-  Skill,
 };
 
 export {
+  Skill,
   projects
 };
 
