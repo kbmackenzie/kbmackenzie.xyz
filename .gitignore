@@ -39,8 +39,8 @@ next-env.d.ts
 # - personal! 
 
 # temporary
-*.png
-*.jpg
-*.svg
+#*.png
+#*.jpg
+#*.svg
 /blog/
 _assets/
