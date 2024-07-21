@@ -2,6 +2,7 @@ import { ProjectCard } from '@/features/project-showcase/components/project-card
 import { projects } from '@/features/project-showcase/store/projects';
 import { Project } from '@/features/project-showcase/types/project';
 import { Skill } from '@/features/project-showcase/types/skill';
+import { SkillIcon } from '@/features/project-showcase/components/skill-icon';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/project-showcase/index.module.sass';
 import { CSSProperties } from 'react';
@@ -11,8 +12,9 @@ export type {
 };
 
 export {
+  projects,
   Skill,
-  projects
+  SkillIcon,
 };
 
 export function ProjectShowcase({ className }: { className?: string }) {
