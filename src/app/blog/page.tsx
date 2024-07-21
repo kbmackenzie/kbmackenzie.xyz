@@ -9,9 +9,7 @@ export default async function Blog() {
   return (
     <main className={styles.blog}>
       <Suspense>
-        <div className={styles.posts}>
-          <Posts posts={posts} />
-        </div>
+        <Posts posts={posts} />
       </Suspense>
     </main>
   );

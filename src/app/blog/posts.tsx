@@ -6,35 +6,41 @@ import { yearOfPost } from '@/blog/blog-post';
 import { BrowsePosts } from '@/features/browse-posts';
 import { Observer } from '@/components/observer';
 import { useSearchParams } from 'next/navigation';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/blog/posts.module.sass';
 
-export function Posts({ posts }: { posts: PostMetadata[] }) {
+export function Posts({ posts, className }: { posts: PostMetadata[], className?: string }) {
   const searchParams = useSearchParams();
   const tag = searchParams.get('tagged');
+  const filterByTag = tag !== null && tag !== '';
 
   function hasTag(post: PostMetadata): boolean {
-    if (tag === null || tag === '') return true;
-    return post.tags.includes(tag);
+    return filterByTag && post.tags.includes(tag);
   }
 
   const postsByYear = groupyBy(
-    posts.filter(hasTag),
+    filterByTag ? posts.filter(hasTag) : posts,
     post => yearOfPost(post),
   );
 
   return (
-    <ul className={styles.list}>
-      {postsByYear.map(([year, posts]) => (
-        <li key={year} className={styles.year}>
-          <h3>{year}</h3>
-          <hr />
-          <Observer threshold={0.2}>
-            <BrowsePosts
-              className={styles.posts}
-              posts={posts} />
-          </Observer>
-        </li>
-      ))}
-    </ul>
+    <div className={styleClasses(styles.container, className)}>
+      <h1 className={styles.title}>Posts</h1>
+      {filterByTag &&
+        <h3 className={styles.status}>
+          Filtering by tag: <span className={styles.tag}>"{tag}"</span>
+        </h3>}
+      <hr className={styles.divider} />
+      <ul className={styles.list}>
+        {postsByYear.map(([year, posts]) => (
+          <li key={year} className={styles.posts}>
+            <h3 className={styles.year}>{year}</h3>
+            <Observer threshold={0.2}>
+              <BrowsePosts posts={posts} />
+            </Observer>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
