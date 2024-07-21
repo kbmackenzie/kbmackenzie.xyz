@@ -41,7 +41,7 @@ export function Search(props: AttrsAndStyle<HTMLDivElement>) {
 
   return (
     <div {...props} onKeyDown={onKeyDown}>
-      <label htmlFor="filter-by">Filter by:</label>
+      <label htmlFor="filter-by">Filter by tag:</label>
       <input ref={input} type="text" name="filter-by" />
     </div>
   );
