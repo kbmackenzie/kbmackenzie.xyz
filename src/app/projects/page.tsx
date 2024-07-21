@@ -1,9 +1,10 @@
 import { ProjectShowcase } from '@/features/project-showcase';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/projects/page.module.sass';
 
 export default function Projects() {
   return (
-    <main className={styles.projects}>
+    <main className={styleClasses('visible', styles.projects)}>
       <ProjectShowcase />
     </main>
   );
