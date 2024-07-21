@@ -26,7 +26,7 @@ export function Posts({ posts, className }: { posts: PostMetadata[], className?:
 
   return (
     <div className={styleClasses(styles.container, className)}>
-      <h1 className={styles.title}>Posts</h1>
+      <h1 className={styles.title}>Blog Posts</h1>
       <Search className={styles.search} />
       {filterByTag &&
         <h3 className={styles.status}>
