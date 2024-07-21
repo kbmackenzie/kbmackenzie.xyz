@@ -1,3 +1,5 @@
+'use client';
+
 import { CSSProperties } from 'react';
 import { PostMetadata } from '@/blog/blog-post';
 import Link from 'next/link';
@@ -9,7 +11,7 @@ type Props = {
   className?: string;
 };
 
-export async function BrowsePosts({ className, posts }: Props) {
+export function BrowsePosts({ className, posts }: Props) {
   function linkToPost(date: Date, id: string): string {
     return `/blog/${date.getFullYear()}/${id}`;
   }
