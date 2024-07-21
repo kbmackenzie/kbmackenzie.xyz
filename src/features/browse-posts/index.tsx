@@ -29,8 +29,12 @@ export function BrowsePosts({ className, posts }: Props) {
           <li key={post.id} className={styles.container} style={postStyle}>
             <Link className={styles.post} href={linkToPost(date, post.id)}>
               <h3 className={styles.title}>{post.title}</h3>
-              <p className={styles.date}>{date.toLocaleDateString()}</p>
-              <p className={styles.description}>{post.description}</p>
+              <p className={styles.date}>
+                <strong>Posted: </strong>{date.toLocaleString()}
+              </p>
+              <p className={styles.description}>
+                {post.description}
+              </p>
             </Link>
           </li>
         );

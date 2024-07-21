@@ -27,16 +27,13 @@
   animation: 0.3s easing.$overshoot post-slide-in forwards
 
 .post
+  display: block
   padding: 1rem 2rem
   border-radius: 2rem
   text-decoration: none
 
   color: white
   background-color: colors.$moon-light
-
-  display: flex
-  flex-flow: row wrap
-
   transition: transform 0.5s ease, background-color 0.3s
 
   &:hover
@@ -45,7 +42,6 @@
 
 .title
   font-size: 1.3rem
-  flex: 6 0
 
   white-space: nowrap
   overflow: hidden
@@ -55,9 +51,7 @@
   margin-bottom: 0.5rem
 
 .date
-  font-size: 1rem
-  opacity: 60%
-  color: colors.$starlight
+  font-size: 0.8rem
 
 .description
-  flex: 1 1 100%
+  margin: 0.5rem 0
