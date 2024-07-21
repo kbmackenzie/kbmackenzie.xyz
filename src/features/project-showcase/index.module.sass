@@ -1,7 +1,4 @@
-@use '@styles/colors'
 @use '@styles/easing'
-@use '@styles/screens'
-@use '@styles/gradient'
 
 @keyframes project-slide-in
   from
@@ -25,4 +22,7 @@
 
 .container
   opacity: 0
+  transform: translateX(-5%)
+
+:global(.visible) .container
   animation: 0.3s easing.$overshoot project-slide-in forwards

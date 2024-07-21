@@ -2,7 +2,7 @@ import { ProjectCard } from '@/features/project-showcase/components/project-card
 import { projects } from '@/features/project-showcase/store/projects';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/project-showcase/index.module.sass';
-import {CSSProperties} from 'react';
+import { CSSProperties } from 'react';
 
 export function ProjectShowcase({ className }: { className?: string }) {
   return (
