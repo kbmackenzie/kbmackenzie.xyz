@@ -1,5 +1,6 @@
 import { fetchPostMetadata } from '@/blog/fetch-post';
 import { Posts } from '@/app/blog/posts';
+import { Suspense } from 'react';
 import styles from '@/app/blog/page.module.sass';
 
 export default async function Blog() {
@@ -7,7 +8,11 @@ export default async function Blog() {
 
   return (
     <main className={styles.blog}>
-      <Posts posts={posts} />
+      <Suspense>
+        <div className={styles.posts}>
+          <Posts posts={posts} />
+        </div>
+      </Suspense>
     </main>
   );
 }
