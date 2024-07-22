@@ -1,5 +1,5 @@
 import { ProjectCard } from '@/app/projects/project-card';
-import { projects } from '@/features/project-showcase';
+import { projects } from '@/features/projects';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/projects/page.module.sass';
 

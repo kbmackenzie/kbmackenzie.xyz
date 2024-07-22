@@ -1,4 +1,4 @@
-import { Skill } from '@/features/project-showcase/types/skill';
+import { Skill } from '@/types/skill';
 
 export const skillIcons: ReadonlyMap<Skill, string> = new Map([
   [

@@ -1,8 +1,8 @@
-import { Project } from '@/features/project-showcase/types/project';
-import { Skill } from '@/features/project-showcase/types/skill';
-import mewlixLogo from '@/features/project-showcase/assets/mewlix.png';
-import alpacaLogo from '@/features/project-showcase/assets/alpaca.png';
-import terminalIcon from '@/features/project-showcase/assets/terminal.png';
+import { Project } from '@/types/project';
+import { Skill } from '@/types/skill';
+import mewlixLogo from '@/features/projects/assets/mewlix.png';
+import alpacaLogo from '@/features/projects/assets/alpaca.png';
+import terminalIcon from '@/features/projects/assets/terminal.png';
 
 function joinLines(...lines: string[]): string {
   return lines.join('\n');

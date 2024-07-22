@@ -1,5 +1,5 @@
-import { Project } from '@/features/project-showcase/types/project';
-import { SkillIcon } from '@/features/project-showcase/components/skill-icon';
+import { Project } from '@/types/project';
+import { SkillIcon } from '@/features/skill-icon';
 import Image from 'next/image';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/project-showcase/components/project-card/index.module.sass';
