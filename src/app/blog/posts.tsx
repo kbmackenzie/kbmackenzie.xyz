@@ -30,7 +30,7 @@ export function Posts({ posts, className }: { posts: PostMetadata[], className?:
       <Search className={styles.search} />
       {filterByTag &&
         <h3 className={styles.status}>
-          Filtering by tag: <span className={styles.tag}>"{tag}"</span>
+          Filtering by tag: <span className={styles.tag}>{`"${tag}"`}</span>
         </h3>}
       <hr className={styles.divider} />
       <ul className={styles.list}>
