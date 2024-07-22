@@ -5,7 +5,7 @@ import styles from '@/app/projects/page.module.sass';
 
 export default function Projects() {
   return (
-    <main className={styleClasses('visible', styles.projects)}>
+    <main className={styles.projects}>
       <ul className={styles.list}>
         {projects.map(project => (
           <li key={project.name}>
