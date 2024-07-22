@@ -5,7 +5,7 @@ import styles from '@/features/about-me/index.module.sass';
 
 function Introduction() {
   return (
-    <p>I'm a <strong>full-stack web developer</strong>, <strong>language tinkerer</strong> and cat enthusiast. I'm in love with <strong>functional programming</strong>, <strong>compilers</strong>, <strong>DSLs</strong> and <strong>game development</strong>.</p>
+    <p>I&lsquo;m a <strong>full-stack web developer</strong>, <strong>language tinkerer</strong> and cat enthusiast. I&lsquo;m in love with <strong>functional programming</strong>, <strong>compilers</strong>, <strong>DSLs</strong> and <strong>game development</strong>.</p>
   );
 }
 
