@@ -1,7 +1,6 @@
 import { PostQuery, yearOfPost } from '@/blog/blog-post';
 import { fetchPostMetadata, postExists, fetchPost } from '@/blog/fetch-post';
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
 import styles from '@/app/blog/[year]/[id]/page.module.sass';
 
 type PostParams = {
@@ -38,11 +37,14 @@ export default async function Post({ params }: { params: PostParams }) {
 
   const post = await fetchPost(query);
   return (
-    <>
+    <main>
       <h2>{post.metadata.title}</h2>
       <h3>{post.metadata.description}</h3>
       <hr />
-      <ReactMarkdown>{post.body}</ReactMarkdown>
-    </>
+      {/* This is fine--posts are static files on the server. */}
+      <div
+        className={styles.body}
+        dangerouslySetInnerHTML={{ __html: post.body }}></div>
+    </main>
   );
 }
