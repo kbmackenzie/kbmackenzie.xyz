@@ -1,0 +1,16 @@
+@use '@styles/easing'
+
+$offset: 5%
+
+@keyframes blog-fade-in
+  from
+    opacity: 0
+    transform: translateY($offset)
+  to
+    opacity: 100%
+    transform: translateY(0)
+
+.blog
+  opacity: 0
+  transform: translateY($offset)
+  animation: 0.3s easing.$overshoot blog-fade-in forwards
