@@ -1,5 +1,5 @@
 import { PostQuery, yearOfPost } from '@/blog/blog-post';
-import { fetchPostMetadata, postExists, fetchPost } from '@/blog/fetch-post';
+import { fetchPostMetadata, postExists, fetchPost, isValidQuery } from '@/blog/fetch-post';
 import Link from 'next/link';
 import styles from '@/app/blog/[year]/[id]/page.module.sass';
 
@@ -31,7 +31,7 @@ export default async function Post({ params }: { params: PostParams }) {
     id: params.id,
   };
 
-  if (!postExists(query)) {
+  if (!isValidQuery(query) || !postExists(query)) {
     return <NotFound />;
   }
 
