@@ -24,7 +24,7 @@ export function MarkdownHighlight({ className, children, highlighters }: Props) 
       const language = languageName.exec(props.className || '')?.[1];
 
       if (!language || !highlighters || !highlighters.has(language)) {
-        return <code {...props}>{children}</code>
+        return <code {...props}></code>
       }
       const highlighter = highlighters.get(language)!;
       const input = String(props.children);
