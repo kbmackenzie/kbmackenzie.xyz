@@ -1,4 +1,5 @@
 import { PostQuery, yearOfPost } from '@/blog/blog-post';
+import { Post } from '@/app/blog/[year]/[id]/post';
 import { fetchPostMetadata, postExists, fetchPost, isValidQuery } from '@/blog/fetch-post';
 import Link from 'next/link';
 import styles from '@/app/blog/[year]/[id]/page.module.sass';
@@ -25,7 +26,7 @@ function NotFound() {
   );
 }
 
-export default async function Post({ params }: { params: PostParams }) {
+export default async function BlogPost({ params }: { params: PostParams }) {
   const query: PostQuery = {
     year: Number(params.year),
     id: params.id,
@@ -38,13 +39,7 @@ export default async function Post({ params }: { params: PostParams }) {
   const post = await fetchPost(query);
   return (
     <main>
-      <h2>{post.metadata.title}</h2>
-      <h3>{post.metadata.description}</h3>
-      <hr />
-      {/* This is fine--posts are static files on the server. */}
-      <div
-        className={styles.body}
-        dangerouslySetInnerHTML={{ __html: post.body }}></div>
+      <Post post={post} />
     </main>
   );
 }
