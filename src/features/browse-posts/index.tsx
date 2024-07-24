@@ -24,6 +24,9 @@ export function BrowsePosts({ className, posts }: Props) {
         const postStyle: CSSProperties = {
           animationDelay: `${delay}s`
         };
+        const imageStyle: CSSProperties = {
+          backgroundImage: `url(${post.image.src})`
+        };
 
         return (
           <li key={post.id} className={styles.container} style={postStyle}>
@@ -35,6 +38,7 @@ export function BrowsePosts({ className, posts }: Props) {
               <p className={styles.description}>
                 {post.description}
               </p>
+              <div className={styles.image} style={imageStyle}></div>
             </Link>
           </li>
         );
