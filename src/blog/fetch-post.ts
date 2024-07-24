@@ -19,6 +19,19 @@ function getPostPath({ year, id }: PostQuery): string {
   return path.join(blogDirectory, year.toString(), `${id}.json`);
 }
 
+const idValidator: RegExp = /^[a-zA-Z0-9-]$/;
+
+export function isValidId(id: string): boolean {
+  return idValidator.test(id);
+}
+
+export function isValidQuery({ year, id }: PostQuery): boolean {
+  return !Number.isNaN(year)
+    && year > 0
+    && year <= new Date().getFullYear()
+    && isValidId(id);
+}
+
 export async function fetchPost(query: PostQuery): Promise<BlogPost> {
   const postPath = getPostPath(query);
   const contents = await readFile(postPath);
