@@ -20,6 +20,7 @@ function getPostPath({ year, id }: PostQuery): string {
 }
 
 const idValidator: RegExp = /^[a-zA-Z0-9-]$/;
+const idMaxLength: number = 413;
 
 export function isValidId(id: string): boolean {
   return idValidator.test(id);
@@ -29,6 +30,7 @@ export function isValidQuery({ year, id }: PostQuery): boolean {
   return !Number.isNaN(year)
     && year > 0
     && year <= new Date().getFullYear()
+    && id.length <= idMaxLength
     && isValidId(id);
 }
 
