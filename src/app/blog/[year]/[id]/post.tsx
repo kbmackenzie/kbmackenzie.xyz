@@ -24,9 +24,12 @@ export function Post({ post, className }: Props) {
         </p>
         <p className={styles.tags}>
           <strong>Tags: </strong>{post.metadata.tags.map((tag, i) => (
-            <Link key={tag} className={styles.tag} href={`/blog?tagged=${tag}`}>
-              #{tag}{i < tagCount - 1 && ', '}
-            </Link>
+            <span key={tag}>
+              <Link className={styles.tag} href={`/blog?tagged=${tag}`}>
+                #{tag}
+              </Link>
+              {i < tagCount - 1 && ', '}
+            </span>
           ))}
         </p>
       </div>
