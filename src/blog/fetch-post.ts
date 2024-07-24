@@ -19,7 +19,7 @@ function getPostPath({ year, id }: PostQuery): string {
   return path.join(blogDirectory, year.toString(), `${id}.json`);
 }
 
-const idValidator: RegExp = /^[a-zA-Z0-9-]$/;
+const idValidator: RegExp = /^[a-zA-Z0-9-]+$/;
 const idMaxLength: number = 413;
 
 export function isValidId(id: string): boolean {
