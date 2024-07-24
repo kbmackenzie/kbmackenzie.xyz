@@ -1,0 +1,44 @@
+@use '@styles/colors'
+@use '@styles/screens'
+@use '@styles/gradient'
+
+.post
+  color: white
+  width: 80%
+  margin: 1rem auto
+  @media (max-width: screens.$md)
+    width: 90%
+
+.title, .date, .tags, .description
+  font-weight: 300
+  strong
+    font-weight: bold
+
+.title
+  display: inline-block
+  font-size: 2.5rem
+  @media (max-width: screens.$md)
+    font-size: 2rem
+
+.info
+  margin: 1rem 0
+
+.date, .tags
+  font-size: 1rem
+
+.tag
+  color: white 
+  font-weight: bold
+  text-decoration: none
+
+.divider
+  margin: 1rem 0
+  border: none
+  height: 0.1rem
+  background: gradient.cloudy('left')
+
+.body
+  h1, h2, h3, h4, p
+    font-weight: 300
+    margin: 1rem 0
+    line-height: 1.5rem

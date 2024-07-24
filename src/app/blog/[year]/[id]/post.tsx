@@ -1,28 +1,39 @@
 import { BlogPost } from '@/blog/blog-post';
 import { MarkdownHighlight } from '@/components/markdown-highlight';
+import Link from 'next/link';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/blog/[year]/[id]/post.module.sass';
 
 type Props = {
   post: BlogPost;
+  className?: string;
 };
 
-export function Post({ post }: Props) {
+export function Post({ post, className }: Props) {
   const date = new Date(post.metadata.timestamp);
+  const tagCount = post.metadata.tags.length;
+
   return (
-    <>
+    <div className={styleClasses(styles.post, className)}>
       <h2 className={styles.title}>
         {post.metadata.title}
       </h2>
-      <h3 className={styles.date}>
-        Posted: {date.toLocaleString()}
-      </h3>
-      <h3 className={styles.description}>
-        {post.metadata.description}
-      </h3>
+      <div className={styles.info}>
+        <p className={styles.date}>
+          <strong>Posted: </strong>{date.toLocaleString()}
+        </p>
+        <p className={styles.tags}>
+          <strong>Tags: </strong>{post.metadata.tags.map((tag, i) => (
+            <Link key={tag} className={styles.tag} href={`/blog?tagged=${tag}`}>
+              #{tag}{i < tagCount - 1 && ', '}
+            </Link>
+          ))}
+        </p>
+      </div>
       <hr className={styles.divider} />
       <MarkdownHighlight className={styles.body}>
         {post.body}
       </MarkdownHighlight>
-    </>
+    </div>
   );
 }
