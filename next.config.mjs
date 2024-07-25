@@ -10,6 +10,12 @@ const nextConfig = {
     config.resolve.alias['@styles'] = resolve(__dirname, 'src/styles');
     return config;
   },
+  sassOptions: {
+    logger: {
+      warn:  (message) => console.warn('[sass] ' + message),
+      debug: (message) => console.debug('[sass] ' + message),
+    }
+  },
 };
 
 export default nextConfig;
