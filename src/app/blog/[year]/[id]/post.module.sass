@@ -2,8 +2,8 @@
 @use '@styles/easing'
 @use '@styles/screens'
 @use '@styles/gradient'
+@use '@styles/markdown'
 @use 'sass:list'
-@use 'sass:color'
 
 $offset: 5%
 
@@ -67,46 +67,4 @@ $animate-order: 'title', 'date', 'tags', 'body'
   opacity: 43%
 
 .body
-  h1, h2, h3, h4, h5, h6, p, ul, ol
-    margin: 0.5rem 0
-    color: white
-    font-weight: normal
-    line-height: 1.5rem
-
-  h1, h2, h3, h4, h5, h6
-    font-weight: 300
-
-  img
-    display: block
-    width: 80%
-    height: auto
-    margin: 1rem auto
-
-  a
-    color: colors.$bubblegum
-    text-decoration: underline
-    transition: color 0.5s
-
-    &:hover
-      color: color.scale(colors.$bubblegum, $lightness: 30%)
-
-  ul, ol
-    margin-left: 1.5rem
-
-  ul
-    list-style: '\2605'
-
-  li
-    padding-left: 1rem
-
-  code:global(.code-block)
-    background-color: colors.$deep-space
-    padding: 1rem
-    border-radius: 2rem
-    margin: 1rem 0
-
-  code:global(.code-inline)
-    background-color: colors.$deep-space
-    font-size: 1rem
-    padding: 0.3rem 0.5rem
-    border-radius: 0.5rem
+  @include markdown.markdown-style()
