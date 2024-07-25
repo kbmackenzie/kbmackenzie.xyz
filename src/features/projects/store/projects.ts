@@ -21,6 +21,7 @@ function joinLines(...lines: string[]): string {
 export const projects: Project[] = [
   {
     name: 'mewlix',
+    id: 'mewlix',
     description: joinLines(
       'A cat-themed esoteric programming language, with templates for creating pixel games!',
       'The compiler is written in pure Haskell.',
@@ -35,6 +36,7 @@ export const projects: Project[] = [
   },
   {
     name: 'kbmackenzie.xyz',
+    id: 'kbmackenzie-xyz',
     description: joinLines(
       'This website! A personal website + statically compiled blog. It\'s entirely open-source.',
       'Written in TypeScript with React, Sass and Next.js.',
@@ -49,6 +51,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Inscryption Mods',
+    id: 'inscryption-mods',
     description: 'An assortment of mods I made for the game "Inscryption".',
     image: {
       src: terminalIcon,
@@ -60,6 +63,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Cult of the Lamb Mods',
+    id: 'cult-of-the-lamb-mods',
     description: 'An assortment of mods I made for the game "Cult of the Lamb".',
     image: {
       src: terminalIcon,
