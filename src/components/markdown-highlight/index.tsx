@@ -13,9 +13,11 @@ import { styleClasses } from '@/utils/style-classes';
  *
  * todo: 'purify' HTML for future me's sanity. */
 
+export type CodeProps = HTMLAttributes<HTMLElement> & ExtraProps;
+
 export type Highlighter = (
   input: string,
-  props: Omit<HTMLAttributes<HTMLElement> & ExtraProps, 'children'>,
+  props: Omit<CodeProps, 'children'>,
 ) => JSX.Element;
 
 type Props = {
@@ -29,7 +31,8 @@ const languageName: RegExp = /language-(\w+)/;
 const defaultHighlighters = new Map<string, Highlighter>(
   supportedLanguages.map(language => [language, (input, props) => {
     const html = hljs.highlight(input, { language: language }).value;
-    return <code {...props} dangerouslySetInnerHTML={{ __html: html }}></code>
+    const classes = styleClasses(props.className, 'code-block');
+    return <code {...props} className={classes} dangerouslySetInnerHTML={{ __html: html }}></code>;
   }])
 );
 
@@ -48,7 +51,8 @@ export function MarkdownHighlight({ className, children, customHighlighters }: P
     code({ children, ...props }) {
       const language = languageName.exec(props.className || '')?.[1];
       if (!language || !getHighlighter(language)) {
-        return <code {...props}>{children}</code>
+        const classes = styleClasses(props.className, language && 'code-block');
+        return <code {...props} className={classes}>{children}</code>
       }
       const highlighter = getHighlighter(language)!;
       const input = String(children);
