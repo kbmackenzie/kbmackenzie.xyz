@@ -4,6 +4,7 @@ import { MarkdownHighlight } from '@/components/markdown-highlight';
 import { readFile } from 'fs/promises';
 import Image from 'next/image';
 import { styleClasses } from '@/utils/style-classes';
+import { firaMono } from '@/fonts';
 import styles from '@/app/projects/project-card.module.sass';
 
 async function readDataFile(project: Project): Promise<string> {
@@ -35,6 +36,9 @@ export async function ProjectCard({ project, className }: { project: Project, cl
         <MarkdownHighlight className={styles.body}>
           {body}
         </MarkdownHighlight>
+        <a href={project.url} className={styleClasses(styles.button, firaMono.className)}>
+          <p>See More</p>
+        </a>
       </div>
     </div>
   );
