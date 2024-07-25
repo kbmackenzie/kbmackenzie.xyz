@@ -33,7 +33,7 @@ const defaultHighlighters = new Map<string, Highlighter>(
   supportedLanguages.map(language => [language, (input, props) => {
     const html = hljs.highlight(input, { language: language }).value;
     const classes = styleClasses(props.className, firaMono.className, 'code-block');
-    return (<code {...props} className={classes} dangerouslySetInnerHTML={{ __html: html }}></code>);
+    return <code {...props} className={classes} dangerouslySetInnerHTML={{ __html: html }}></code>
   }])
 );
 
@@ -55,7 +55,7 @@ export function MarkdownHighlight({ className, children, customHighlighters }: P
         const classes = styleClasses(
           props.className,
           firaMono.className,
-          language && 'code-block'
+          language ? 'code-block' : 'code-inline'
         );
         return <code {...props} className={classes}>{children}</code>
       }
