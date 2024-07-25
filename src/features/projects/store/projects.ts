@@ -3,6 +3,16 @@ import { Skill } from '@/types/skill';
 import mewlixLogo from '@/features/projects/assets/mewlix.png';
 import alpacaLogo from '@/features/projects/assets/alpaca.png';
 import terminalIcon from '@/features/projects/assets/terminal.png';
+import url from 'url';
+import path from 'path'
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname  = path.dirname(__filename)
+const projectDirectory = path.resolve(__dirname, '../../../../static/projects/');
+
+function getDatafile(datafile: string): string {
+  return path.join(projectDirectory, datafile);
+}
 
 function joinLines(...lines: string[]): string {
   return lines.join('\n');
@@ -19,6 +29,7 @@ export const projects: Project[] = [
       src: mewlixLogo,
       alt: 'mewlix logo',
     },
+    datafile: getDatafile('mewlix.md'),
     url: 'https://github.com/kbmackenzie/mewlix',
     skills: [Skill.Haskell, Skill.TypeScript, Skill.HTML, Skill.Sass],
   },
@@ -32,6 +43,7 @@ export const projects: Project[] = [
       src: alpacaLogo,
       alt: 'kbmackenzie.xyz logo',
     },
+    datafile: getDatafile('kbmackenzie-xyz.md'),
     url: 'https://github.com/kbmackenzie/kbmackenzie.xyz',
     skills: [Skill.TypeScript, Skill.React, Skill.Sass, Skill.NextJS],
   },
@@ -42,6 +54,7 @@ export const projects: Project[] = [
       src: terminalIcon,
       alt: 'terminal icon',
     },
+    datafile: getDatafile('mods/inscryption.md'),
     url: 'https://thunderstore.io/c/inscryption/p/KellyBetty/',
     skills: [Skill.CSharp, Skill.Unity],
   },
@@ -52,6 +65,7 @@ export const projects: Project[] = [
       src: terminalIcon,
       alt: 'terminal icon',
     },
+    datafile: getDatafile('mods/cult-of-the-lamb.md'),
     url: 'https://thunderstore.io/c/cult-of-the-lamb/p/KellyBetty/',
     skills: [Skill.CSharp, Skill.Unity],
   },
