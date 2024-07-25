@@ -10,6 +10,7 @@ export type Project = {
     width?: number;
     height?: number;
   }
+  datafile: string;
   url: string;
   skills: Skill[];
 }
