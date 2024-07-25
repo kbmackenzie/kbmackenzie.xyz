@@ -1,6 +1,7 @@
 import { Project } from '@/types/project';
 import { SkillIcon } from '@/features/skill-icon';
 import Image from 'next/image';
+import Link from 'next/link';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/project-showcase/components/project-card/index.module.sass';
 
@@ -10,11 +11,9 @@ type Props = {
 };
 
 export function ProjectCard({ project, className }: Props) {
+  const projectUrl = `/projects#${project.id}`;
   return (
-    <a className={styleClasses(styles.card, className)}
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer">
+    <Link className={styleClasses(styles.card, className)} href={projectUrl}>
       <div className={styles.image}>
         <Image
           src={project.image.src}
@@ -34,6 +33,6 @@ export function ProjectCard({ project, className }: Props) {
           ))}
         </ul>
       </div>
-    </a>
+    </Link>
   );
 }

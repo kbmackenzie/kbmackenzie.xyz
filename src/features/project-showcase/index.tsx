@@ -13,7 +13,7 @@ export function ProjectShowcase({ className }: { className?: string }) {
           animationDelay: `${delay}s`
         };
         return (
-          <li key={project.name} className={styles.container} style={style}>
+          <li key={project.id} className={styles.container} style={style}>
             <ProjectCard className={styles.card} project={project} />
           </li>
         );
