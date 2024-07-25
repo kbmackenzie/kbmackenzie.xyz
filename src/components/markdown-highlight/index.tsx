@@ -3,6 +3,7 @@ import hljs from 'highlight.js/lib/core';
 import { supportedLanguages } from '@/store/highlight';
 import ReactMarkdown, { Components, ExtraProps } from 'react-markdown';
 import { styleClasses } from '@/utils/style-classes';
+import { firaMono } from '@/fonts';
 
 /* Markdown, with syntax highlighting.
  * Accepts syntax highlighters based on language.
@@ -31,8 +32,8 @@ const languageName: RegExp = /language-(\w+)/;
 const defaultHighlighters = new Map<string, Highlighter>(
   supportedLanguages.map(language => [language, (input, props) => {
     const html = hljs.highlight(input, { language: language }).value;
-    const classes = styleClasses(props.className, 'code-block');
-    return <code {...props} className={classes} dangerouslySetInnerHTML={{ __html: html }}></code>;
+    const classes = styleClasses(props.className, firaMono.className, 'code-block');
+    return (<code {...props} className={classes} dangerouslySetInnerHTML={{ __html: html }}></code>);
   }])
 );
 
@@ -51,7 +52,11 @@ export function MarkdownHighlight({ className, children, customHighlighters }: P
     code({ children, ...props }) {
       const language = languageName.exec(props.className || '')?.[1];
       if (!language || !getHighlighter(language)) {
-        const classes = styleClasses(props.className, language && 'code-block');
+        const classes = styleClasses(
+          props.className,
+          firaMono.className,
+          language && 'code-block'
+        );
         return <code {...props} className={classes}>{children}</code>
       }
       const highlighter = getHighlighter(language)!;
