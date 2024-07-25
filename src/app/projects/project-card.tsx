@@ -36,7 +36,11 @@ export async function ProjectCard({ project, className }: { project: Project, cl
         <MarkdownHighlight className={styles.body}>
           {body}
         </MarkdownHighlight>
-        <a href={project.url} className={styleClasses(styles.button, firaMono.className)}>
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styleClasses(styles.button, firaMono.className)}>
           <p>See More</p>
         </a>
       </div>
