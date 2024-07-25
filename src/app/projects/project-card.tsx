@@ -1,10 +1,18 @@
 import { Project } from '@/types/project';
 import { SkillIcon } from '@/features/skill-icon';
+import { MarkdownHighlight } from '@/components/markdown-highlight';
+import { readFile } from 'fs/promises';
 import Image from 'next/image';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/projects/project-card.module.sass';
 
-export function ProjectCard({ project, className }: { project: Project, className?: string }) {
+async function readDataFile(project: Project): Promise<string> {
+  const buffer = await readFile(project.datafile)
+  return buffer.toString();
+}
+
+export async function ProjectCard({ project, className }: { project: Project, className?: string }) {
+  const body = await readDataFile(project);
   return (
     <div className={styleClasses(styles.card, className)}>
       <div className={styles.icon}>
@@ -24,7 +32,9 @@ export function ProjectCard({ project, className }: { project: Project, classNam
             </li>
           ))}
         </ul>
-        <p>{project.description}</p>
+        <MarkdownHighlight className={styles.body}>
+          {body}
+        </MarkdownHighlight>
       </div>
     </div>
   );
