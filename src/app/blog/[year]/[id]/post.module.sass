@@ -1,6 +1,31 @@
 @use '@styles/colors'
+@use '@styles/easing'
 @use '@styles/screens'
 @use '@styles/gradient'
+@use 'sass:list'
+
+$offset: 5%
+
+@keyframes post-text-slide-in
+  from
+    opacity: 0%
+    transform: translateX($offset)
+  to
+    opacity: 100%
+    transform: translateX(0)
+
+$animate-order: 'title', 'date', 'tags', 'body'
+
+@for $i from 1 to list.length($animate-order) + 1
+  $elem: list.nth($animate-order, $i)
+  @debug 'animating post elem: #{$elem}'
+  .#{$elem}
+    opacity: 0%
+    transform: translateX($offset)
+    $delay: 0.08s * $i
+    @if $elem == 'body'
+      $delay: $delay + 0.15s
+    animation: 0.5s ease $delay post-text-slide-in forwards
 
 .post
   color: white

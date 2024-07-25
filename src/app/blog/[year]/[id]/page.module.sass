@@ -1,4 +1,20 @@
 @use '@styles/colors'
+@use '@styles/easing'
+
+$offset: 5%
+
+@keyframes post-slide-in
+  from
+    opacity: 0
+    transform: translateY($offset)
+  to
+    opacity: 100%
+    transform: translateY(0)
+
+.post
+  opacity: 0
+  transform: translateY($offset)
+  animation: 0.3s easing.$overshoot post-slide-in forwards
 
 .error
   > h2

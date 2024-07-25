@@ -38,7 +38,7 @@ export default async function BlogPost({ params }: { params: PostParams }) {
 
   const post = await fetchPost(query);
   return (
-    <main>
+    <main className={styles.post}>
       <Post post={post} />
     </main>
   );
