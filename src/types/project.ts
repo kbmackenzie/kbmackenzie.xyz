@@ -3,6 +3,7 @@ import { Skill } from '@/types/skill';
 
 export type Project = {
   name: string;
+  id: string;
   description: string;
   image: {
     src: string | StaticImport;
