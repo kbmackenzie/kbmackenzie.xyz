@@ -14,7 +14,7 @@ async function readDataFile(project: Project): Promise<string> {
 export async function ProjectCard({ project, className }: { project: Project, className?: string }) {
   const body = await readDataFile(project);
   return (
-    <div className={styleClasses(styles.card, className)}>
+    <div id={project.id} className={styleClasses(styles.card, className)}>
       <div className={styles.icon}>
         <Image
           src={project.image.src} 
