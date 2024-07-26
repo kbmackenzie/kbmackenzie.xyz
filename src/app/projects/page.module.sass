@@ -1,6 +1,26 @@
 @use '@styles/colors'
+@use '@styles/easing'
 @use '@styles/screens'
 @use '@styles/gradient'
+@use 'sass:list'
+
+$offset: 5%
+$animate-order: 'title', 'description', 'list'
+
+@keyframes project-page-slide-in
+  from
+    opacity: 0
+    transform: translateY($offset)
+  to
+    opacity: 100%
+    transform: translateY(0)
+
+@for $i from 1 to list.length($animate-order) + 1
+  $elem: list.nth($animate-order, $i)
+  .#{$elem}
+    opacity: 0
+    transform: translateY($offset)
+    animation: 0.5s easing.$overshoot (0.1s * $i) project-page-slide-in forwards
 
 .projects
   width: 80%
@@ -8,16 +28,18 @@
   @media (max-width: screens.$md)
     width: 90%
 
-.list
-  list-style: none
-  > li
-    padding: 0
-    margin: 2rem 0
-
 .title
   color: white
   font-size: 2rem
   font-weight: 300
+
+.description
+  font-size: 1rem
+  color: white
+  font-weight: 300
+  margin: 1rem 0
+  strong
+    font-weight: 500
 
 .divider
   margin: 0.5rem 0
@@ -26,10 +48,8 @@
   background: gradient.cloudy('left')
   opacity: 30%
 
-.description
-  font-size: 1rem
-  color: white
-  font-weight: 300
-  margin: 0.5rem 0
-  strong
-    font-weight: 500
+.list
+  list-style: none
+  > li
+    padding: 0
+    margin: 2rem 0
