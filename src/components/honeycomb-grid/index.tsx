@@ -20,19 +20,20 @@ export type HoneycombIcon = {
 type Props = {
   icons: ReadonlyMap<HoneycombSlot, HoneycombIcon>;
   gridStyle?: string;
-  slotStyle?: string;
-  centerSlotStyle?: string;
+  slotStyle?: {
+    normal?: string;
+    center?: string;
+  },
 };
 
-export function HoneycombGrid({ icons, gridStyle, slotStyle, centerSlotStyle }: Props) {
+export function HoneycombGrid({ icons, gridStyle, slotStyle }: Props) {
   return (
     <div className={styleClasses(styles.honeycomb, gridStyle)}>
       {Array.from(icons.entries()).map(([key, icon]) => {
         const classes = styleClasses(
           styles.slot,
           styles[`slot-${key}`],
-          slotStyle,
-          key === 'center' && centerSlotStyle,
+          slotStyle && (key === 'center' ? slotStyle.center : slotStyle.normal)
         );
         return (
           <div className={classes} key={key}>
