@@ -11,7 +11,7 @@ export function AboutMe({ className }: { className?: string }) {
     <section className={styleClasses(styles.greeting, className)}>
       <h2>{`Hello, I'm Kelly!`}</h2>
       <hr />
-      <Markdown contents={introduction} />
+      <Markdown>{introduction}</Markdown>
       <hr />
       <RoundIcons icons={socialMedia} className={styles.socials} />
     </section>
