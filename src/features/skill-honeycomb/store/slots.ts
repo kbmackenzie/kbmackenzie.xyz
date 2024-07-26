@@ -1,7 +1,7 @@
 import { HoneycombSlot, HoneycombIcon } from '@/components/honeycomb-grid';
 
 /* todo: add center icon */
-export const skills: ReadonlyMap<HoneycombSlot, HoneycombIcon> = new Map([
+export const slots: ReadonlyMap<HoneycombSlot, HoneycombIcon> = new Map([
   ['top'          , {
     alt: 'haskell',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-plain.svg',
