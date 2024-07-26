@@ -52,6 +52,11 @@ $post-cutoff: 60%
   position: relative
   z-index: 3
 
+  width: $post-cutoff
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
 .title
   font-size: 1.3rem
   margin-right:  1rem
@@ -62,12 +67,6 @@ $post-cutoff: 60%
 
 .description
   margin: 0.5rem 0
-
-.title, .date, .description
-  width: $post-cutoff
-  overflow: hidden
-  white-space: nowrap
-  text-overflow: ellipsis
 
 .image
   position: absolute
