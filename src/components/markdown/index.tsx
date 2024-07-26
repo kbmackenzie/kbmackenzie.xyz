@@ -2,7 +2,7 @@ import { styleClasses } from '@/utils/style-classes';
 import { micromark } from 'micromark';
 
 type Props = {
-  contents: string;
+  children: string;
   className?: string;
 };
 
@@ -14,8 +14,8 @@ type Props = {
  *
  * todo: benchmark alternatives */
 
-export function Markdown({ contents, className }: Props) {
-  const html = micromark(contents);
+export function Markdown({ children, className }: Props) {
+  const html = micromark(children);
   return (
     <div
       className={styleClasses(className)}
