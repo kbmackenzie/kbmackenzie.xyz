@@ -1,8 +1,11 @@
 @use '@styles/colors'
+@use '@styles/screens'
 
 .projects
-  width: 90%
+  width: 80%
   margin: auto
+  @media (max-width: screens.$md)
+    width: 90%
 
 .list
   list-style: none
