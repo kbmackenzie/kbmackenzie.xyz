@@ -9,7 +9,7 @@ export type PostMetadata = Readonly<{
 
 export type Image = Readonly<{
   src: string;
-  alt: string;
+  alt?: string;
 }>;
 
 export type BlogPost = Readonly<{
