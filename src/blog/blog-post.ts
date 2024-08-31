@@ -17,6 +17,6 @@ export type BlogPost = Readonly<{
   body: string;
 }>;
 
-export function yearOfPost(post: PostMetadata) {
+export function yearOfPost(post: PostMetadata): number {
   return new Date(post.timestamp).getFullYear();
 }
