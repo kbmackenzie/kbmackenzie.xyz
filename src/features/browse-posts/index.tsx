@@ -25,7 +25,7 @@ export function BrowsePosts({ className, posts }: Props) {
           animationDelay: `${delay}s`
         };
         const imageStyle: CSSProperties = {
-          backgroundImage: `url(${post.thumbnail?.src ?? ''})`
+          backgroundImage: post.thumbnail && `url(${post.thumbnail.src})`
         };
 
         return (
