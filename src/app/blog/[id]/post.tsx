@@ -2,7 +2,7 @@ import { BlogPost } from '@/blog/blog-post';
 import { MarkdownHighlight } from '@/components/markdown-highlight';
 import Link from 'next/link';
 import { styleClasses } from '@/utils/style-classes';
-import styles from '@/app/blog/[year]/[id]/post.module.sass';
+import styles from '@/app/blog/[id]/post.module.sass';
 
 type Props = {
   post: BlogPost;

@@ -1,19 +1,16 @@
-import { PostQuery, yearOfPost } from '@/blog/blog-post';
-import { Post } from '@/app/blog/[year]/[id]/post';
-import { fetchPostMetadata, postExists, fetchPost, isValidQuery } from '@/blog/fetch-post';
+import { Post } from '@/app/blog/[id]/post';
+import { fetchPostMetadata, postExists, fetchPost } from '@/blog/fetch-post';
 import Link from 'next/link';
-import styles from '@/app/blog/[year]/[id]/page.module.sass';
+import styles from '@/app/blog/[id]/page.module.sass';
 
 type PostParams = {
-  year: string;
   id: string;
 };
 
 export async function generateStaticParams(): Promise<PostParams[]> {
   const metadata = await fetchPostMetadata();
   return metadata.map(post => ({
-    year: yearOfPost(post).toString(),
-    id:   post.id,
+    id: post.id,
   }));
 }
 
@@ -27,16 +24,10 @@ function NotFound() {
 }
 
 export default async function BlogPost({ params }: { params: PostParams }) {
-  const query: PostQuery = {
-    year: Number(params.year),
-    id: params.id,
-  };
-
-  if (!isValidQuery(query) || !postExists(query)) {
+  if (postExists(params.id)) {
     return <NotFound />;
   }
-
-  const post = await fetchPost(query);
+  const post = await fetchPost(params.id);
   return (
     <main className={styles.post}>
       <Post post={post} />

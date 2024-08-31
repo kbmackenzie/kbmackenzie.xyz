@@ -2,12 +2,14 @@ export type PostMetadata = Readonly<{
   title: string;
   id: string;
   timestamp: number;
-  image: {
-    src: string;
-    alt: string;
-  };
   description: string;
+  thumbnail?: Image;
   tags: string[];
+}>;
+
+export type Image = Readonly<{
+  src: string;
+  alt: string;
 }>;
 
 export type BlogPost = Readonly<{
@@ -15,15 +17,6 @@ export type BlogPost = Readonly<{
   body: string;
 }>;
 
-export type PostQuery = Readonly<{
-  year: number;
-  id: string;
-}>;
-
 export function yearOfPost(post: PostMetadata) {
   return new Date(post.timestamp).getFullYear();
-}
-
-export function isQueriedPost(query: PostQuery, post: PostMetadata): boolean {
-  return yearOfPost(post) === query.year && post.id === query.id;
 }

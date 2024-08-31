@@ -12,8 +12,8 @@ type Props = {
 };
 
 export function BrowsePosts({ className, posts }: Props) {
-  function linkToPost(date: Date, id: string): string {
-    return `/blog/${date.getFullYear()}/${id}`;
+  function linkToPost(id: string): string {
+    return `/blog/${id}`;
   }
 
   return (
@@ -25,12 +25,12 @@ export function BrowsePosts({ className, posts }: Props) {
           animationDelay: `${delay}s`
         };
         const imageStyle: CSSProperties = {
-          backgroundImage: `url(${post.image.src})`
+          backgroundImage: `url(${post.thumbnail?.src ?? ''})`
         };
 
         return (
           <li key={post.id} className={styles.container} style={postStyle}>
-            <Link className={styles.post} href={linkToPost(date, post.id)}>
+            <Link className={styles.post} href={linkToPost(post.id)}>
               <h3 className={styles.title}>{post.title}</h3>
               <p className={styles.date}>
                 <strong>Posted: </strong>{date.toLocaleString()}
