@@ -1,5 +1,5 @@
 import { Post } from '@/app/blog/[id]/post';
-import { fetchPostMetadata, postExists, fetchPost } from '@/blog/fetch-post';
+import { fetchPostMetadata, postExists, fetchPost, isValidId } from '@/blog/fetch-post';
 import Link from 'next/link';
 import styles from '@/app/blog/[id]/page.module.sass';
 
@@ -24,7 +24,7 @@ function NotFound() {
 }
 
 export default async function BlogPost({ params }: { params: PostParams }) {
-  if (!postExists(params.id)) {
+  if (!isValidId(params.id) || !postExists(params.id)) {
     return <NotFound />;
   }
   const post = await fetchPost(params.id);
