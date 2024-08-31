@@ -44,7 +44,7 @@ export function postExists(id: string): boolean {
 }
 
 export async function fetchPostMetadata(): Promise<PostMetadata[]> {
-  const metaPath = path.join(blogDirectory, 'posts.json');
+  const metaPath = path.join(blogDirectory, 'meta.json');
   const contents = await readFile(metaPath);
   return JSON.parse(contents.toString()) as PostMetadata[];
 }
