@@ -24,7 +24,7 @@ function NotFound() {
 }
 
 export default async function BlogPost({ params }: { params: PostParams }) {
-  if (postExists(params.id)) {
+  if (!postExists(params.id)) {
     return <NotFound />;
   }
   const post = await fetchPost(params.id);
