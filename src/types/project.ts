@@ -1,4 +1,4 @@
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import type { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { Skill } from '@/types/skill';
 
 export type Project = {

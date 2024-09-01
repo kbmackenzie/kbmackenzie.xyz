@@ -50,7 +50,7 @@ export function MarkdownHighlight({ className, children, customHighlighters }: P
 
   const components: Components = {
     code({ children, ...props }) {
-      const language = languageName.exec(props.className || '')?.[1];
+      const language = languageName.exec(props.className ?? '')?.[1];
       if (!language || !getHighlighter(language)) {
         const classes = styleClasses(
           props.className,
