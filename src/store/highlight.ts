@@ -10,6 +10,7 @@ import bash       from 'highlight.js/lib/languages/bash'
 import c          from 'highlight.js/lib/languages/c'
 import csharp     from 'highlight.js/lib/languages/csharp'
 import yaml       from 'highlight.js/lib/languages/yaml';
+import { mewlix } from 'mewlix-highlight';
 
 hljs.registerLanguage('haskell'    , haskell    );
 hljs.registerLanguage('javascript' , javascript );
@@ -20,6 +21,7 @@ hljs.registerLanguage('bash'       , bash       );
 hljs.registerLanguage('c'          , c          );
 hljs.registerLanguage('csharp'     , csharp     );
 hljs.registerLanguage('yaml'       , yaml       );
+hljs.registerLanguage('mewlix'     , mewlix     );
 
 // Note: Dynamic imports would make this easier, but they're wonky.
 // I prefer staying with the repetitive approach.
@@ -33,4 +35,5 @@ export const supportedLanguages = [
   'c',
   'csharp',
   'yaml',
+  'mewlix',
 ];
