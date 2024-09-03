@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { styleClasses } from '@/utils/style-classes';
-import styles from '@/features/bubblegum-button/index.module.sass';
+import styles from '@/components/bubblegum-button/index.module.sass';
 
 type BubblegumButtonProps = {
   href: string;
