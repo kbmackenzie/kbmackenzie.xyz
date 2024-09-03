@@ -26,8 +26,10 @@ export function generateStaticParams(): MewlixDocParam[] {
 export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
   const path = getStaticFile('mewlix/docs/', `${params.doc}.md`);
   return (
-    <MewlixDoc
-      docpath={path}
-      className={styles.doc} />
+    <main>
+      <MewlixDoc
+        docpath={path}
+        className={styles.doc} />
+    </main>
   );
 }
