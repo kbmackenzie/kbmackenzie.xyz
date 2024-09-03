@@ -5,6 +5,7 @@ import { ProjectShowcase } from '@/features/project-showcase';
 import { TitledSection } from '@/components/titled-section';
 import { BrowsePosts } from '@/features/browse-posts';
 import { Observer } from '@/components/observer';
+import { BubblegumButton } from '@/components/bubblegum-button';
 import { fetchPostMetadata } from '@/blog/fetch-post';
 import styles from '@/app/page.module.sass';
 
@@ -31,6 +32,9 @@ export default async function Home() {
           <BrowsePosts
             posts={latest}
             className={styles.posts} />
+          <BubblegumButton href="/blog" className={styles.seeall}>
+            See All Posts
+          </BubblegumButton>
         </Observer>
       </TitledSection>
     </main>
