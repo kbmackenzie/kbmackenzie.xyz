@@ -2,6 +2,7 @@ import { HTMLAttributes } from 'react';
 import hljs from 'highlight.js/lib/core';
 import { supportedLanguages } from '@/store/highlight';
 import ReactMarkdown, { Components, ExtraProps } from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { styleClasses } from '@/utils/style-classes';
 import { firaMono } from '@/fonts';
 
@@ -57,7 +58,7 @@ export function MarkdownHighlight({ className, children, additionalComponents }:
     ...additionalComponents
   };
   return (
-    <ReactMarkdown components={components} className={styleClasses(className)}>
+    <ReactMarkdown components={components} className={styleClasses(className)} remarkPlugins={[remarkGfm]}>
       {children}
     </ReactMarkdown>
   );
