@@ -9,6 +9,7 @@ import scheme     from 'highlight.js/lib/languages/scheme'
 import bash       from 'highlight.js/lib/languages/bash'
 import c          from 'highlight.js/lib/languages/c'
 import csharp     from 'highlight.js/lib/languages/csharp'
+import yaml       from 'highlight.js/lib/languages/yaml';
 
 hljs.registerLanguage('haskell'    , haskell    );
 hljs.registerLanguage('javascript' , javascript );
@@ -18,6 +19,7 @@ hljs.registerLanguage('scheme'     , scheme     );
 hljs.registerLanguage('bash'       , bash       );
 hljs.registerLanguage('c'          , c          );
 hljs.registerLanguage('csharp'     , csharp     );
+hljs.registerLanguage('yaml'       , yaml       );
 
 // Note: Dynamic imports would make this easier, but they're wonky.
 // I prefer staying with the repetitive approach.
@@ -30,4 +32,5 @@ export const supportedLanguages = [
   'bash',
   'c',
   'csharp',
+  'yaml',
 ];
