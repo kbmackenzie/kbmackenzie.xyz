@@ -24,12 +24,12 @@ export type Highlighter = (
 type Props = {
   className?: string;
   children: string;
-  customHighlighters?: Map<string, Highlighter>;
+  additionalComponents?: Components;
 };
 
 const languageName: RegExp = /language-(\w+)/;
 
-const defaultHighlighters = new Map<string, Highlighter>(
+const highlighters = new Map<string, Highlighter>(
   supportedLanguages.map(language => [language, (input, props) => {
     const html = hljs.highlight(input, { language: language }).value;
     const classes = styleClasses(props.className, firaMono.className, 'code-block');
@@ -37,21 +37,11 @@ const defaultHighlighters = new Map<string, Highlighter>(
   }])
 );
 
-export function MarkdownHighlight({ className, children, customHighlighters }: Props) {
-  function getHighlighter(language: string): Highlighter | null {
-    if (customHighlighters && customHighlighters.has(language)) {
-      return customHighlighters.get(language)!;
-    }
-    if (defaultHighlighters.has(language)) {
-      return defaultHighlighters.get(language)!;
-    }
-    return null;
-  }
-
+export function MarkdownHighlight({ className, children, additionalComponents }: Props) {
   const components: Components = {
     code({ children, ...props }) {
       const language = languageName.exec(props.className ?? '')?.[1];
-      if (!language || !getHighlighter(language)) {
+      if (!language || !highlighters.has(language)) {
         const classes = styleClasses(
           props.className,
           firaMono.className,
@@ -59,11 +49,12 @@ export function MarkdownHighlight({ className, children, customHighlighters }: P
         );
         return <code {...props} className={classes}>{children}</code>
       }
-      const highlighter = getHighlighter(language)!;
+      const highlighter = highlighters.get(language)!;
       const input = String(children);
 
       return highlighter(input, props);
     },
+    ...additionalComponents
   };
   return (
     <ReactMarkdown components={components} className={styleClasses(className)}>
