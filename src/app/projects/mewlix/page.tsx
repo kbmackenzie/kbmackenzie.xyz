@@ -5,8 +5,13 @@ import styles from '@/app/projects/mewlix/page.module.sass';
 export default function Mewlix() {
   const path = getStaticFile('mewlix/mewlix.md');
   return (
-    <MewlixDoc
-      docpath={path}
-      className={styles.doc} />
+    <main>
+      <h2 className={styles.title}>
+        mewlix documentation 🐱
+      </h2>
+      <MewlixDoc
+        docpath={path}
+        className={styles.doc} />
+    </main>
   );
 }
