@@ -5,10 +5,11 @@ import styles from '@/app/projects/mewlix/page.module.sass';
 export default function Mewlix() {
   const path = getStaticFile('mewlix/mewlix.md');
   return (
-    <main>
+    <main className={styles.body}>
       <h2 className={styles.title}>
-        mewlix documentation 🐱
+        mewlix 🐱
       </h2>
+      <hr className={styles.divider} />
       <MewlixDoc
         docpath={path}
         className={styles.doc} />
