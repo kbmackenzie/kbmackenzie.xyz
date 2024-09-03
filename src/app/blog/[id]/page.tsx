@@ -18,7 +18,9 @@ function NotFound() {
   return (
     <main className={styles.error}>
       <h2>Post not found.</h2>
-      <BubblegumButton href="/blog">See All Posts</BubblegumButton>
+      <BubblegumButton href="/blog">
+        See All Posts
+      </BubblegumButton>
     </main>
   );
 }

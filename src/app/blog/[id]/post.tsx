@@ -1,5 +1,6 @@
 import { BlogPost } from '@/blog/blog-post';
 import { MarkdownHighlight } from '@/components/markdown-highlight';
+import { BubblegumButton } from '@/components/bubblegum-button';
 import Link from 'next/link';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/blog/[id]/post.module.sass';
@@ -37,6 +38,10 @@ export function Post({ post, className }: Props) {
       <MarkdownHighlight className={styles.body}>
         {post.body}
       </MarkdownHighlight>
+      <hr className={styles.divider} />
+      <BubblegumButton href="/blog" className={styles.seeall}>
+        See All Posts
+      </BubblegumButton>
     </div>
   );
 }
