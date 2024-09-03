@@ -1,25 +1,19 @@
 import { styleClasses } from '@/utils/style-classes';
-import { micromark } from 'micromark';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 type Props = {
   children: string;
   className?: string;
 };
 
-/* Notes to my future self.
- *
- * This is fine because:
- * - micromark output is safe.
- * - markdown will only ever come from the server
- *
- * todo: benchmark alternatives */
+/* A simple Markdown-rendering plugin, with no syntax highlighting.
+ * When syntax highlighting is a necessity, use 'MarkdownHighlight'. */
 
 export function Markdown({ children, className }: Props) {
-  const html = micromark(children);
   return (
-    <div
-      className={styleClasses(className)}
-      dangerouslySetInnerHTML={{ __html: html }} >
-    </div>
+    <ReactMarkdown className={styleClasses(className)} remarkPlugins={[remarkGfm]}>
+      {children}
+    </ReactMarkdown>
   );
 }
