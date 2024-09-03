@@ -6,11 +6,11 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename)
 const staticFolder = path.resolve(__dirname, '../../static/');
 
-export function getStaticFile(relative: string): string {
-  return path.join(staticFolder, relative);
+export function getStaticFile(...paths: string[]): string {
+  return path.join(staticFolder, ...paths);
 }
 
-export function readStaticFile(relative: string): Promise<Buffer> {
-  const staticPath = getStaticFile(relative);
+export function readStaticFile(...paths: string[]): Promise<Buffer> {
+  const staticPath = getStaticFile(...paths);
   return fs.readFile(staticPath);
 }
