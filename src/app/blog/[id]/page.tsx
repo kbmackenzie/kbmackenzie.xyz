@@ -1,6 +1,6 @@
 import { Post } from '@/app/blog/[id]/post';
+import { BubblegumButton } from '@/components/bubblegum-button';
 import { fetchPostMetadata, postExists, fetchPost, isValidId } from '@/blog/fetch-post';
-import Link from 'next/link';
 import styles from '@/app/blog/[id]/page.module.sass';
 
 type PostParams = {
@@ -18,7 +18,7 @@ function NotFound() {
   return (
     <main className={styles.error}>
       <h2>Post not found.</h2>
-      <Link href="/blog">See All Posts</Link>
+      <BubblegumButton href="/blog">See All Posts</BubblegumButton>
     </main>
   );
 }
