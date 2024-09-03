@@ -19,7 +19,6 @@ $animate-order: 'title', 'description', 'list'
   $elem: list.nth($animate-order, $i)
   .#{$elem}
     opacity: 0
-    transform: translateY($offset)
     animation: 0.5s easing.$overshoot (0.1s * $i) project-page-slide-in forwards
 
 .projects

@@ -22,7 +22,6 @@ $animate-order: 'title', 'date', 'tags', 'body'
   @debug 'animating post elem: #{$elem}'
   .#{$elem}
     opacity: 0%
-    transform: translateX($offset)
     $delay: 0.08s * $i
     @if $elem == 'body'
       $delay: $delay + 0.15s
