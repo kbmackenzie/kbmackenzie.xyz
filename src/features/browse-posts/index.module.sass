@@ -35,8 +35,9 @@ $post-cutoff: 60%
   border-radius: 2rem
   text-decoration: none
 
-  border: 2px solid transparent
+  $border-size: 3px
   color: white
+  border: $border-size solid transparent
 
   background-color: colors.$moon-light
   transition: transform 0.5s ease, background-color 0.3s
@@ -46,7 +47,7 @@ $post-cutoff: 60%
   &:hover
     background-color: color.scale(colors.$moon-light, $lightness: 5%)
     transform: scale(105%)
-    border: 3px solid colors.$star-light
+    border: $border-size solid colors.$star-light
 
 .title, .date, .description
   position: relative
