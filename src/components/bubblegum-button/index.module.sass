@@ -6,14 +6,22 @@
   width: 12rem
   min-height: 3rem
 
-  color: white
-  background-color: colors.$bubblegum
+  padding: 1rem 2rem
+  border: none
+  border-radius: 1.5rem
+  margin: 0 auto
 
   font-size: 1.1rem
   text-align: center
   text-decoration: none
 
-  padding: 1rem 2rem
-  border: none
-  border-radius: 1.5rem
-  margin: 0 auto
+  color: white
+  background-color: colors.$bubblegum
+
+  transform: scale(100%)
+  transition: color 0.5s, background-color 0.5s, transform 0.5s
+
+  &:hover
+    background-color: white
+    color: colors.$bubblegum
+    transform: scale(105%)
