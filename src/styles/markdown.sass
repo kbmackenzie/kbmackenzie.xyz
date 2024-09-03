@@ -39,6 +39,35 @@
     background: gradient.cloudy('left')
     opacity: 30%
 
+  table
+    table-layout: fixed
+    width: 90%
+    margin: 2rem auto
+    border: none
+    border-collapse: collapse
+    border-radius: 1rem
+    overflow: hidden
+    box-shadow: 1px 3px 3px colors.$deep-space
+
+  th
+    padding: 0.5rem
+    color: white
+    background-color: colors.$deep-space
+    font-size: 1.2rem
+  
+  td
+    text-align: center
+    color: white
+    padding: 0.5rem
+    font-weight: 400
+    font-size: 1rem
+
+  tbody tr:nth-child(odd)
+    background-color: color.scale(colors.$deep-space, $lightness: 2%)
+
+  tbody tr:nth-child(even)
+    background-color: color.scale(colors.$deep-space, $lightness: 4%)
+
   a
     color: colors.$bubblegum
     text-decoration: underline
