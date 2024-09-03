@@ -26,7 +26,10 @@ export const projects: Project[] = [
       alt: 'mewlix logo',
     },
     datafile: getProjectDatafile('mewlix.md'),
-    url: 'https://github.com/kbmackenzie/mewlix',
+    link: {
+      url: '/projects/mewlix',
+      internal: true,
+    },
     skills: [Skill.Haskell, Skill.TypeScript, Skill.HTML, Skill.Sass],
   },
   {
@@ -41,7 +44,9 @@ export const projects: Project[] = [
       alt: 'kbmackenzie.xyz logo',
     },
     datafile: getProjectDatafile('kbmackenzie-xyz.md'),
-    url: 'https://github.com/kbmackenzie/kbmackenzie.xyz',
+    link: {
+      url: 'https://github.com/kbmackenzie/kbmackenzie.xyz',
+    },
     skills: [Skill.TypeScript, Skill.React, Skill.Sass, Skill.NextJS],
   },
   {
@@ -53,7 +58,9 @@ export const projects: Project[] = [
       alt: 'terminal icon',
     },
     datafile: getProjectDatafile('mods/inscryption.md'),
-    url: 'https://thunderstore.io/c/inscryption/p/KellyBetty/',
+    link: {
+      url: 'https://thunderstore.io/c/inscryption/p/KellyBetty/',
+    },
     skills: [Skill.CSharp, Skill.Unity],
   },
   {
@@ -65,7 +72,9 @@ export const projects: Project[] = [
       alt: 'terminal icon',
     },
     datafile: getProjectDatafile('mods/cult-of-the-lamb.md'),
-    url: 'https://thunderstore.io/c/cult-of-the-lamb/p/KellyBetty/',
+    link: {
+      url: 'https://thunderstore.io/c/cult-of-the-lamb/p/KellyBetty/',
+    },
     skills: [Skill.CSharp, Skill.Unity],
   },
 ];
