@@ -32,7 +32,7 @@ export default async function Home() {
           <BrowsePosts
             posts={latest}
             className={styles.posts} />
-          <BubblegumButton href="/blog" className={styles.seeall}>
+          <BubblegumButton href="/blog">
             See All Posts
           </BubblegumButton>
         </Observer>
