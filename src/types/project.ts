@@ -12,6 +12,9 @@ export type Project = {
     height?: number;
   }
   datafile: string;
-  url: string;
+  link: {
+    url: string;
+    internal?: boolean;
+  },
   skills: Skill[];
 }
