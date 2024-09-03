@@ -7,6 +7,9 @@ type PostParams = {
   id: string;
 };
 
+/* Allow only pre-rendered posts. */
+export const dynamicParams = false;
+
 export async function generateStaticParams(): Promise<PostParams[]> {
   const metadata = await fetchPostMetadata();
   return metadata.map(post => ({
