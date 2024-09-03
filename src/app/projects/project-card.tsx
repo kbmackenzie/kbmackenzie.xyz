@@ -1,8 +1,10 @@
+import { ReactNode } from 'react';
 import { Project } from '@/types/project';
 import { SkillIcon } from '@/features/skill-icon';
 import { MarkdownHighlight } from '@/components/markdown-highlight';
 import { readFile } from 'fs/promises';
 import Image from 'next/image';
+import Link from 'next/link';
 import { styleClasses } from '@/utils/style-classes';
 import { firaMono } from '@/fonts';
 import styles from '@/app/projects/project-card.module.sass';
@@ -12,7 +14,36 @@ async function readDataFile(project: Project): Promise<string> {
   return buffer.toString();
 }
 
-export async function ProjectCard({ project, className }: { project: Project, className?: string }) {
+type ProjectLinkProps = {
+  project: Project;
+  className: string;
+  children: ReactNode;
+};
+
+function ProjectLink({ project, children, className }: ProjectLinkProps) {
+  if (project.link.internal) {
+    return (
+      <Link href={project.link.url} className={className}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <a href={project.link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}>
+      {children}
+    </a>
+  );
+}
+
+type ProjectCardProps = {
+  project: Project;
+  className?: string;
+};
+
+export async function ProjectCard({ project, className }: ProjectCardProps) {
   const body = await readDataFile(project);
   return (
     <div id={project.id} className={styleClasses(styles.card, className)}>
@@ -36,13 +67,11 @@ export async function ProjectCard({ project, className }: { project: Project, cl
         <MarkdownHighlight className={styles.body}>
           {body}
         </MarkdownHighlight>
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
+        <ProjectLink
+          project={project}
           className={styleClasses(styles.button, firaMono.className)}>
           <p>See More</p>
-        </a>
+        </ProjectLink>
       </div>
     </div>
   );
