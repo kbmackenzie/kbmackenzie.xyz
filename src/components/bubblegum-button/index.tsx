@@ -11,7 +11,7 @@ type BubblegumButtonProps = {
 
 export function BubblegumButton({ href, children, className }: BubblegumButtonProps) {
   return (
-    <div className={styleClasses(styles.container, className)}>
+    <div className={styleClasses(className)}>
       <Link href={href} className={styles.button}>
         {children}
       </Link>
