@@ -4,14 +4,11 @@ import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { styleClasses } from '@/utils/style-classes';
 
-/* Markdown, with syntax highlighting.
- * Accepts syntax highlighters based on language.
- *
- * Note to future self: This will only be used for blog posts, *never* user input.
- * Blog posts are static and come from the server.
- * Thus, blog post input *can* be trusted, and using 'dangerouslySetInnerHTML' is fine.
- *
- * todo: 'purify' HTML for future me's sanity. */
+/* Markdown, with stylish features:
+ * - Syntax highlighting!
+ * - Anchors for headings (IDs)!
+ * Also supports GFM (tables, strikethrough, etc) through the 'remark-gfm' plugin! */
+
 type Props = {
   className?: string;
   children: string;

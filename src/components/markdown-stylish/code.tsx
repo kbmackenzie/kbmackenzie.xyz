@@ -12,6 +12,11 @@ type Highlighter = (
   props: Omit<CodeProps, 'children'>,
 ) => JSX.Element;
 
+/* Note to future self: This will only be used for static content, *never* user input.
+ * Blog posts, project documentation—all static.
+ * Also, syntax highlighters are trustworthy, too, duh.
+ * Thus, output string can be trusted and using 'dangerouslySetInnerHTML' is fine. */
+
 const highlighters = new Map<string, Highlighter>(
   supportedLanguages.map(language => [language, (input, props) => {
     const html = hljs.highlight(input, { language: language }).value;
