@@ -7,7 +7,7 @@ type HeadingComponent = Components[Headings];
 
 function getId(children: ReactNode): string {
   const text = onlyText(children);
-  return text.replace(/\W/, '-');
+  return text.replace(/\W/g, '-');
 }
 
 /* A little repetitive, but automating this would be extremely pointless.
