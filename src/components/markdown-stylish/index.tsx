@@ -1,5 +1,5 @@
-import { headingAnchors } from '@/components/markdown-highlight/anchor';
-import { codeBlock } from '@/components/markdown-highlight/code';
+import { headingAnchors } from '@/components/markdown-stylish/anchor';
+import { codeBlock } from '@/components/markdown-stylish/code';
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { styleClasses } from '@/utils/style-classes';
@@ -18,7 +18,7 @@ type Props = {
   additionalComponents?: Components;
 };
 
-export function MarkdownHighlight({ className, children, additionalComponents }: Props) {
+export function MarkdownStylish({ className, children, additionalComponents }: Props) {
   const components: Components = {
     ...codeBlock,
     ...headingAnchors,

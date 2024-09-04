@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Project } from '@/types/project';
 import { SkillIcon } from '@/features/skill-icon';
-import { MarkdownHighlight } from '@/components/markdown-highlight';
+import { MarkdownStylish } from '@/components/markdown-stylish';
 import { readFile } from 'fs/promises';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -64,9 +64,9 @@ export async function ProjectCard({ project, className }: ProjectCardProps) {
             </li>
           ))}
         </ul>
-        <MarkdownHighlight className={styles.body}>
+        <MarkdownStylish className={styles.body}>
           {body}
-        </MarkdownHighlight>
+        </MarkdownStylish>
         <ProjectLink
           project={project}
           className={styleClasses(styles.button, firaMono.className)}>

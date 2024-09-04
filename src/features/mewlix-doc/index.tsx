@@ -1,4 +1,4 @@
-import { MarkdownHighlight } from '@/components/markdown-highlight';
+import { MarkdownStylish } from '@/components/markdown-stylish';
 import Link from 'next/link';
 import fs from 'node:fs/promises';
 import { Components } from 'react-markdown';
@@ -24,8 +24,8 @@ const components: Components = {
 export async function MewlixDoc({ docpath, className }: MewlixDocProps) {
   const buffer = await fs.readFile(docpath);
   return (
-    <MarkdownHighlight className={className} additionalComponents={components}>
+    <MarkdownStylish className={className} additionalComponents={components}>
       {String(buffer)}
-    </MarkdownHighlight>
+    </MarkdownStylish>
   );
 }

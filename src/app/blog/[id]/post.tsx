@@ -1,5 +1,5 @@
 import { BlogPost } from '@/blog/blog-post';
-import { MarkdownHighlight } from '@/components/markdown-highlight';
+import { MarkdownStylish } from '@/components/markdown-stylish';
 import { BubblegumButton } from '@/components/bubblegum-button';
 import Link from 'next/link';
 import { styleClasses } from '@/utils/style-classes';
@@ -35,9 +35,9 @@ export function Post({ post, className }: Props) {
         </p>
       </div>
       <hr className={styles.divider} />
-      <MarkdownHighlight className={styles.body}>
+      <MarkdownStylish className={styles.body}>
         {post.body}
-      </MarkdownHighlight>
+      </MarkdownStylish>
       <hr className={styles.divider} />
       <BubblegumButton href="/blog" className={styles.seeall}>
         See All Posts
