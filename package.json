@@ -15,6 +15,7 @@
     "mewlix-highlight": "github:kbmackenzie/mewlix-highlight",
     "next": "14.2.4",
     "react": "^18",
+    "react-children-utilities": "^2.10.0",
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
     "remark-gfm": "^4.0.0",
