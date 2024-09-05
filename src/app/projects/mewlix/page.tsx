@@ -1,5 +1,6 @@
 import { MewlixDoc } from '@/features/mewlix-doc';
 import { getStaticFile } from '@/utils/static-file';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/projects/mewlix/page.module.sass';
 
 export default function Mewlix() {
@@ -12,7 +13,7 @@ export default function Mewlix() {
       <hr className={styles.divider} />
       <MewlixDoc
         docpath={path}
-        className={styles.doc} />
+        className={styleClasses('alpaca-markdown', styles.doc)} />
     </main>
   );
 }

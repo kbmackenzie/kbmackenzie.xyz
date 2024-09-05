@@ -1,5 +1,6 @@
 import { MewlixDoc } from '@/features/mewlix-doc';
 import { getStaticFile } from '@/utils/static-file';
+import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/projects/mewlix/[doc]/page.module.sass';
 
 type MewlixDocParam = {
@@ -29,7 +30,7 @@ export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
     <main className={styles.body}>
       <MewlixDoc
         docpath={path}
-        className={styles.doc} />
+        className={styleClasses('alpaca-markdown', styles.doc)} />
     </main>
   );
 }

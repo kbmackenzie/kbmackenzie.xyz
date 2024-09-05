@@ -2,7 +2,6 @@
 @use '@styles/easing'
 @use '@styles/screens'
 @use '@styles/gradient'
-@use '@styles/markdown'
 @use 'sass:list'
 
 $offset: 5%
@@ -64,6 +63,3 @@ $animate-order: 'title', 'date', 'tags', 'body'
   height: 0.1rem
   background: gradient.cloudy('left')
   opacity: 43%
-
-.body
-  @include markdown.markdown-style()

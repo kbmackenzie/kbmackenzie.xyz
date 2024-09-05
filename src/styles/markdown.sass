@@ -2,11 +2,7 @@
 @use '@styles/colors'
 @use 'sass:color'
 
-// Style mixin for markdown output, used in:
-// - /blog/[id]     -> Blog posts!
-// - /blog/projects -> Projects!
-
-@mixin markdown-style()
+.alpaca-markdown
   h1, h2, h3, h4, h5, h6, p, ul, ol
     margin: 0.5rem 0
     color: white
@@ -90,7 +86,7 @@
   code
     color: white
 
-  code:global(.code-block)
+  code.code-block
     background-color: colors.$deep-space
     display: block
     border-radius: 1.5rem
@@ -98,7 +94,7 @@
     margin: 1rem 0
     white-space: pre-wrap
 
-  code:global(.code-inline)
+  code.code-inline
     background-color: colors.$deep-space
     padding: 0.3rem 0.5rem
     border-radius: 0.5rem

@@ -64,7 +64,7 @@ export async function ProjectCard({ project, className }: ProjectCardProps) {
             </li>
           ))}
         </ul>
-        <MarkdownStylish className={styles.body}>
+        <MarkdownStylish className="alpaca-markdown">
           {body}
         </MarkdownStylish>
         <ProjectLink
