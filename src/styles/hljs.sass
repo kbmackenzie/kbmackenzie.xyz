@@ -1,0 +1,38 @@
+$keyword: #ff729d
+$operator: #ff9cba
+
+$type: #ffa2f1
+$function: #bf90ff
+
+$literal: #ff9a41
+$string: #fff77a
+$number: #ffa3a3
+$comment: #544d5b
+
+.hljs
+  &, &-subst, &-number
+    color: white
+
+  &-doctag, &-keyword
+    color: $keyword
+
+  &-operator
+    color: $operator
+
+  &-literal, &-built_in
+    color: $literal
+
+  &-number
+    color: $number
+
+  &-type, &-class, &-title.class_, &-title.class_.inherited_
+    color: $type
+
+  &-title.function_, &-property
+    color: $function
+
+  &-regexp, &-string, &-meta &-string
+    color: $string
+
+  &-code, &-comment, &-formula
+    color: $comment
