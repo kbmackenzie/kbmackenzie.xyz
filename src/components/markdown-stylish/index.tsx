@@ -3,6 +3,8 @@ import { codeBlock } from '@/components/markdown-stylish/code';
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { styleClasses } from '@/utils/style-classes';
+import '@styles/markdown.sass';
+import '@styles/hljs.sass';
 
 /* Markdown, with stylish features:
  * - Syntax highlighting!
