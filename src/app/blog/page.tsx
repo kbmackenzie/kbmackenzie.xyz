@@ -2,6 +2,11 @@ import { fetchPostMetadata } from '@/blog/fetch-post';
 import { Posts } from '@/app/blog/posts';
 import { Suspense } from 'react';
 import styles from '@/app/blog/page.module.sass';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'kbmackenzie\'s blog',
+}
 
 export default async function Blog() {
   const posts = await fetchPostMetadata();

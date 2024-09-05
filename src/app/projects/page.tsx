@@ -2,6 +2,11 @@ import { ProjectCard } from '@/app/projects/project-card';
 import { projects } from '@/features/projects';
 import { Markdown } from '@/components/markdown';
 import styles from '@/app/projects/page.module.sass';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'kbmackenzie\'s projects',
+};
 
 const description: string = 'A list of my favorite projects I have worked on, including: **esoteric programming languages**; little **games**; **mods** and **modding tools**; and anything else that piques my interest.';
 

@@ -2,6 +2,7 @@ import { MewlixDoc } from '@/features/mewlix-doc';
 import { getStaticFile } from '@/utils/static-file';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/projects/mewlix/[doc]/page.module.sass';
+import { Metadata } from 'next';
 
 type MewlixDocParam = {
   doc: string;
@@ -22,6 +23,17 @@ export function generateStaticParams(): MewlixDocParam[] {
   return docs.map(doc => ({
     doc: doc,
   }));
+}
+
+export function generateMetadata({ params }: { params: MewlixDocParam }): Metadata {
+  const name = params.doc.replace('-', ' ');
+  const title = `mewlix - ${name} | kbmackenzie.xyz`;
+  return {
+    title: title,
+    openGraph: {
+      title: title,
+    },
+  };
 }
 
 export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
