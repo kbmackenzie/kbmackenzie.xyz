@@ -13,12 +13,11 @@
 .greeting
   color: white
   text-align: right
+  opacity: 0
+  animation: 0.3s easing.$overshoot 0.2s fade-in forwards
 
   @media (max-width: screens.$md)
     text-align: center
-
-  opacity: 0
-  animation: 0.3s easing.$overshoot 0.2s fade-in forwards
 
   h2
     font-size: 2rem

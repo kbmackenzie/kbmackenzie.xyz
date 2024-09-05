@@ -71,14 +71,14 @@ $slot-shrink: 1rem
   width: $slot-width
   height: $slot-height
 
-  @media (max-width: screens.$md)
-    width: $slot-width - $slot-shrink
-    height: get-slot-height($slot-width - $slot-shrink)
-
   position: absolute
   inset: 0
   margin: auto
   clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
+
+  @media (max-width: screens.$md)
+    width: $slot-width - $slot-shrink
+    height: get-slot-height($slot-width - $slot-shrink)
 
   & > img
     width: 100%
