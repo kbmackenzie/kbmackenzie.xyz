@@ -10,29 +10,82 @@ $number: #ffa3a3
 $comment: #544d5b
 
 .hljs
-  &, &-subst, &-number
+  /* Priority selectors (i.e. relevant to all languages I care about): */
+  &, &-subst
     color: white
 
-  &-doctag, &-keyword
+  &-keyword, &-variable.language_
     color: $keyword
 
   &-operator
     color: $operator
 
-  &-literal, &-built_in
+  &-literal, &-built_in, &-symbol
     color: $literal
 
   &-number
     color: $number
 
-  &-type, &-class, &-title.class_, &-title.class_.inherited_
+  &-type, &-title.class_, &-title.class_.inherited_
     color: $type
 
   &-title.function_, &-property
     color: $function
 
-  &-regexp, &-string, &-meta &-string
+  &-regexp, &-string
     color: $string
 
-  &-code, &-comment, &-formula
+  &-comment
     color: $comment
+
+  /* Miscellaneous, less important selectors: */
+  &-doctag, &-name, &-link
+    color: $keyword
+
+  &-section, &-bullet
+    color: $type
+
+  &-strong
+    font-weight: bold
+
+  &-emphasis
+    font-style: italic
+
+  &-tag, &-attr, &-attribute
+    color: $operator
+
+  &-code, &-formula, &-quote
+    color: $comment
+
+  &-meta
+    color: $operator
+
+    .hljs-keyword
+      color: $keyword
+
+    .hljs-string
+      color: $string
+
+  &-selector
+    &-class, &-id
+      color: $keyword
+
+    &-tag, &-attr
+      color: $operator
+
+    &-pseudo
+      color: $string
+
+  &-template
+    &-tag
+      color: $keyword
+
+    &-variable
+      color: $operator
+
+  /* Diffs! */
+  .addition
+    color: $operator
+
+  .deletion
+    color: red
