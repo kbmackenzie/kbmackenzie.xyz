@@ -4,7 +4,7 @@ import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/projects/mewlix/page.module.sass';
 import { Metadata } from 'next';
 
-const title = 'mewlix 🐱 | kbmackenzie.xyz';
+const title = 'mewlix | kbmackenzie.xyz';
 const description = 'documentation for mewlix, a cat-themed esolang';
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function Mewlix() {
   return (
     <main className={styles.body}>
       <h2 className={styles.title}>
-        mewlix 🐱
+        mewlix
       </h2>
       <hr className={styles.divider} />
       <MewlixDoc
