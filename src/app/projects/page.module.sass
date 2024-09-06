@@ -7,7 +7,7 @@
 $offset: 5%
 $animate-order: 'title', 'description', 'list'
 
-@keyframes project-page-slide-in
+@keyframes slide-in
   from
     opacity: 0
     transform: translateY($offset)
@@ -19,7 +19,7 @@ $animate-order: 'title', 'description', 'list'
   $elem: list.nth($animate-order, $i)
   .#{$elem}
     opacity: 0
-    animation: 0.5s easing.$overshoot (0.1s * $i) project-page-slide-in forwards
+    animation: 0.5s easing.$overshoot (0.1s * $i) slide-in forwards
 
 .projects
   width: 80%
