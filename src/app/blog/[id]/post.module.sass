@@ -4,8 +4,13 @@
 @use '@styles/gradient'
 @use 'sass:list'
 
-$offset: 5%
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 100%
 
+$offset: 5%
 @keyframes slide-in
   from
     opacity: 0%
@@ -22,8 +27,6 @@ $animate-order: 'title', 'date', 'tags', 'body'
   .#{$elem}
     opacity: 0%
     $delay: 0.08s * $i
-    @if $elem == 'body'
-      $delay: $delay + 0.15s
     animation: 0.5s ease $delay slide-in forwards
 
 .post
