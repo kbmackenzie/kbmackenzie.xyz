@@ -32,4 +32,4 @@ It has...
 - `nand` and `nor` operators, for picky boolean expressions.
 - Feline-oriented programming capabilities.
 
-To learn more, read the documentation on the [wiki](https://github.com/kbmackenzie/mewlix/wiki)!
+To learn more + read the documentation, click on **'See More'**! 🐱

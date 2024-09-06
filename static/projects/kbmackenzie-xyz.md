@@ -1,5 +1,10 @@
-This website! Written in TypeScript, React, Sass and Next.js. All animations are hand-written. It's my personal website, and doubles as blog.
+This website! Written entirely from scratch in TypeScript with React, Sass and Next.js.
 
-Blog posts are compiled with [kestrel](https://github.com/kbmackenzie/kestrel), a little blog compiler I wrote! 
+All animations are written by hand! No templates used! 🐱💖
 
-This website is entirely open-source. To see the Github repository, click the button below!
+Blog posts are organized with [Alpaca][1], a little blog utility I wrote!
+
+This website is entirely open-source! The source code is entirely available [on its Github repository][2]!
+
+[1]: https://github.com/kbmackenzie/alpaca
+[2]: https://github.com/kbmackenzie/kbmackenzie.xyz
