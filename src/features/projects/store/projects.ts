@@ -36,8 +36,8 @@ export const projects: Project[] = [
     name: 'kbmackenzie.xyz',
     id: 'kbmackenzie-xyz',
     description: joinLines(
-      'This website! A personal website + statically compiled blog. It\'s entirely open-source.',
-      'Written in TypeScript with React, Sass and Next.js.',
+      'This website! Written entirely from scratch in TypeScript with React, Sass and Next.js.',
+      'All animations are written by hand! No templates used! 🐱💖',
     ),
     image: {
       src: alpacaLogo,
