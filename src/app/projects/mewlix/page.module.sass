@@ -1,5 +1,19 @@
+@use '@styles/easing'
 @use '@styles/screens'
 @use '@styles/gradient'
+@use 'sass:list'
+
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 100%
+
+@keyframes slide-in
+  from
+    transform: translateY(3rem)
+  to
+    transform: translateY(0)
 
 .body
   width: 90%
@@ -11,7 +25,16 @@
   font-weight: 300
   margin: 1rem 0
 
+  opacity: 0
+  animation: 0.5s ease fade-in forwards
+
 .doc
+  opacity: 0
+  $delay: 0.25s
+  $fade: 0.5s ease $delay fade-in forwards
+  $slide: 0.5s easing.$overshoot $delay slide-in forwards
+  animation: $fade, $slide
+
   img
     margin: 0
     float: right
