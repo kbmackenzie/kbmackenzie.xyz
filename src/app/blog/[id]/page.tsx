@@ -1,5 +1,5 @@
 import { Post } from '@/app/blog/[id]/post';
-import { BubblegumButton } from '@/components/bubblegum-button';
+import { notFound } from 'next/navigation';
 import { fetchPostMetadata, postExists, fetchPost, isValidId } from '@/blog/fetch-post';
 import styles from '@/app/blog/[id]/page.module.sass';
 import { Metadata } from 'next';
@@ -37,20 +37,9 @@ export async function generateMetadata({ params }: { params: PostParams }): Prom
   };
 }
 
-function NotFound() {
-  return (
-    <main className={styles.error}>
-      <h2>Post not found.</h2>
-      <BubblegumButton href="/blog">
-        See All Posts
-      </BubblegumButton>
-    </main>
-  );
-}
-
 export default async function BlogPost({ params }: { params: PostParams }) {
   if (!isValidId(params.id) || !postExists(params.id)) {
-    return <NotFound />;
+    notFound();
   }
   const post = await fetchPost(params.id);
   return (
