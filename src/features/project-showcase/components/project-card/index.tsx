@@ -22,7 +22,7 @@ export function ProjectCard({ project, className }: Props) {
           height={project.image.height ?? 256} />
       </div>
       <div className={styles.info}>
-        <h1>{project.name}</h1>
+        <h3>{project.name}</h3>
         <hr />
         <p>{project.description}</p>
         <ul className={styles.skills}>
