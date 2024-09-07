@@ -2,7 +2,7 @@ import { Project } from '@/types/project';
 import { Skill } from '@/types/skill';
 import mewlixLogo from '@/features/projects/assets/mewlix.png';
 import alpacaLogo from '@/features/projects/assets/alpaca.png';
-import terminalIcon from '@/features/projects/assets/terminal.png';
+import projectIcon from '@/features/projects/assets/project.png';
 import { getStaticFile } from '@/utils/static-file';
 
 function getProjectDatafile(datafile: string): string {
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     id: 'inscryption-mods',
     description: 'An assortment of mods I made for the game "Inscryption".',
     image: {
-      src: terminalIcon,
+      src: projectIcon,
       alt: 'terminal icon',
     },
     datafile: getProjectDatafile('mods/inscryption.md'),
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     id: 'cult-of-the-lamb-mods',
     description: 'An assortment of mods I made for the game "Cult of the Lamb".',
     image: {
-      src: terminalIcon,
+      src: projectIcon,
       alt: 'terminal icon',
     },
     datafile: getProjectDatafile('mods/cult-of-the-lamb.md'),
