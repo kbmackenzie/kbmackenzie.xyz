@@ -50,8 +50,8 @@ export const projects: Project[] = [
     skills: [Skill.TypeScript, Skill.React, Skill.Sass, Skill.NextJS],
   },
   {
-    name: 'Inscryption Mods',
-    id: 'inscryption-mods',
+    name: 'Mods: Inscryption',
+    id: 'mods-inscryption',
     description: 'An assortment of mods I made for the game "Inscryption".',
     image: {
       src: projectIcon,
@@ -64,8 +64,8 @@ export const projects: Project[] = [
     skills: [Skill.CSharp, Skill.Unity],
   },
   {
-    name: 'Cult of the Lamb Mods',
-    id: 'cult-of-the-lamb-mods',
+    name: 'Mods: Cult of the Lamb',
+    id: 'mods-cult-of-the-lamb',
     description: 'An assortment of mods I made for the game "Cult of the Lamb".',
     image: {
       src: projectIcon,
