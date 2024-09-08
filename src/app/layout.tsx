@@ -1,15 +1,13 @@
 import type { Metadata } from 'next';
 import { openSans } from '@/fonts';
 import { AlpacaLayout } from '@/features/alpaca-layout';
+import { root } from '@/app/metadata';
 import './globals.sass';
-
-const title = 'kbmackenzie\'s corner';
-const description  = 'Functional programming, esoteric languages, game modding... and cats!';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kbmackenzie.xyz'),
-  title: title,
-  description: description,
+  title: root.title,
+  description: root.description,
   keywords: [
     'programming',
     'esolangs',
@@ -18,8 +16,8 @@ export const metadata: Metadata = {
   authors: { name: 'kbmackenzie', url: 'https://github.com/kbmackenzie', },
   generator: 'Next.js',
   openGraph: {
-    title: title,
-    description: description,
+    title: root.title,
+    description: root.description,
   },
 };
 

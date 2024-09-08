@@ -3,19 +3,21 @@ import { projects } from '@/features/projects';
 import { Markdown } from '@/components/markdown';
 import styles from '@/app/projects/page.module.sass';
 import { Metadata } from 'next';
+import { makeMetadata, makePageTitle } from '@/app/metadata';
 
-export const metadata: Metadata = {
-  title: 'kbmackenzie\'s projects',
-};
+export const metadata: Metadata = makeMetadata({
+  title: makePageTitle('projects'),
+  description: 'Kelly\'s projects.',
+});
 
-const description: string = 'A list of my favorite projects I have worked on, including: **esoteric programming languages**; little **games**; **mods** and **modding tools**; and anything else that piques my interest.';
+const introduction: string = 'A list of my favorite projects I have worked on, including: **esoteric programming languages**; little **games**; **mods** and **modding tools**; and anything else that piques my interest.';
 
 export default function Projects() {
   return (
     <main className={styles.projects}>
       <h2 className={styles.title}>Projects</h2>
       <Markdown className={styles.description}>
-        {description}
+        {introduction}
       </Markdown>
       <hr className={styles.divider} />
       <ul className={styles.list}>

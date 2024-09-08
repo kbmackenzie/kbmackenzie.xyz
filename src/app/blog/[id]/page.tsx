@@ -2,6 +2,7 @@ import { Post } from '@/app/blog/[id]/post';
 import { notFound } from 'next/navigation';
 import { fetchPostMetadata, postExists, fetchPost, isValidId } from '@/blog/fetch-post';
 import styles from '@/app/blog/[id]/page.module.sass';
+import { makeMetadata, makePageTitle } from '@/app/metadata';
 import { Metadata } from 'next';
 
 type PostParams = {
@@ -20,12 +21,12 @@ export async function generateStaticParams(): Promise<PostParams[]> {
 
 export async function generateMetadata({ params }: { params: PostParams }): Promise<Metadata> {
   if (!isValidId(params.id) || !postExists(params.id)) {
-    return {
-      title: 'invalid post',
-    };
+    return makeMetadata({
+      title: makePageTitle('post not found'),
+    });
   }
   const { metadata: post } = await fetchPost(params.id);
-  const title = `${post.title} - Post in kbmackenzie's blog`;
+  const title = makePageTitle(`${post.title} - post in kbmackenzie's blog`);
   return {
     title: title,
     description: post.description,

@@ -3,10 +3,12 @@ import { Posts } from '@/app/blog/posts';
 import { Suspense } from 'react';
 import styles from '@/app/blog/page.module.sass';
 import { Metadata } from 'next';
+import { makeMetadata, makePageTitle } from '@/app/metadata';
 
-export const metadata: Metadata = {
-  title: 'kbmackenzie\'s blog',
-}
+export const metadata: Metadata = makeMetadata({
+  title: makePageTitle('blog'),
+  description: 'Kelly\'s blog posts.',
+});
 
 export default async function Blog() {
   const posts = await fetchPostMetadata();

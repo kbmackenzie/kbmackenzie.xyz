@@ -4,6 +4,7 @@ import { styleClasses } from '@/utils/style-classes';
 import { notFound } from 'next/navigation';
 import styles from '@/app/projects/mewlix/[doc]/page.module.sass';
 import { Metadata } from 'next';
+import { makeMetadata, makePageTitle } from '@/app/metadata';
 
 type MewlixDocParam = {
   doc: string;
@@ -32,13 +33,10 @@ export function generateStaticParams(): MewlixDocParam[] {
 
 export function generateMetadata({ params }: { params: MewlixDocParam }): Metadata {
   const name = params.doc.replace('-', ' ');
-  const title = `mewlix - ${name} | kbmackenzie.xyz`;
-  return {
-    title: title,
-    openGraph: {
-      title: title,
-    },
-  };
+  return makeMetadata({
+    title: makePageTitle(`mewlix - ${name}`),
+    description: 'Documentation for Mewlix, a cat-themed esolang.',
+  });
 }
 
 export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
