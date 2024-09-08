@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ComponentProps } from 'react';
 import { createPortal } from 'react-dom';
 import { firaMono } from '@/fonts';
 import Link from 'next/link';
@@ -10,13 +10,21 @@ import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/alpaca-layout/components/side-menu/index.module.sass';
 import exitIcon from '@/features/alpaca-layout/assets/exit-icon.svg';
 
-function Button({ data }: { data: ButtonData }) {
+type ButtonProps = Omit<ComponentProps<typeof Link>, 'href'> & {
+  data: ButtonData,
+};
+
+function Button({ data, ...props }: ButtonProps) {
   const { type, text, url } = data;
   const classes = styleClasses(firaMono.className, styles.button, styles[type]);
-  return <Link href={url} className={classes}>{text}</Link>;
+  return (
+    <Link {...props} href={url} className={classes}>
+      {text}
+    </Link>
+  );
 }
 
-type Props = {
+type SideMenuProps = {
   buttons: ButtonData[];
   portalTarget: string;
   exit: () => void;
@@ -24,7 +32,7 @@ type Props = {
 
 const exitDelay = 400;
 
-export function SideMenu({ buttons, portalTarget, exit }: Props) {
+export function SideMenu({ buttons, portalTarget, exit }: SideMenuProps) {
   const [shouldClose, setShouldClose] = useState<boolean>(false);
 
   useEffect(() => {
@@ -34,17 +42,18 @@ export function SideMenu({ buttons, portalTarget, exit }: Props) {
     return () => clearTimeout(timeout);
   }, [shouldClose, exit]);
 
-  const menuClasses = styleClasses(styles.menu, shouldClose && styles.close);
+  const menuClasses  = styleClasses(styles.menu, shouldClose && styles.close);
+  const closeOnClick = () => setShouldClose(true);
 
   return createPortal(
     <>
       <div className={styles.overlay}></div>
       <nav className={menuClasses}>
-        <button className={styles.exit} onClick={() => setShouldClose(true)}>
+        <button className={styles.exit} onClick={closeOnClick}>
           <Image src={exitIcon} alt="exit menu" />
         </button>
         {buttons.map(button => (
-          <Button key={button.text} data={button} />
+          <Button key={button.text} data={button} onClick={closeOnClick} />
         ))}
       </nav>
     </>,
