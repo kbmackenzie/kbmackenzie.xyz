@@ -2,6 +2,7 @@ import { MewlixDoc } from '@/features/mewlix-doc';
 import { getStaticFile } from '@/utils/static-file';
 import { styleClasses } from '@/utils/style-classes';
 import { notFound } from 'next/navigation';
+import { BubblegumButton } from '@/components/bubblegum-button';
 import styles from '@/app/projects/mewlix/[doc]/page.module.sass';
 import { Metadata } from 'next';
 import { makeMetadata, makePageTitle } from '@/app/metadata';
@@ -49,6 +50,9 @@ export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
       <MewlixDoc
         docpath={path}
         className={styleClasses('alpaca-markdown', styles.doc)} />
+      <BubblegumButton href="/projects/mewlix" className={styles.seefull}>
+        See Full Documentation
+      </BubblegumButton>
     </main>
   );
 }
