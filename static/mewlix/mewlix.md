@@ -197,12 +197,13 @@ a + b   -- addition
 a - b   -- subtraction
 a * b   -- multiplication
 a / b   -- division
+a ^ b   -- exponentiation
 a % b   -- modulo (euclidean remainder! *not* like C's "%"!)
 a // b  -- "floor division"
 -a      -- negation
 
 not a   -- boolean negation (boolean 'not')
-a or b  -- boolean 'not'
+a or b  -- boolean 'or'
 a and b -- boolean 'and'
 
 -- ternary operator:
@@ -331,8 +332,8 @@ clowder Animal
 ~( ^.x.^)>
 To instantiate a clowder, use the 'new' keyword:
 <(^.x.^ )~
-mew serval = new Animal('bird', 'chirp')
-serval.make_sound() -- prints: 'chirp'
+mew bird = new Animal('bird', 'chirp')
+bird.make_sound() -- prints: 'chirp'
 
 ~( ^.x.^)>
 Inheritance is also supported through the 'is' keyword.
