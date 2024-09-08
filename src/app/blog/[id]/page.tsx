@@ -1,5 +1,5 @@
 import { Post } from '@/app/blog/[id]/post';
-import { BubblegumButton } from '@/components/bubblegum-button';
+import { notFound } from 'next/navigation';
 import { fetchPostMetadata, postExists, fetchPost, isValidId } from '@/blog/fetch-post';
 import styles from '@/app/blog/[id]/page.module.sass';
 import { Metadata } from 'next';
@@ -15,21 +15,8 @@ export async function generateStaticParams(): Promise<PostParams[]> {
   }));
 }
 
-
-/* I have to handle 404 logic myself. I can't rely on 'not-found.{ts|tsx}'.
+/* Note: I should handle 404 logic myself. I can't rely on 'not-found.{ts|tsx}'.
  * See: https://github.com/vercel/next.js/issues/54270 */
-
-function NotFound({ id }: { id: string }) {
-  return (
-    <main className={styles.error}>
-      <h2>Post not found!</h2>
-      <p>{`No post found matching id "${id}"!`}</p>
-      <BubblegumButton href="/blog">
-        See All Posts
-      </BubblegumButton>
-    </main>
-  );
-}
 
 export async function generateMetadata({ params }: { params: PostParams }): Promise<Metadata> {
   if (!isValidId(params.id) || !postExists(params.id)) {
@@ -52,7 +39,7 @@ export async function generateMetadata({ params }: { params: PostParams }): Prom
 
 export default async function BlogPost({ params }: { params: PostParams }) {
   if (!isValidId(params.id) || !postExists(params.id)) {
-    return <NotFound id={params.id} />;
+    return notFound();
   }
   const post = await fetchPost(params.id);
   return (
