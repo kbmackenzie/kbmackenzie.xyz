@@ -14,7 +14,7 @@ All Mewlix yarn balls implicitly import the `std` yarn ball by default. To keep 
 - [Collections](#collections)
 - [Numbers](#numbers)
 - [Storage](#storage)
-- [IO](#files)
+- [IO](#io)
 - [JSON](#json)
 - [Debugging](#debugging)
 
