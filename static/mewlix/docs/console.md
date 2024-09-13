@@ -11,7 +11,7 @@ The paperclip button at the bottom left corner can be used to upload a text file
 The console includes a settings menu located in the upper right corner. The settings menu has options for changing:
 - The color of the console's prompt (`>>`) string.
 - The color of the console's error messages.
-- Whether or not the input box should be highlighted when focused, for [accessibility reasons](https://stackoverflow.com/a/9274994/19764270). You can set this to always be on by default through the `std.console` yarn ball's `highlight` function.
+- Whether or not the input box should be highlighted when focused on, for [accessibility reasons](https://stackoverflow.com/a/9274994/19764270). You can set this to always be on by default through the `std.console` yarn ball's `input_focus` function.
 
 #### `meow`
 When using the `console` project mode, the `meow` expression has special behavior: It writes a new line to the console. It functions the same as `console.write`!
@@ -53,13 +53,13 @@ Clear the console.
 
 Change the project name displayed at the top of the console.
 
-#### console.highlight
+#### console.input_focus
 
 **type:** `(boolean) -> nothing`
 
-Toggle the **highlight** option in the virtual console on and off.
+Toggle the **"Focus on input"** option in the virtual console's settings on and off.
 
-The **highlight** option makes the input box change color when focused on. This is an [accessibility feature](https://stackoverflow.com/a/9274994/19764270).
+This option makes the input box change color when focused on. This is an [accessibility feature](https://stackoverflow.com/a/9274994/19764270).
 
 **Note:** A user can always enable or disable this in the settings menu, located in the upper right corner.
 
@@ -67,7 +67,7 @@ The **highlight** option makes the input box change color when focused on. This 
 
 **type:** `(string) -> nothing`
 
-Set the color of the virtual console's prompt (`>>`) symbol.
+Set the color of the virtual console's (`>>`) symbol.
 
 This function expects a valid hex code as argument.
 
