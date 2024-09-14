@@ -2,17 +2,24 @@
 
 Mewlix is a cat-themed esoteric programming language designed for creating small pixel games! It compiles to vanilla JavaScript and runs natively on a browser.
 
-Mewlix's compiler is written in pure Haskell, and the source code is [fully available on Github](https://github.com/kbmackenzie/mewlix).
+Mewlix's compiler is written in pure Haskell, and the source code is [fully available on Github][1].
 
-The compiler is a self-contained binary executable. It can build projects, run them in a local server, and package them into a neat `.zip` file for upload to websites like [itch.io](https://itch.io/).
+The compiler is a self-contained binary executable. It can build projects, run them in a local server, and package them into a neat `.zip` file for upload to websites like [itch.io][4]!
 
 A Mewlix source file should have the `.mews` extension, and should be an UTF8-encoded text file.
 
 A fun, brief guide to Mewlix can be found [in this section](#learn-mewlix-in-y-minutes)!
 
-A list of example projects with fully available source code can be found [here](https://github.com/kbmackenzie/mewlix-examples)!
+A list of example projects with fully available source code can be found [here][3]!
 
-### Documentation
+## Table of Contents
+
+1. [Documentation](#documentation)
+2. [Install Guide](#installation)
+3. [Related Links](#related-links)
+4. [Tools](#tools)
+
+## Documentation
 
 1. [Language and Syntax](@mewlix/language)
 2. [Compiler and Project Management](@mewlix/compiler)
@@ -24,7 +31,7 @@ A list of example projects with fully available source code can be found [here](
 
 ### Learn Mewlix in Y Minutes
 
-A brief tutorial in the style of [Learn X in Y Minutes](https://learnxinyminutes.com/) can be found below:
+A brief tutorial in the style of [Learn X in Y Minutes][5] can be found below:
 
 ```mewlix
 ~( ^.x.^)>
@@ -492,6 +499,26 @@ mewlix clean
 mewlix package
 ```
 
-### Additional Links
+## Installation
 
-- [Vim plugin](https://github.com/kbmackenzie/mewlix.vim).
+A comprehensive installation guide can be found [here][7]!
+
+## Related Links
+
+All the source code for Mewlix's **base library and templates** can be found [here][2].
+
+**Example projects** can be found [here][3]!
+
+## Tools
+
+### Vim Plugin
+
+A plugin that provides syntax highlighting for `.mews` files can be found [here][6].
+
+[1]: https://github.com/kbmackenzie/mewlix
+[2]: https://github.com/kbmackenzie/mewlix-base
+[3]: https://github.com/kbmackenzie/mewlix-examples
+[4]: https://itch.io/
+[5]: https://learnxinyminutes.com/
+[6]: https://github.com/kbmackenzie/mewlix.vim
+[7]: https://github.com/kbmackenzie/mewlix/blob/main/INSTALL.md
