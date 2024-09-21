@@ -12,13 +12,20 @@ function getId(children: ReactNode): string {
 }
 
 function headingAnchor(heading: Heading): HeadingComponent {
-  return function({ children, ...props }) {
+  return function({ children, className, ...props }) {
     const id = getId(children);
-    const newProps: HeadingProps = {
+    const linkProps: ComponentProps<'a'> = {
+      href: '#' + id,
+    };
+    const headingProps: HeadingProps = {
       id: id,
       ...props
     };
-    return createElement(heading, newProps, children);
+    return createElement(
+      heading,
+      headingProps,
+      createElement('a', linkProps, children)
+    );
   }
 }
 
