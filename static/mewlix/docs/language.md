@@ -1,10 +1,10 @@
 ## 🐱 mewlix - language documentation
 
-----
-
 Mewlix is a dynamically typed scripting language. This page covers all of its expressions, operators and statements.
 
 A few examples projects written in Mewlix can be found [on this repository](https://github.com/kbmackenzie/mewlix-examples)!
+
+----
 
 ### Comments
 
