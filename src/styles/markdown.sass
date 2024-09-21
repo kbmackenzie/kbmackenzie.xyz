@@ -4,13 +4,15 @@
 
 .alpaca-markdown
   h1, h2, h3, h4, h5, h6, p, ul, ol
-    margin: 0.5rem 0
     color: white
     font-weight: normal
 
+  p, ul, ol
+    margin: 0.5rem 0
+
   h1, h2, h3, h4, h5, h6
     font-weight: 300
-    margin: 1.5rem 0
+    margin: 2rem 0 1rem 0
 
   h2
     font-size: 2.5rem
@@ -66,13 +68,25 @@
   tbody tr:nth-child(even)
     background-color: color.scale(colors.$deep-space, $lightness: 4%)
 
+  // Content links:
   a
     color: colors.$bubblegum
-    text-decoration: underline
     transition: color 0.5s
-
+    text-decoration: underline
     &:hover
       color: color.scale(colors.$bubblegum, $lightness: 30%)
+
+  // Heading anchor links:
+  h1, h2, h3, h4, h5, h6
+    > a
+      color: white
+      transition: none
+      text-decoration: none
+      &:hover
+        color: white
+        &::after
+          color: colors.$star-light
+          content: ' #'
 
   ul, ol
     margin-left: 1.5rem
