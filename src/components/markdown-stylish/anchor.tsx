@@ -12,7 +12,7 @@ function getId(children: ReactNode): string {
 }
 
 function headingAnchor(heading: Heading): HeadingComponent {
-  return function({ children, className, ...props }) {
+  return function HeadingAnchor({ children, className, ...props }) {
     const id = getId(children);
     const linkProps: ComponentProps<'a'> = {
       href: '#' + id,
