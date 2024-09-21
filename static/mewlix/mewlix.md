@@ -511,9 +511,7 @@ All the source code for Mewlix's **base library and templates** can be found [he
 
 ### Tools
 
-#### Vim Plugin
-
-A plugin that provides syntax highlighting for `.mews` files can be found [here][6].
+- A **Vim plugin** that provides **syntax highlighting** for `.mews` files can be found [here][6].
 
 [1]: https://github.com/kbmackenzie/mewlix
 [2]: https://github.com/kbmackenzie/mewlix-base
