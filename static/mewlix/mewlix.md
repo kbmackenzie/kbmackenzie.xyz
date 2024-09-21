@@ -12,14 +12,14 @@ A fun, brief guide to Mewlix can be found [in this section](#learn-mewlix-in-y-m
 
 A list of example projects with fully available source code can be found [here][3]!
 
-## Table of Contents
+### Table of Contents
 
 1. [Documentation](#documentation)
 2. [Install Guide](#installation)
 3. [Related Links](#related-links)
 4. [Tools](#tools)
 
-## Documentation
+### Documentation
 
 1. [Language and Syntax](@mewlix/language)
 2. [Compiler and Project Management](@mewlix/compiler)
@@ -29,7 +29,7 @@ A list of example projects with fully available source code can be found [here][
 5. [Console Template](@mewlix/console)
 6. [FAQ](@mewlix/faq)
 
-### Learn Mewlix in Y Minutes
+#### Learn Mewlix in Y Minutes
 
 A brief tutorial in the style of [Learn X in Y Minutes][5] can be found below:
 
@@ -499,19 +499,19 @@ mewlix clean
 mewlix package
 ```
 
-## Installation
+### Installation
 
 A comprehensive installation guide can be found [here][7]!
 
-## Related Links
+### Related Links
 
 All the source code for Mewlix's **base library and templates** can be found [here][2].
 
 **Example projects** can be found [here][3]!
 
-## Tools
+### Tools
 
-### Vim Plugin
+#### Vim Plugin
 
 A plugin that provides syntax highlighting for `.mews` files can be found [here][6].
 
