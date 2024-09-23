@@ -2,7 +2,7 @@
 
 The **console** project mode creates an interactive virtual console where a user can send input either by writing in the input box or uploading an UTF-8-encoded text file.
 
-![Screenshot of the Mewlix virtual console window.](/mewlix-images/console-01.png)
+![Screenshot of the Mewlix virtual console window.](/mewlix-previews/mewlix-console.png)
 
 The text box at the bottom is where input should be written when the virtual console requests it. You can press the `Enter` key to send your input to the console. To insert a linebreak, press `Shift + Enter`.
 
