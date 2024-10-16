@@ -2,8 +2,7 @@
 export const redirects = [
   {
     source: '/mewlix',
-    destination: 'https://github.com/kbmackenzie/mewlix',
-    basePath: false,
+    destination: '/projects/mewlix',
     permanent: true,
   },
   {
