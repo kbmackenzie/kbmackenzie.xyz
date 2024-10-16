@@ -8,7 +8,7 @@ export const socialMedia: RoundIconData[] = [
   },
   {
     alt: 'Bluesky',
-    url: 'https://bsky.app/profile/kbmackenzie.bsky.social',
+    url: 'https://bsky.app/profile/kellybetty.bsky.social',
     src: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg',
   },
 ];
