@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'url';
 import { resolve, dirname } from 'path';
+import { redirects } from './static/redirects.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename)
@@ -15,6 +16,9 @@ const nextConfig = {
       warn:  (message) => console.warn('[sass] ' + message),
       debug: (message) => console.debug('[sass] ' + message),
     }
+  },
+  async redirects() {
+    return redirects;
   },
 };
 
