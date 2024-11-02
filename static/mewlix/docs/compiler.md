@@ -273,11 +273,11 @@ mode: graphic
 
 A list of patterns for finding source files. They work similarly to [POSIX glob patterns][2]:
 
-- `*.mews` will match all .mews files in the current directory (but not in subdirectories).
-- `**/*.mews` will match all .mews files in the current directory **and** in subdirectories, recursively.
+- `*.mews` will match all `.mews` files in the current directory (but not in subdirectories).
+- `**/*.mews` will match all `.mews` files in the current directory **and** in subdirectories, recursively.
 - `example.mews` will match only the script `example.mews`, and nothing else.
 
-To match all .mews files inside a `src` directory, use `src/**/*.mews`. That's **all** you need most of the time!
+To match all `.mews` files inside a `src` directory, use `src/**/*.mews`. That's **all** you need most of the time!
 
 ```yaml
 source-files:
@@ -286,7 +286,7 @@ source-files:
 
 ##### `assets`
 
-A list of patterns for finding asset files. It works like [source-files](#source-files)!
+A list of patterns for finding asset files. This field works like [source-files](#source-files)!
 
 Asset files are different from source files in that they're copied directly to the build folder, unchanged and untouched. Images, audio and static text files should be listed in this field.
 
