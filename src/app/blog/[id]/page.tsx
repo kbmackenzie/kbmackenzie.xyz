@@ -1,7 +1,6 @@
 import { Post } from '@/app/blog/[id]/post';
 import { notFound } from 'next/navigation';
 import { fetchPostMetadata, postExists, fetchPost, isValidId } from '@/blog/fetch-post';
-import styles from '@/app/blog/[id]/page.module.sass';
 import { makeMetadata, makePageTitle } from '@/app/metadata';
 import { Metadata } from 'next';
 
@@ -44,7 +43,7 @@ export default async function BlogPost({ params }: { params: PostParams }) {
   }
   const post = await fetchPost(params.id);
   return (
-    <main className={styles.post}>
+    <main>
       <Post post={post} />
     </main>
   );
