@@ -1,5 +1,7 @@
 ## 🐱 mewlix - frequently asked questions
 
+----
+
 **Q:** *"What is an esoteric programming language? Is this language intended for real use?"*
 
 **A:** An [esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language) is a programming language created for artistic purposes and/or otherwise not intended for real use in productation.

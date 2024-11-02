@@ -7,10 +7,6 @@ The **graphic** project template is designed for creating **small pixel games**.
 2. A set of functions for listening to mouse and keyboard input.
 3. A set of functions for drawing sprites, writing text and playing audio.
 
-It lets you create little HTML5 canvas games:
-
-> todo: add preview
-
 The best way to learn how to use the graphic project mode is to look at the [example project showcase](#)!
 
 #### `meow`
