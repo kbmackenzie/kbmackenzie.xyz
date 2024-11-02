@@ -15,7 +15,9 @@ const nextConfig = {
     logger: {
       warn:  (message) => console.warn('[sass] ' + message),
       debug: (message) => console.debug('[sass] ' + message),
-    }
+    },
+    /* See: https://github.com/vercel/next.js/issues/71638#issuecomment-2431137842 */
+    silenceDeprecations: ["legacy-js-api"],
   },
   async redirects() {
     return redirects;
