@@ -281,7 +281,7 @@ To match all .mews files inside a `src` directory, use `src/**/*.mews`. That's *
 
 ```yaml
 source-files:
-- 'src/**/*.mews'
+- src/**/*.mews
 ```
 
 ##### `assets`

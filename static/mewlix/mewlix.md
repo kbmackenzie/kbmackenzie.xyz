@@ -480,7 +480,7 @@ To learn more, read the documentation and see the example projects at: https://k
 
 ```bash
 # To create a project in the current directory, do:
-mewlix init project-name
+mewlix init your-project-name
 
 # To build a project, do:
 mewlix build
