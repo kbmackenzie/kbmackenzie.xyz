@@ -16,7 +16,7 @@ export default function Mewlix() {
   return (
     <main className={styles.body}>
       <h2 className={styles.title}>
-        mewlix
+        Mewlix
       </h2>
       <hr className={styles.divider} />
       <MewlixDoc
