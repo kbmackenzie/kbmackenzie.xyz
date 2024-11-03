@@ -4,7 +4,7 @@ Written entirely from scratch in TypeScript with React, Sass and Next.js.
 
 All animations are written by hand! No templates used! 🐱💖 Additionally, log posts are organized with [Alpaca][2], a little blog utility I wrote!
 
-<img width="512" src="logo.png" alt="Art of a cartoon alpaca peeking up at the viewer.">
+![A screenshot of the website, viewed in a desktop screen. It features a color palette with purple and pink tones, and a drawing of an alpaca in the upper right corner.](./preview.jpg)
 
 [1]: https://kbmackenzie.xyz
 [2]: https://github.com/kbmackenzie/alpaca
