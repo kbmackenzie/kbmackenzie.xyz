@@ -1,4 +1,4 @@
-## 🐱 mewlix - `std` yarn ball
+## Standard Library 🐱
 
 The core of Mewlix's standard library is the `std` yarn ball. \_(:3」∠)\_
 

@@ -1,4 +1,4 @@
-## 🐱 mewlix - compiler
+## The Mewlix Compiler 🐱
 
 Mewlix's compiler is written in pure Haskell, and the source code is fully available [here](https://github.com/kbmackenzie/mewlix).
 

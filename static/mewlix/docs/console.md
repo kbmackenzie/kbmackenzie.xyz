@@ -1,4 +1,4 @@
-## 🐱 mewlix - `console` project mode
+## Console Template 🐱
 
 The **console** project mode creates an interactive virtual console where a user can send input either by writing in the input box or uploading an UTF-8-encoded text file.
 

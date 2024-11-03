@@ -1,4 +1,4 @@
-## 🐱 mewlix - language documentation
+## Language Documentation 🐱
 
 Mewlix is a dynamically typed scripting language. This page covers all of its expressions, operators and statements.
 

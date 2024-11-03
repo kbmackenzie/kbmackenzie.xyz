@@ -1,4 +1,4 @@
-## 🐱 mewlix - `graphic` project mode
+## Graphic Mode 🐱
 
 ![Animated GIF of a little Snake game clone written in Mewlix.](/mewlix-previews/mewlix-snake.webp)
 

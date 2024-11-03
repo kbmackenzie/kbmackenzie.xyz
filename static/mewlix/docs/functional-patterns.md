@@ -1,4 +1,4 @@
-## 🐱 mewlix - functional patterns
+## Functional Patterns 🐱
 
 Mewlix is imperative at heart, but it was written by someone addicted to functional programming. Because of this, functional programming patterns are supported in varying degrees.
 

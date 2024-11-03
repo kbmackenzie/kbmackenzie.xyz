@@ -1,4 +1,4 @@
-## 🐱 mewlix - frequently asked questions
+## Frequently Asked Questions 🐱
 
 ----
 
