@@ -4,6 +4,7 @@ import { styleClasses } from '@/utils/style-classes';
 import { notFound } from 'next/navigation';
 import { BubblegumButton } from '@/components/bubblegum-button';
 import styles from '@/app/projects/mewlix/[doc]/page.module.sass';
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { makeMetadata, makePageTitle } from '@/app/metadata';
 
@@ -40,6 +41,14 @@ export function generateMetadata({ params }: { params: MewlixDocParam }): Metada
   });
 }
 
+function MewlixContext() {
+  return (
+    <Link href="/projects/mewlix" className={styles.context}>
+      Mewlix Documentation
+    </Link>
+  );
+}
+
 export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
   if (!params.doc || !docSet.has(params.doc)) {
     return notFound();
@@ -47,6 +56,7 @@ export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
   const path = getStaticFile('mewlix/docs/', `${params.doc}.md`);
   return (
     <main className={styles.body}>
+      <MewlixContext />
       <MewlixDoc
         docpath={path}
         className={styleClasses('alpaca-markdown', styles.doc)} />
