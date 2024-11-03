@@ -60,7 +60,7 @@ export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
       <MewlixDoc
         docpath={path}
         className={styleClasses('alpaca-markdown', styles.doc)} />
-      <BubblegumButton href="/projects/mewlix" className={styles.seefull}>
+      <BubblegumButton href="/projects/mewlix" className={styles['see-full']}>
         See Full Documentation
       </BubblegumButton>
     </main>
