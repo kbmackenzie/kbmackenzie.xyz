@@ -29,7 +29,6 @@ It has...
 - Lambda functions, defined like this: `🐈 (a, b) -> a + b`
 - Classes, affectionately nicknamed *'clowders'*.
 - A [function composition][4] operator (`:>`) and a [function application][5] operator (`|>`)!
-- `nand` and `nor` operators, for picky boolean expressions.
 - Feline-oriented programming capabilities.
 
 To learn more + read the documentation, click on **'See More'**! 🐱
