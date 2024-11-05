@@ -241,7 +241,7 @@ You can freely tweak all of the fields in your project file to your taste. An ex
 
 ##### `name`
 
-The name of your project. The name is used in log messages and in the auto-generated `README.md` file in your project's `build` folder.
+The name of your project. The name is used in log messages and in the auto-generated `README.md` file in your project's build folder.
 
 Additionally, when using the **console** and **graphic** project templates, the project name becomes the title for the generated page.
 
@@ -336,7 +336,7 @@ flags:
 
 ##### `description`
 
-A description for your project. This field is entirely optional; the description will only ever be used inside of the auto-generated `README.md` file in your project's `build` folder.
+A description for your project. This field is entirely optional; the description will only ever be used inside of the auto-generated `README.md` file in your project's build folder.
 
 ```yaml
 description: I like cats!
@@ -350,9 +350,9 @@ You can build your project with the `mewlix build` command:
 mewlix build
 ```
 
-When you run this command, the compiler will look for a `mewlix.yaml` project file in the current directory. If a project file is found. the compiler will read it and use the project data to build your project.
+When you run this command, the compiler will look for a `mewlix.yaml` project file in the current directory. If a project file is found. the compiler will read it and build your project.
 
-The build output is always placed in the `build` folder.
+The build output goes in the `.mewlix/build` directory in your project's root.
 
 #### Running a Project
 
@@ -395,13 +395,12 @@ When you run this command, the compiler will look for a project file, read it, b
 When using the `graphic` or `console` project modes, the generated `.zip` file is ready for upload to websites like [itch.io][3].
 
 #### Cleaning
-You can clean the build output in your project's directory with the `mewlix clean` command:
+
+The `clean` command is self-explanatory: It cleans the project directory, removing all build files.
 
 ```bash
 mewlix clean
 ```
-
-This command is rather simple: It looks for a `mewlix.yaml` project file to ensure there's a Mewlix project in the current directory, and it removes the `build` folder from the current directory, if any is found.
 
 #### Building Without a Project File
 
