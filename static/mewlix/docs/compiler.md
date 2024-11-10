@@ -210,11 +210,11 @@ This flag is only valid for the `run` command!
 
 ![Looping animation of a cartoon cat playing with a ball of yarn.](/mewlix-images/cat-shelf.webp)
 
-A Mewlix project is a collection of yarn balls, resource files and compiler flags + options, all of should be in a `mewlix.yaml` project file in the root of the project's directory.
+A Mewlix project is a collection of yarn balls, resource files and compiler flags + options. All of this should be specified in a `mewlix.yaml` project configuration file in the project's root.
 
 #### Project File
 
-A `mewlix.yaml` project file is, as the extension implies, a [YAML][1] file. It's meant to hold core information about your project, such as where to look for source files, what project template to use when building, and so on.
+A `mewlix.yaml` project file is, as the extension implies, a [YAML][1] file. It's meant to hold core information about your project, such as how to look for source files, what project template to use building, and so on.
 
 You can **create a new project** in your current directory with the `mewlix init` command, passing in the name for your new project:
 
