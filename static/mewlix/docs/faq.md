@@ -4,9 +4,7 @@
 
 **Q:** *"What is an esoteric programming language? Is this language intended for real use?"*
 
-**A:** An [esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language) is a programming language created for artistic purposes and/or otherwise not intended for real use in productation.
-
-Esoteric programming languages are typically not designed with usability in mind. Mewlix is one such case: It's an odd language themed around cats. \_(:3」∠)\_
+**A:** An [esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language) is a programming language created for artistic purposes and/or otherwise not intended for real use in productation. Esoteric programming languages are typically not designed with usability in mind. Mewlix is one such case: It's an odd language themed around cats. \_(:3」∠)\_
 
 You *can* use Mewlix for hobby projects, however. Mewlix is designed **primarily** for making small games, and it tries to do a well-enough job at just that.
 
