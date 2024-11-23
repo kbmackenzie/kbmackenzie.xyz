@@ -342,7 +342,7 @@ std.fold(🐈 (acc, x) -> acc + x, 0, [1, 2, 3]) -- 6
 
 #### std.find
 
-**type:** `<🐱>((🐱) -> boolean, [🐱]) -> [🐱]`
+**type:** `<🐱>((🐱) -> boolean, [🐱]) -> number | nothing`
 
 Find a value in a shelf using a predicate.
 
