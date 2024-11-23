@@ -356,7 +356,7 @@ If no value satisfies the predicate, this function returns `nothing`.
 
 #### std.any
 
-**type:** `<🐱>((🐱) -> boolean, [🐱]) -> [🐱]`
+**type:** `<🐱>((🐱) -> boolean, [🐱]) -> boolean`
 
 Asks if any item in the shelf satisfies a predicate.
 
@@ -367,7 +367,7 @@ This function expects the following arguments:
 If the shelf is empty, this function returns `false`.
 
 #### std.all
-**type:** `<🐱>((🐱) -> boolean, [🐱]) -> [🐱]`
+**type:** `<🐱>((🐱) -> boolean, [🐱]) -> boolean`
 
 Asks if all items in the shelf satisfy a predicate.
 
