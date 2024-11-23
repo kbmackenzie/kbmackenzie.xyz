@@ -340,6 +340,20 @@ A fold is a little hard to explain concisely, so I won't bother to explain it he
 std.fold(🐈 (acc, x) -> acc + x, 0, [1, 2, 3]) -- 6
 ```
 
+#### std.find
+
+**type:** `<🐱>((🐱) -> boolean, [🐱]) -> [🐱]`
+
+Find a value in a shelf using a predicate.
+
+This function expects the following arguments:
+1. A predicate function.
+2. A shelf.
+
+It returns the index of the first value that satisfies the predicate.
+
+If no value satisfies the predicate, this function returns `nothing`.
+
 #### std.any
 
 **type:** `<🐱>((🐱) -> boolean, [🐱]) -> [🐱]`
