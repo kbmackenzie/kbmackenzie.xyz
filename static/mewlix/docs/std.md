@@ -281,7 +281,7 @@ Sorts a shelf.
 
 ```mewlix
 std.sort([3, 4, 1, 2, 6, 5])    -- [1, 2, 3, 4, 5, 6]
-std.sort(["c", "a', "t"])       -- ["a", "c", "t"]
+std.sort(["c", "a", "t"])       -- ["a", "c", "t"]
 std.sort([true, false, true])   -- [false, true, true]
 ```
 
