@@ -866,7 +866,7 @@ takes std.graphic as g
 Alternatively, you may choose to import only a select few bindings from a yarn ball.
 You can do this with the 'from... takes' statement:
 
-```
+```mewlix
 from std.graphic takes init, load, draw
 ```
 
@@ -876,7 +876,7 @@ All top-level bindings in a yarn ball are exported by default.
 
 You can make a binding private by prefixing it with an underscore ('_'):
 
-```
+```mewlix
 mew _priv = 'this will not be exported'
 ```
 
