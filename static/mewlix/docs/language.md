@@ -501,7 +501,7 @@ assert type of x == "number"
 ```
 The one advantage of `+` is the slightly more helpful error message. Assertions tell you the line number where the assertion is, but give no further information. A `TypeMismatch` error thrown by `+` will have a much more descriptive message.
 
-The unary plus operator does not perform implicit type conversion of any form. To convert a value to number, use the standard library function [`std.slap`](#std-slap).
+The unary plus operator does not perform implicit type conversion of any form. To convert a value to number, use the standard library function [`std.slap`](@mewlix/std#std-slap).
 
 #### Modulo (`%`)
 
@@ -634,15 +634,15 @@ The length operator (`...?`) can be used to get the length of a shelf. It's an *
 As shelves are a *last in, first out* data structure, performing an indexed lookup in a shelf requires traversing it in order: an **O(n)** operation.
 
 The `std` yarn ball provides a few functions for indexing into shelves and inserting/removing items:
-1. [std.poke](#std-poke)
-1. [std.insert](#std-insert)
-1. [std.remove](#std-remove)
+1. [std.poke](@mewlix/std#std-poke)
+1. [std.insert](@mewlix/std#std-insert)
+1. [std.remove](@mewlix/std#std-remove)
 
 **All** of these functions have an O(n) time complexity, however, and they should be used **very sparingly**! Too much shelf-poking will surely get you in trouble. Imagine if you broke a vase!
 
 ##### Higher Order Functions: `map()`, `filter()`, `fold()`
 
-The base library includes a few higher order functions for working with shelves in a simple and concise way; namely [map](#std-map), [filter](#std-filter) and [fold](#std-fold).
+The base library includes a few higher order functions for working with shelves in a simple and concise way; namely [map](@mewlix/std#std-map), [filter](@mewlix/std#std-filter) and [fold](@mewlix/std#std-fold).
 
 ----
 
