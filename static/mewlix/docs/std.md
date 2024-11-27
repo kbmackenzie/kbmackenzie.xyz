@@ -6,7 +6,7 @@ It contains functions for string and shelf manipulation, type conversion and bas
 
 #### Implicit Import
 
-All Mewlix yarn balls implicitly import the `std` yarn ball by default. To keep this from happening, use the [`--no-std` compiler flag](@mewlix/CLI) or add `no-std` in the [*'flags'* field of your project file](@mewlix/Packaging#project-file).
+All Mewlix yarn balls implicitly import the `std` yarn ball by default. To keep this from happening, use the [`--no-std` compiler flag](@mewlix/CLI) or add `no-std` in the [*'flags'* field of your project file](@mewlix/compiler#project-file).
 
 ### Table of Contents
 
