@@ -196,7 +196,7 @@ Ignore the existence of a project file in the current directory and use project 
 This option is useful if you wish to build a single `.mews` file once, without creating a whole new project:
 
 ```bash
-mewlix build -s "src/" --name "example project" --console
+mewlix build -s "main.mews" --console
 ```
 
 ##### `--no-browser`
@@ -409,7 +409,7 @@ To make the compiler ignore the existence of a project file when building, you c
 You can still pass in additional compiler flags to configure your project:
 
 ```bash
-mewlix build -s "src/" --name "example project" --console
+mewlix build -s "main.mews" --name "example project" --console
 ```
 
 [1]: https://yaml.org/
