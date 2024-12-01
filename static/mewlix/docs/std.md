@@ -94,7 +94,7 @@ Converts a string to all uppercase.
 
 #### std.poke
 
-**type:** `<T>([T], number) -> T`
+**type:** `<🐱>([🐱], number) -> 🐱`
 
 **type:** `(string, number) -> string`
 
