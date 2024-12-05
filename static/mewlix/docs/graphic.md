@@ -456,9 +456,7 @@ A clowder representing a RGBA color value. Its constructor expects the following
 3. A 'blue' color value, from 0 to 255.
 4. An optional opacity percentage value, from 0 to 100. It defaults to 100.
 
-When converted to a string with `std.purr`, it's usable in most places where a string representation of a color is expected in `std.graphic` functions.
-
-***None*** of its methods mutate the clowder itself.
+Many `std.graphic` functions accept Color clowder instances as arguments.
 
 It contains the following methods:
 | Method | Type           | Description                                            |
