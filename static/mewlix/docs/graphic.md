@@ -486,6 +486,8 @@ It contains the following methods:
 | get_pixel | `(number, number) -> Color`          | Get color of pixel at position (x, y) as a Color box. |
 | to_sprite | `(string) -> nothing`                | Create a new sprite associated with a string key.     |
 
+**Note:** These methods *also* accept strings as color values.
+
 #### graphic.page_background
 
 **type:** `(Color) -> nothing`
