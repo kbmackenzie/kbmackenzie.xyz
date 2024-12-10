@@ -43,9 +43,11 @@ The Mewlix compiler includes a detailed `--help` message explaining its commands
 ```none
 mewlix - a compiler for a cat-oriented programming language
 
-Usage: mewlix COMMAND
+Usage: mewlix COMMAND [-q|--quiet] [-s|--standalone]
 
 Available options:
+  -q,--quiet               Silence compiler messages
+  -s,--standalone          Ignore project file, use project defaults
   -h,--help                Show this help text
 
 Available commands:
@@ -77,8 +79,7 @@ Available options:
 ```none
 Usage: mewlix build [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
                     [(-c|--console) | (-g|--graphic) | (-n|--node)] 
-                    [-a|--asset PATH] [-q|--quiet] [-p|--pretty] [--no-std] 
-                    [--no-readme] [-s|--standalone]
+                    [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme]
 
   Build project
 
@@ -89,11 +90,9 @@ Available options:
   -g,--graphic             Graphic template
   -n,--node                Node.js template
   -a,--asset PATH          Project asset
-  -q,--quiet               Silence compiler messages
   -p,--pretty              Prettify compiler output
   --no-std                 Do not include std library binding when compiling
   --no-readme              Do not auto-generate a README file
-  -s,--standalone          Ignore project file, use project defaults
   -h,--help                Show this help text
 ```
 
@@ -102,9 +101,8 @@ Available options:
 ```none
 Usage: mewlix run [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
                   [(-c|--console) | (-g|--graphic) | (-n|--node)] 
-                  [-a|--asset PATH] [-q|--quiet] [-p|--pretty] [--no-std] 
-                  [--no-readme] [-s|--standalone] [--port INT] [-r|--rebuild] 
-                  [--no-browser]
+                  [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme] 
+                  [--port INT] [-r|--rebuild] [--no-browser]
 
   Run project
 
@@ -115,11 +113,9 @@ Available options:
   -g,--graphic             Graphic template
   -n,--node                Node.js template
   -a,--asset PATH          Project asset
-  -q,--quiet               Silence compiler messages
   -p,--pretty              Prettify compiler output
   --no-std                 Do not include std library binding when compiling
   --no-readme              Do not auto-generate a README file
-  -s,--standalone          Ignore project file, use project defaults
   --port INT               Port number to use when running project
   -r,--rebuild             Rebuild project
   --no-browser             Don't launch web browser when running project
@@ -131,8 +127,7 @@ Available options:
 ```none
 Usage: mewlix package [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
                       [(-c|--console) | (-g|--graphic) | (-n|--node)] 
-                      [-a|--asset PATH] [-q|--quiet] [-p|--pretty] [--no-std] 
-                      [--no-readme] [-s|--standalone]
+                      [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme]
 
   Package project's build output into a .zip archive
 
@@ -143,29 +138,26 @@ Available options:
   -g,--graphic             Graphic template
   -n,--node                Node.js template
   -a,--asset PATH          Project asset
-  -q,--quiet               Silence compiler messages
   -p,--pretty              Prettify compiler output
   --no-std                 Do not include std library binding when compiling
   --no-readme              Do not auto-generate a README file
-  -s,--standalone          Ignore project file, use project defaults
   -h,--help                Show this help text
 ```
 
 ##### `clean --help`
 
 ```none
-Usage: mewlix clean [-s|--standalone]
+Usage: mewlix clean 
 
   Clean project directory, removing build folder
 
 Available options:
-  -s,--standalone          Ignore project file, use project defaults
   -h,--help                Show this help text
 ```
 
 #### Compiler Options
 
-Mewlix's compiler accepts a number of options for the `build`, `run` and `package` commands:
+A few options accepted by the Mewlix compiler are:
 
 ##### `-q` / `--quiet`
 
@@ -175,7 +167,7 @@ Silence compiler messages. The compiler won't log anything to `stdout` when you 
 
 ##### `-p` / `--pretty`
 
-Prettify compilation output. This makes the generated `yarnballs.js` file more readable by adding indentation and linebreaks.
+Prettify compiler output. This makes the generated `yarnballs.js` file more readable by adding indentation and linebreaks.
 
 ##### `--no-std`
 
@@ -187,10 +179,8 @@ You can do this if you wish to manually import the `std` module with an alias to
 takes std as _std
 ```
 
-##### `--no-readme`
-Do not auto-generate a `README.md` file when building a project.
-
 ##### `-s` / `--standalone`
+
 Ignore the existence of a project file in the current directory and use project defaults instead.
 
 This option is useful if you wish to build a single `.mews` file once, without creating a whole new project:
@@ -200,9 +190,14 @@ mewlix build -s "main.mews" --console
 ```
 
 ##### `--no-browser`
+
 Do not automatically launch web browser when running project (only valid if using `console` or `graphic` mode).
 
-This flag is only valid for the `run` command!
+This flag is only valid for the `run` command, for obvious reasons.
+
+##### `--no-readme`
+
+Do not auto-generate a `README.md` file in the output folder when building a project.
 
 ----
 
