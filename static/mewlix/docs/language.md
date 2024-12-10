@@ -679,7 +679,14 @@ You can create a new instance of a clowder with the `new` expression:
 
 ```mewlix
 mew cat = new Cat('charlie')
-meow cat.introduction() -- prints: 'meow, i'm charlie"
+meow cat.introduction()  -- prints: 'meow, i'm charlie"
+```
+
+You can also use the arrow syntax to instantiate clowders:
+
+```mewlix
+mew cat = new Cat <- 'charlie'
+meow do cat.introduction -- prints: 'meow, i'm charlie'
 ```
 
 #### Inheritance
