@@ -793,7 +793,8 @@ bring fib(n - 1) + fib(n - 2)
 Wherever line breaks are required, you can instead use a **semicolon** to achieve the same effect. This is useful when too many line breaks hurt readability.
 
 As an example, let's rewrite `fib` with a few semicolons:
-```
+
+```mewlix
 🐱 fib(n)
   pounce when n == 0; bring 0; ~meow
   pounce when n == 1; bring 1; ~meow
