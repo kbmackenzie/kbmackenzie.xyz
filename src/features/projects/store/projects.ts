@@ -2,6 +2,8 @@ import { Project } from '@/types/project';
 import { Skill } from '@/types/skill';
 import mewlixLogo from '@/features/projects/assets/mewlix.png';
 import alpacaLogo from '@/features/projects/assets/alpaca.png';
+import araneaLogo from '@/features/projects/assets/aranea.png';
+import henhenLogo from '@/features/projects/assets/henhen.png';
 import projectIcon from '@/features/projects/assets/project.png';
 import { getStaticFile } from '@/utils/static-file';
 
@@ -48,6 +50,40 @@ export const projects: Project[] = [
       url: 'https://github.com/kbmackenzie/kbmackenzie.xyz',
     },
     skills: [Skill.TypeScript, Skill.React, Skill.Sass, Skill.NextJS],
+  },
+  {
+    name: 'henhen',
+    id: 'henhen',
+    description: joinLines(
+      'A tool for managing virtual environments for CHICKEN Scheme. 🐔',
+      'It lets you install dependencies in an isolated environment on a per-project basis.',
+    ),
+    image: {
+      src: henhenLogo,
+      alt: 'henhen logo',
+    },
+    datafile: getProjectDatafile('henhen.md'),
+    link: {
+      url: 'https://github.com/kbmackenzie/henhen',
+    },
+    skills: [Skill.Haskell],
+  },
+  {
+    name: 'aranea',
+    id: 'aranea',
+    description: joinLines(
+      'A tiny shell preprocessor written in POSIX Awk.',
+      'Inspired by the C preprocessor. Works outo-of-the-box in most Linux distros!',
+    ),
+    image: {
+      src: araneaLogo,
+      alt: 'aranea logo',
+    },
+    datafile: getProjectDatafile('aranea.md'),
+    link: {
+      url: 'https://github.com/kbmackenzie/aranea',
+    },
+    skills: [Skill.Awk],
   },
   {
     name: 'Mods: Inscryption',
