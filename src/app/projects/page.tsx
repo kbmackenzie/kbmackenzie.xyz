@@ -10,7 +10,7 @@ export const metadata: Metadata = makeMetadata({
   description: 'Kelly\'s projects.',
 });
 
-const introduction: string = 'A list of my favorite projects I have worked on, including: **esoteric programming languages**; little **games**; **mods** and **modding tools**; and anything else that piques my interest.';
+const introduction: string = 'A list of my favorite projects I have worked on, including: **esoteric programming languages**, miscellaneous **tools**, little **games**, game mods, and anything else that piques my interest.';
 
 export default function Projects() {
   return (
