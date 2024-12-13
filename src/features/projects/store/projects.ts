@@ -83,7 +83,7 @@ export const projects: Project[] = [
     link: {
       url: 'https://github.com/kbmackenzie/aranea',
     },
-    skills: [Skill.Awk],
+    skills: [Skill.Awk, Skill.Bash],
   },
   {
     name: 'Mods: Inscryption',
