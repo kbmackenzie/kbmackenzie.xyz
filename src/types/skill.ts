@@ -12,6 +12,8 @@ export enum Skill {
   FSharp,
   C,
   CPlusPlus,
+  Bash,
+  Awk,
   Godot,
   Unity,
   Python,
