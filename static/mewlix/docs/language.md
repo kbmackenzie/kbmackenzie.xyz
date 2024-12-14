@@ -1,6 +1,16 @@
 ## Language Documentation 🐱
 
-Mewlix is a dynamically typed scripting language. This page covers all of its expressions, operators and statements.
+Mewlix is a dynamically typed esoteric scripting language. This page covers all of its expressions, operators and statements.
+
+1. [Comments](#comments)
+2. [Types](#types)
+3. [Expressions](#expressions)
+4. [Operators](#operators)
+5. [Shelf](#shelf)
+6. [Statements](#statements)
+7. [Clowders](#clowders)
+8. [Whitespace](#whitespace)
+9. [Yarn Balls](#yarn-ball)
 
 A few examples projects written in Mewlix can be found [on this repository](https://github.com/kbmackenzie/mewlix-examples)!
 
@@ -643,6 +653,313 @@ The `std` yarn ball provides a few functions for indexing into shelves and inser
 ##### Higher Order Functions: `map()`, `filter()`, `fold()`
 
 The base library includes a few higher order functions for working with shelves in a simple and concise way; namely [map](@mewlix/std#std-map), [filter](@mewlix/std#std-filter) and [fold](@mewlix/std#std-fold).
+
+----
+
+### Statements
+
+Mewlix has a collection of cat-themed statement blocks.
+
+#### Variable Declaration
+
+A variable is declared with the `mew` keyword:
+
+```mewlix
+mew foo = ":3"
+```
+
+A constant is declared similarly... but LOUDER!
+```mewlix
+mew foo!!!!! = ":3"
+```
+
+Any number of exclamation marks may be used when declaring constants, so long as there's at least one.
+
+A few things you should know about variables in Mewlix are:
+- A variable is always local to the block it was declared in.
+- You cannot reference a variable before creating it.
+- Variables do not have types, and can contain values of any type.
+
+#### Variable Assignment
+
+A variable can be assigned to in the way you would expect:
+```mewlix
+mew x = 1
+x = 2
+```
+A constant, on the other hand, cannot have its value re-assigned. Erm, obviously. As you would expect.
+
+#### Functions
+
+A function is declared with the `🐱` statement:
+```mewlix
+🐱 sum(a, b)
+  bring a + b
+~meow
+```
+
+**Alternatively**, the symbol `=^.x.^=` can be used:
+```mewlix
+=^.x.^= sum(a, b)
+  bring a + b
+~meow
+```
+
+To return a value from a function, use the `bring` statement.
+
+When declared with an unique key, a function binding is constant; you cannot re-assign it:
+
+```mewlix
+sum = nothing   -- Runtime error!
+```
+
+Alternatively, you may choose to use the **function assignment** syntax, assigning a function to a variable or box property using an expression between square brackets:
+
+```mewlix
+mew op = 📦 []
+
+🐱 [op.sum]()
+  bring a + b
+~meow
+```
+
+In the example above, the function is assigned to the `sum` property of the `op` box.
+
+When a function doesn't explicitly return a value, `nothing` is returned instead.
+
+##### Early Return
+
+The `bring` statement must always be followed by an expression. Even if it's nothing!
+
+As early returns are a common pattern in imperative languages. Mewlix has the `run away` statement, which is designed for early returns and is purely syntactic sugar for `bring nothing`:
+
+```mewlix
+🐱 fight(monster)
+  pounce when monster.level > 10
+    run away
+  ~meow
+  attack(monster)
+~meow
+```
+
+#### Cat Trees
+
+A cat tree is structure resembling an [enum](https://en.wikipedia.org/wiki/Enumerated_type):
+
+```mewlix
+cat tree Colors
+  Pink
+  Purple
+  Magenta
+~meow
+```
+
+Each key defined in the example above—`Pink`, `Purple` and `Magenta`—become constants inside the cat tree. Each constant is a assigned a numeric value in order.
+
+Cat tree constants are special boxes with the following properties:
+- **key**: The constant's string key.
+- **value**: The constant's numeric value.
+- **parent**: The name of the cat tree the constant belongs to, as a string.
+
+And the following methods:
+
+- **prev():** Return the cat tree value that comes before the current one, or nothing if there isn't one.
+- **next():** Return the cat tree value that comes after the current one, or nothing if there isn't one.
+
+Enumeration starts at 0, as the feline gods intended.
+
+##### Lookup
+
+Constants can be looked up inside a cat tree by their string key:
+
+```mewlix
+meow Colors.Pink
+meow Colors['Pink']
+```
+
+... Or by their numeric value:
+
+```mewlix
+meow Colors[0]
+assert Colors.Pink == Colors[0]
+```
+
+Additionally...
+
+... Cat tree constants can be compared:
+
+```mewlix
+assert Colors.Pink != Colors.Purple
+assert Colors.Pink == Colors.Pink
+```
+
+... Cat tree constants return an unique string when stringified:
+
+```mewlix
+meow Colors.Pink        -- prints: Colors.Pink
+meow Colors[1]          -- prints: Colors.Purple
+meow Colors['Magenta']  -- prints: Colors.Magenta
+```
+
+... Cat tree constants can be used efficiently as box keys:
+
+```mewlix
+mew hexcodes! = 📦 []
+
+hexcodes[Colors.Pink]    = "#ff8080"
+hexcodes[Colors.Purple]  = "#8000ff"
+hexcodes[Colors.Magenta] = "#ff0080"
+```
+
+**Note:** Cat tree bindings are constant; you cannot re-assign them:
+
+```mewlix
+Colors = nothing        -- Runtime error!
+```
+
+#### Control Flow
+
+A simple *'if/else'* conditional can be written with a `pounce when/else hiss` statement:
+
+```mewlix
+pounce when x < 10
+  meow "x is less than 10"
+else hiss
+  meow "x is greater or equal to 10"
+~meow
+```
+
+If you need more levels of nested conditionals, you can use `or when`:
+
+```mewlix
+pounce when x < 10
+  meow "x is less than 10"
+or when x == 10
+  meow "x is 10"
+else hiss
+  meow "x is greater than 10"
+~meow
+```
+
+#### Loops
+
+A simple *'while'* loop can be written with the `stare while` statement:
+```mewlix
+stare while x > 0
+  -- ... <logic> ...
+  x = x - 1
+~meow
+```
+This is all you need; any other kind of loop can be created from a *'while'* loop.
+
+For convenience, however, Mewlix has an additional loop type: the `chase after/in` loop. It works similarly to the 'foreach' type of loops found in some C-family languages: It lets you iterate through a **shelf** or a **string**, performing actions on each item.
+
+```mewlix
+mew kitties = [1, 2, 3]
+
+chase after kitty in kitties!!!!!!!!!!
+  meow kitty
+~meow
+
+-- in order:
+-- prints: 3
+-- prints: 2
+-- prints: 1
+```
+
+The number of exclamation marks (`!!!`) after the expression is completely arbitrary, from 0 to infinity.
+
+In the example above, a new item from the shelf is bound to the identifier "kitty" in each iteration of the loop.
+The choice of "kitty" for that identifier is purely thematic; any identifier can be used.
+
+##### Catnap
+
+The `catnap` keyword can be used to end an iteration early. It's equivalent to the `continue` keyword in C-family languages.
+
+##### Break
+
+The `escape` keyword can be used to exit a loop early. It's equivalent to the `break` keyword in C-family languages.
+
+#### Assert
+
+The `assert` statement can be used to, as the name implies, make assertions about code: 
+
+```mewlix
+assert x == 2 
+```
+
+When an assertion fails, an error is thrown. It functions very similarly to C's `assert()` macro.
+
+Additionally, the compiler remembers what `.mews` file and what line number an assertion was defined in, and this information is included in the error message.
+
+#### `explode`
+
+The `explode` statement is used to throw an error anywhere in your program:
+```mewlix
+explode "HELP!!"
+```
+
+The value passed to the `explode` statement is always converted to a string.
+
+When you throw an error with the `explode` statement, the name of the exact `.mews` file and line number where the assertion appears are remembered by the compiler and included in the error message for convenience.
+
+Additionally, the `explode` statement throws errors with the `CatOnComputer` error code. To learn more about error codes, read the [documentation page on error handling](#error-handling) (right below)!
+
+#### Error Handling
+
+The cat-oriented equivalent of a `try/catch` statement is the `watch/pounce on` statement:
+```mewlix
+watch
+  dummy()
+pounce on error
+  meow :3"dummy() failed with: [error]!"
+~meow
+```
+
+In the example above, the exception caught is bound to the identifier `error`.
+
+The choice of `error` for the identifier is arbitrary: Any valid identifier can be used.
+
+The error value received in the `pounce on` block is always a special **box** with the following properties:
+
+- **name:** The string name for the error code.
+- **id:** An integer ID for the error code.
+- **message:** The error message, as a string. When no error message is attached, this becomes **nothing**.
+
+There are 9 error codes, all explained in the table below:
+
+| Name              | Id | Description                                                       |
+|-------------------|----|-------------------------------------------------------------------|
+| TypeMismatch      | 0  | Thrown when operations receive a value of an unexpected type.     |
+| InvalidOperation  | 1  | Thrown when attempting to perform an invalid operation.           |
+| InvalidConversion | 2  | Thrown when a type conversion operation cannot be performed.      |
+| CatOnComputer     | 3  | Any error thrown with the `explode` or `assert` statements.       |
+| Console           | 4  | Any error thrown by the console template's core.                  |
+| Graphic           | 5  | Any error thrown by the graphic template's core.                  |
+| InvalidImport     | 6  | Any error related to importing a yarn ball.                       |
+| CriticalError     | 7  | A critical error. See [this section](#critical-errors).           |
+| ExternalError     | 8  | A non-Mewlix error; a normal JavaScript error, for example.       |
+
+The [`std` yarn ball's `error` field](@mewlix/std#stderror) contains a box with numeric constants representing the **id** of each error code.
+
+You're heavily discouraged from silencing any errors with the `ExternalError` error code.
+
+##### `rethrow`
+When you want to rethrow an error without losing any of the special context JavaScript errors have behind the scenes (such as stack traces), you can use the `rethrow` statement:
+
+```mewlix
+watch
+  -- <logic>
+pounce on error
+  pounce when error.id == std.error.ExternalError
+    rethrow
+  ~meow
+  -- ... <rest of logic>
+~meow
+```
+
+##### Critical Errors
+If you ever encounter any errors with the `CriticalError` error code, please be sure to report them. Those are always edge cases and are **never** meant to be thrown.
 
 ----
 
