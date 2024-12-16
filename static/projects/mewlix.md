@@ -28,7 +28,7 @@ It has...
 - String interpolation—`:3"like [this]!"`—affectionately nicknamed *'yarn strings'*.
 - Lambda functions, defined like this: `🐈 (a, b) -> a + b`
 - Classes, affectionately nicknamed *'clowders'*.
-- A [function composition][4] operator (`:>`) and a [function application][5] operator (`|>`)!
+- A [function composition](@mewlix/language#function-composition-----) operator (`:>`) and a [function application](@mewlix/language#function-pipes-----) operator (`|>`)!
 - Feline-oriented programming capabilities.
 
 To learn more + read the documentation, click on **'See More'**! 🐱
@@ -36,5 +36,3 @@ To learn more + read the documentation, click on **'See More'**! 🐱
 [1]: https://en.wikipedia.org/wiki/Esoteric_programming_language
 [2]: https://itch.io/
 [3]: https://en.wikipedia.org/wiki/Persistent_data_structure
-[4]: https://kbmackenzie.xyz/projects/mewlix/language#function-composition-----
-[5]: https://kbmackenzie.xyz/projects/mewlix/language#function-pipes-----
