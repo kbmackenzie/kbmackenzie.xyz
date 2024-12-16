@@ -7,7 +7,7 @@ import { makeMetadata, makePageTitle } from '@/app/metadata';
 
 export const metadata: Metadata = makeMetadata({
   title: makePageTitle('projects'),
-  description: 'Kelly\'s projects.',
+  description: 'An internet alpaca\'s projects.',
 });
 
 const introduction: string = 'A list of my favorite projects I have worked on, including: **esoteric programming languages**, miscellaneous **tools**, little **games**, game mods, and anything else that piques my interest.';

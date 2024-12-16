@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: PostParams }): Prom
     });
   }
   const { metadata: post } = await fetchPost(params.id);
-  const title = makePageTitle(`${post.title} - post in kbmackenzie's blog`);
+  const title = makePageTitle(`${post.title} - Post in kbmackenzie's blog`);
   return {
     title: title,
     description: post.description,

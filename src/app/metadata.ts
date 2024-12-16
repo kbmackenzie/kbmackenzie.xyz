@@ -8,7 +8,7 @@ type MetadataMaker = Readonly<{
 
 export const root = {
   title: 'kbmackenzie\'s corner',
-  description: 'Functional programming, esoteric languages, game modding... and cats!',
+  description: 'An internet alpaca talks about programming too much.',
 };
 
 export function makePageTitle(words: string) {

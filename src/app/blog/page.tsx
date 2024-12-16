@@ -7,7 +7,7 @@ import { makeMetadata, makePageTitle } from '@/app/metadata';
 
 export const metadata: Metadata = makeMetadata({
   title: makePageTitle('blog'),
-  description: 'Kelly\'s blog posts.',
+  description: 'An internet alpaca\'s programming blog.',
 });
 
 export default async function Blog() {

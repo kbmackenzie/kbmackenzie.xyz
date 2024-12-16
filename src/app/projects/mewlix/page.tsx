@@ -7,7 +7,7 @@ import { makeMetadata, makePageTitle } from '@/app/metadata';
 
 export const metadata: Metadata = makeMetadata({
   title: makePageTitle('mewlix'),
-  description: 'Documentation for Mewlix, a cat-themed esolang',
+  description: 'Documentation for Mewlix, a cat-themed esolang.',
   keywords: ['cats', 'esolang', 'programming'],
 });
 
