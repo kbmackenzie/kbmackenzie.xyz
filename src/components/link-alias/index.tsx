@@ -1,4 +1,4 @@
-import { aliasTable } from '@/features/link-alias/store/alias-table';
+import { linkAliases } from '@/store/link-aliases';
 import { ComponentProps } from 'react';
 import Link from 'next/link';
 
@@ -13,7 +13,7 @@ export function LinkAlias({ children, href, ...props }: ComponentProps<'a'>) {
     return <a href={href} {...props}>{children}</a>
   }
   const key    = parsed[1];
-  const prefix = aliasTable[key] ?? '/'; /* forgive bad prefixes. better than exploding. */
+  const prefix = linkAliases[key] ?? '/'; /* forgive bad prefixes. better than exploding. */
   const url    = prefix + parsed[2];
   return <Link href={url} {...props}>{children}</Link>
 }
