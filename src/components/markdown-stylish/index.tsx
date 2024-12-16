@@ -1,5 +1,6 @@
-import { headingAnchors } from '@/components/markdown-stylish/anchor';
+import { anchorAlias } from '@/components/markdown-stylish/anchor';
 import { codeBlock } from '@/components/markdown-stylish/code';
+import { headingAnchors } from '@/components/markdown-stylish/heading';
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { styleClasses } from '@/utils/style-classes';
@@ -19,6 +20,7 @@ type Props = {
 
 export function MarkdownStylish({ className, children, additionalComponents }: Props) {
   const components: Components = {
+    ...anchorAlias,
     ...codeBlock,
     ...headingAnchors,
     ...additionalComponents
