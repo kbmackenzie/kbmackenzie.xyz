@@ -1,4 +1,4 @@
-import { MewlixDoc } from '@/features/mewlix-doc';
+import { MarkdownDoc } from '@/features/markdown-doc';
 import { getStaticFile } from '@/utils/static-file';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/app/projects/mewlix/page.module.sass';
@@ -19,8 +19,8 @@ export default function Mewlix() {
         Mewlix
       </h2>
       <hr className={styles.divider} />
-      <MewlixDoc
-        docpath={path}
+      <MarkdownDoc
+        docPath={path}
         className={styleClasses('alpaca-markdown', styles.doc)} />
     </main>
   );

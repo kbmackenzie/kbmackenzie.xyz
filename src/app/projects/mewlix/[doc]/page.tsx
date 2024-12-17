@@ -1,4 +1,4 @@
-import { MewlixDoc } from '@/features/mewlix-doc';
+import { MarkdownDoc } from '@/features/markdown-doc';
 import { getStaticFile } from '@/utils/static-file';
 import { styleClasses } from '@/utils/style-classes';
 import { notFound } from 'next/navigation';
@@ -57,8 +57,8 @@ export default function MewlixDocfile({ params }: { params: MewlixDocParam }) {
   return (
     <main className={styles.body}>
       <MewlixContext />
-      <MewlixDoc
-        docpath={path}
+      <MarkdownDoc
+        docPath={path}
         className={styleClasses('alpaca-markdown', styles.doc)} />
       <BubblegumButton href="/projects/mewlix" className={styles['see-full']}>
         See Full Documentation
