@@ -1,12 +1,11 @@
 'use client';
 
-import { useRef, useCallback, useEffect } from 'react';
-import { AttrsAndStyle } from '@/types/attrs-and-style';
+import { ComponentProps, useRef, useCallback, useEffect } from 'react';
 import { MousePosition, MouseCallback, useMousePosition } from '@/hooks/use-mouse-position';
 
 export type DrawCallback = (context: CanvasRenderingContext2D, mouse: MousePosition) => void;
 
-type Props = AttrsAndStyle<HTMLCanvasElement> & {
+type Props = ComponentProps<'canvas'> & {
   draw: DrawCallback;
   width: number;
   height: number;

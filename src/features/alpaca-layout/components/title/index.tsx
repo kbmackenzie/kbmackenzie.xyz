@@ -1,9 +1,9 @@
-import { AttrsAndStyle } from '@/types/attrs-and-style';
+import { ComponentProps } from 'react';
 import { firaMono } from '@/fonts';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/alpaca-layout/components/title/index.module.sass';
 
-export function Title({ ...props }: AttrsAndStyle<HTMLHeadingElement>) {
+export function Title({ ...props }: ComponentProps<'h1'>) {
   const classes = styleClasses(firaMono.className, styles.title);
   return (
     <h1 {...props}>

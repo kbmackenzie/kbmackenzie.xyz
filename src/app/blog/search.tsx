@@ -1,11 +1,10 @@
 'use client';
 
-import { useCallback, useRef, KeyboardEvent} from 'react';
-import { AttrsAndStyle } from '@/types/attrs-and-style';
+import { ComponentProps, useCallback, useRef, KeyboardEvent} from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 
-export function Search(props: AttrsAndStyle<HTMLDivElement>) {
+export function Search(props: ComponentProps<'div'>) {
   const input = useRef<HTMLInputElement | null>(null);
 
   const router = useRouter();

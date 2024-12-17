@@ -1,12 +1,11 @@
 'use client';
 
-import { useRef, useCallback } from 'react';
-import { AttrsAndStyle } from '@/types/attrs-and-style';
+import { ComponentProps, useRef, useCallback } from 'react';
 import { AnimationCallback, useAnimation } from '@/hooks/use-animation';
 
 export type DrawCallback = (context: CanvasRenderingContext2D, delta: number) => void;
 
-type Props = AttrsAndStyle<HTMLCanvasElement> & {
+type Props = ComponentProps<'canvas'> & {
   draw: DrawCallback;
   width: number;
   height: number;

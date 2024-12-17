@@ -1,7 +1,6 @@
 'use client';
 
-import { useCallback } from 'react';
-import { AttrsAndStyle } from '@/types/attrs-and-style';
+import { ComponentProps, useCallback } from 'react';
 import { SpriteDetails, useSpritesheet } from '@/hooks/use-spritesheet';
 import { CanvasMouseAnimation, DrawCallback } from '@/components/canvas-mouse-animation';
 import { lerp, easeInQuad } from '@/utils/animation';
@@ -28,7 +27,7 @@ function interpolateX(x: number, max: number): number {
   return clamp(target, 0, max);
 }
 
-export function Alpaca({ className, ...props }: AttrsAndStyle<HTMLDivElement>) {
+export function Alpaca({ className, ...props }: ComponentProps<'div'>) {
   const sprites = useSpritesheet(alpacaPeek.src, alpacaSprites);
 
   const drawAlpaca = useCallback<DrawCallback>((context, mouse) => {
