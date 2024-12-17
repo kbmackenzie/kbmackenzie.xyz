@@ -1,18 +1,12 @@
 import { ReactNode } from 'react';
 import { Project } from '@/types/project';
 import { SkillIcon } from '@/features/skill-icon';
-import { MarkdownStylish } from '@/components/markdown-stylish';
-import { readFile } from 'fs/promises';
+import { MarkdownDoc } from '@/features/markdown-doc';
 import Image from 'next/image';
 import Link from 'next/link';
 import { styleClasses } from '@/utils/style-classes';
 import { firaMono } from '@/fonts';
 import styles from '@/app/projects/project-card.module.sass';
-
-async function readDataFile(project: Project): Promise<string> {
-  const buffer = await readFile(project.datafile)
-  return buffer.toString();
-}
 
 type ProjectLinkProps = {
   project: Project;
@@ -44,7 +38,6 @@ type ProjectCardProps = {
 };
 
 export async function ProjectCard({ project, className }: ProjectCardProps) {
-  const body = await readDataFile(project);
   return (
     <div id={project.id} className={styleClasses(styles.card, className)}>
       <div className={styles.icon}>
@@ -64,9 +57,9 @@ export async function ProjectCard({ project, className }: ProjectCardProps) {
             </li>
           ))}
         </ul>
-        <MarkdownStylish className="alpaca-markdown">
-          {body}
-        </MarkdownStylish>
+        <MarkdownDoc
+          docPath={project.datafile}
+          className="alpaca-markdown" />
         <ProjectLink
           project={project}
           className={styleClasses(styles.button, firaMono.className)}>
