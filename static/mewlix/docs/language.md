@@ -118,9 +118,10 @@ nothing .. []        -- "nothing[]"
 At first glance, Mewlix may appear to have an additional type, the `unrecognized` type.
 
 ```mewlix
-takes foreign_object            -- foreign_object comes from a language extension, maybe
-meow (type of foreign_object)   -- prints: 'unrecognized'
+mew foreign_value = ext()     -- assuming 'ext()' is an extension function.
+meow (type of foreign_value)  -- prints: 'unrecognized'
 ```
+
 However, the `unrecognized` type isn't really a type of its own. It just means the value received is foreign and cannot be understood as a Mewlix value.
 
 A plain JavaScript object will, for example, be `unrecognized`.
@@ -340,7 +341,7 @@ This is how it works across for each project mode:
 |----------|---------------------------------------------------------|
 | console  | The `meow` expression writes a new line to the console. |
 | graphic  | The `meow` expression writes text to the canvas.        |
-| liibrary | The `meow` expression functions the same as `std.log`.  |
+| node     | The `meow` expression functions the same as `std.log`.  |
 
 ----
 
