@@ -2,15 +2,9 @@
 
 Mewlix is a cat-themed esoteric programming language designed for creating small pixel games! It compiles to vanilla JavaScript and runs natively on a browser.
 
-Mewlix's compiler is written in pure Haskell, and the source code is [fully available on Github][1].
+The compiler is written in pure Haskell, and is a self-contained binary executable. The source code is [fully available on Github][1].
 
-The compiler is a self-contained binary executable. It can build projects, run them in a local server, and package them into a neat `.zip` file for upload to websites like [itch.io][4]!
-
-A Mewlix source file should have the `.mews` extension, and should be an UTF8-encoded text file.
-
-A fun, brief guide to Mewlix can be found [in this section](#learn-mewlix-in-y-minutes)!
-
-A list of example projects with fully available source code can be found [here][3]!
+A list of example projects with fully available source code can be found [here][3]. 🐱💖
 
 ### Table of Contents
 
@@ -21,13 +15,17 @@ A list of example projects with fully available source code can be found [here][
 
 ### Documentation
 
+A Mewlix source file should have the `.mews` extension, and should be an UTF8-encoded text file.
+
+A fun, brief guide to Mewlix can be found [in this section](#learn-mewlix-in-y-minutes)!
+
 1. [Language and Syntax](@mewlix/language)
 2. [Compiler and Project Management](@mewlix/compiler)
 3. [Standard Library](@mewlix/std)
-  1. [Functional Patterns](@mewlix/functional-patterns)
 4. [Graphic Template](@mewlix/graphic)
 5. [Console Template](@mewlix/console)
-6. [FAQ](@mewlix/faq)
+6. [Functional Patterns](@mewlix/functional-patterns)
+7. [FAQ](@mewlix/faq)
 
 #### Learn Mewlix in Y Minutes
 
