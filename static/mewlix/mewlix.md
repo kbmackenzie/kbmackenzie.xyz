@@ -4,7 +4,7 @@ Mewlix is a cat-themed esoteric programming language designed for creating small
 
 The compiler is written in pure Haskell, and is a self-contained binary executable. The source code is [fully available on Github][1].
 
-A list of example projects with fully available source code can be found [here][3]. 🐱💖
+A fun, brief guide to Mewlix can be found [in this section](#learn-mewlix-in-y-minutes)! 🐱💖
 
 ### Table of Contents
 
@@ -17,7 +17,7 @@ A list of example projects with fully available source code can be found [here][
 
 A Mewlix source file should have the `.mews` extension, and should be an UTF8-encoded text file.
 
-A fun, brief guide to Mewlix can be found [in this section](#learn-mewlix-in-y-minutes)!
+A list of example projects with fully available source code can be found [here][3]! 🌈
 
 1. [Language and Syntax](@mewlix/language)
 2. [Compiler and Project Management](@mewlix/compiler)
