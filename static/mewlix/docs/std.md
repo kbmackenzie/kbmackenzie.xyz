@@ -395,13 +395,21 @@ This function expects the following arguments:
 2. A shelf.
 
 #### std.repeat
-**type:** `(number, (number?) -> any) -> nothing`
+**type:** `<🐱>((number?) -> 🐱, number) -> [🐱]`
 
-Repeatedly invoke a callback function `n` times.
+Invoke a function `n` times, storing the return values in a shelf.
 
 This function expects the following arguments:
-1. A number indicating how many times the function should be invoked.
-2. A callback function to be invoked. The function may optionally accept a numeric argument, which will always be equal to the number of times the function has been called so far (starting at `0`).
+
+1. A function to be invoked. This function may accept an optional numerical argument: the number of times the function has been called so far.
+2. A number indicating how many times the function should be invoked.
+
+#### std.sequence
+**type:** `((number?) -> nothing, number) -> nothing` 
+
+Invoke a function `n` times. It works like [std.repeat](#std-repeat), but discards return values.
+
+It accepts the same arguments as [std.repeat](#std-repeat).
 
 ----
 
