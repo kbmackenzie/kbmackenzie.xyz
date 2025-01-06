@@ -47,7 +47,7 @@ Usage: mewlix COMMAND [-q|--quiet] [-s|--standalone] [-c|--config PATH]
 
 Available options:
   -q,--quiet               Silence compiler messages
-  -s,--standalone          Ignore project file, use project defaults
+  -s,--standalone          Ignore config file, use project defaults
   -c,--config PATH         Path to config file
   -h,--help                Show this help text
 
@@ -64,14 +64,14 @@ Available commands:
 ##### `init --help`
 
 ```none
-Usage: mewlix init [NAME] [(-l|--console) | (-g|--graphic) | (-n|--node)]
+Usage: mewlix init [NAME] [--console | --graphic | --node]
 
   Create a new project in the current directory
 
 Available options:
-  -l,--console             Console template
-  -g,--graphic             Graphic template
-  -n,--node                Node.js template
+  --console                Use console template
+  --graphic                Use graphic template
+  --node                   Use Node.js template
   -h,--help                Show this help text
 ```
 
@@ -79,20 +79,21 @@ Available options:
 
 ```none
 Usage: mewlix build [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                    [(-l|--console) | (-g|--graphic) | (-n|--node)] 
-                    [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme]
+                    [--console | --graphic | --node] [-a|--asset PATH] 
+                    [-p|--pretty] [-n|--release] [--no-std] [--no-readme]
 
   Build project
 
 Available options:
   -o,--name STRING         Project name
   -e,--entrypoint KEY      Project entrypoint
-  -l,--console             Console template
-  -g,--graphic             Graphic template
-  -n,--node                Node.js template
-  -a,--asset PATH          Project asset
+  --console                Use console template
+  --graphic                Use graphic template
+  --node                   Use Node.js template
+  -a,--asset PATH          Add project asset
   -p,--pretty              Prettify compiler output
-  --no-std                 Do not include std library binding when compiling
+  -n,--release             Enable release mode
+  --no-std                 Do not implicitly import 'std' in yarn balls
   --no-readme              Do not auto-generate a README file
   -h,--help                Show this help text
 ```
@@ -101,8 +102,8 @@ Available options:
 
 ```none
 Usage: mewlix run [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                  [(-l|--console) | (-g|--graphic) | (-n|--node)] 
-                  [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme] 
+                  [--console | --graphic | --node] [-a|--asset PATH] 
+                  [-p|--pretty] [-n|--release] [--no-std] [--no-readme] 
                   [--port INT] [-r|--rebuild] [--no-browser]
 
   Run project
@@ -110,12 +111,13 @@ Usage: mewlix run [FILES] [-o|--name STRING] [-e|--entrypoint KEY]
 Available options:
   -o,--name STRING         Project name
   -e,--entrypoint KEY      Project entrypoint
-  -l,--console             Console template
-  -g,--graphic             Graphic template
-  -n,--node                Node.js template
-  -a,--asset PATH          Project asset
+  --console                Use console template
+  --graphic                Use graphic template
+  --node                   Use Node.js template
+  -a,--asset PATH          Add project asset
   -p,--pretty              Prettify compiler output
-  --no-std                 Do not include std library binding when compiling
+  -n,--release             Enable release mode
+  --no-std                 Do not implicitly import 'std' in yarn balls
   --no-readme              Do not auto-generate a README file
   --port INT               Port number to use when running project
   -r,--rebuild             Rebuild project
@@ -127,20 +129,21 @@ Available options:
 
 ```none
 Usage: mewlix package [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                      [(-l|--console) | (-g|--graphic) | (-n|--node)] 
-                      [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme]
+                      [--console | --graphic | --node] [-a|--asset PATH] 
+                      [-p|--pretty] [-n|--release] [--no-std] [--no-readme]
 
   Package project's build output into a .zip archive
 
 Available options:
   -o,--name STRING         Project name
   -e,--entrypoint KEY      Project entrypoint
-  -l,--console             Console template
-  -g,--graphic             Graphic template
-  -n,--node                Node.js template
-  -a,--asset PATH          Project asset
+  --console                Use console template
+  --graphic                Use graphic template
+  --node                   Use Node.js template
+  -a,--asset PATH          Add project asset
   -p,--pretty              Prettify compiler output
-  --no-std                 Do not include std library binding when compiling
+  -n,--release             Enable release mode
+  --no-std                 Do not implicitly import 'std' in yarn balls
   --no-readme              Do not auto-generate a README file
   -h,--help                Show this help text
 ```
@@ -169,6 +172,12 @@ Silence compiler messages. The compiler won't log anything to `stdout` when you 
 ##### `-p` / `--pretty`
 
 Prettify compiler output. This makes the generated `yarnballs.js` file more readable by adding indentation and linebreaks.
+
+##### `-n / --release`
+
+Enable **release mode**. In practice, this means [**assertions**](@mewlix/language#assert) will not be compiled.
+
+You should use this when building a release of your project.
 
 ##### `--no-std`
 
