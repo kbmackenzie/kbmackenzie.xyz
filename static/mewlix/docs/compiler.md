@@ -43,11 +43,12 @@ The Mewlix compiler includes a detailed `--help` message explaining its commands
 ```none
 mewlix - a compiler for a cat-oriented programming language
 
-Usage: mewlix COMMAND [-q|--quiet] [-s|--standalone]
+Usage: mewlix COMMAND [-q|--quiet] [-s|--standalone] [-c|--config PATH]
 
 Available options:
   -q,--quiet               Silence compiler messages
   -s,--standalone          Ignore project file, use project defaults
+  -c,--config PATH         Path to config file
   -h,--help                Show this help text
 
 Available commands:
@@ -63,12 +64,12 @@ Available commands:
 ##### `init --help`
 
 ```none
-Usage: mewlix init [NAME] [(-c|--console) | (-g|--graphic) | (-n|--node)]
+Usage: mewlix init [NAME] [(-l|--console) | (-g|--graphic) | (-n|--node)]
 
   Create a new project in the current directory
 
 Available options:
-  -c,--console             Console template
+  -l,--console             Console template
   -g,--graphic             Graphic template
   -n,--node                Node.js template
   -h,--help                Show this help text
@@ -78,7 +79,7 @@ Available options:
 
 ```none
 Usage: mewlix build [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                    [(-c|--console) | (-g|--graphic) | (-n|--node)] 
+                    [(-l|--console) | (-g|--graphic) | (-n|--node)] 
                     [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme]
 
   Build project
@@ -86,7 +87,7 @@ Usage: mewlix build [FILES] [-o|--name STRING] [-e|--entrypoint KEY]
 Available options:
   -o,--name STRING         Project name
   -e,--entrypoint KEY      Project entrypoint
-  -c,--console             Console template
+  -l,--console             Console template
   -g,--graphic             Graphic template
   -n,--node                Node.js template
   -a,--asset PATH          Project asset
@@ -100,7 +101,7 @@ Available options:
 
 ```none
 Usage: mewlix run [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                  [(-c|--console) | (-g|--graphic) | (-n|--node)] 
+                  [(-l|--console) | (-g|--graphic) | (-n|--node)] 
                   [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme] 
                   [--port INT] [-r|--rebuild] [--no-browser]
 
@@ -109,7 +110,7 @@ Usage: mewlix run [FILES] [-o|--name STRING] [-e|--entrypoint KEY]
 Available options:
   -o,--name STRING         Project name
   -e,--entrypoint KEY      Project entrypoint
-  -c,--console             Console template
+  -l,--console             Console template
   -g,--graphic             Graphic template
   -n,--node                Node.js template
   -a,--asset PATH          Project asset
@@ -126,7 +127,7 @@ Available options:
 
 ```none
 Usage: mewlix package [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                      [(-c|--console) | (-g|--graphic) | (-n|--node)] 
+                      [(-l|--console) | (-g|--graphic) | (-n|--node)] 
                       [-a|--asset PATH] [-p|--pretty] [--no-std] [--no-readme]
 
   Package project's build output into a .zip archive
@@ -134,7 +135,7 @@ Usage: mewlix package [FILES] [-o|--name STRING] [-e|--entrypoint KEY]
 Available options:
   -o,--name STRING         Project name
   -e,--entrypoint KEY      Project entrypoint
-  -c,--console             Console template
+  -l,--console             Console template
   -g,--graphic             Graphic template
   -n,--node                Node.js template
   -a,--asset PATH          Project asset
