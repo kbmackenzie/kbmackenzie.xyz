@@ -889,9 +889,11 @@ The `assert` statement can be used to, as the name implies, make assertions abou
 assert x == 2 
 ```
 
-When an assertion fails, an error is thrown. It functions very similarly to C's `assert()` macro.
+It functions very similarly to C's `assert()` macro.
 
-Additionally, the compiler remembers what `.mews` file and what line number an assertion was defined in, and this information is included in the error message.
+When an assertion fails, an error is thrown. The compiler remembers what `.mews` file and what line number an assertion was defined in, and this information is included in the error message.
+
+When you use [**release mode**](@mewlix/compiler#-n-----release), assertions are skipped and are not compiled.
 
 #### `explode`
 
