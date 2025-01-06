@@ -331,7 +331,12 @@ flags:
 
 ##### `description`
 
-A description for your project. This field is entirely optional; the description will only ever be used inside of the auto-generated `README.md` file in your project's build folder.
+A description for your project. This field is entirely optional.
+
+The description is used in a few places:
+
+- The auto-generated README file in your build folder.
+- The **page description** in the generated webpage (when building in `graphic` or `console` mode).
 
 ```yaml
 description: I like cats!
