@@ -1050,7 +1050,7 @@ A clowder that inherits from another clowder can override its parent clowder's m
 ```mewlix
 clowder Bob is Cat
   🐱 wake()
-    outside("bob")
+    outside('bob')
   ~meow
 
   -- override 'introduction' method
@@ -1061,6 +1061,25 @@ clowder Bob is Cat
 
 mew bob = new Bob()
 meow bob.introduction() -- prints: 'bob does not like introducing himself.'
+```
+
+#### String Representation
+
+A custom string representation for a clowder can be defined with the **purr** method:
+
+```mewlix
+clowder Charlie is Cat
+  🐱 wake()
+    look outside('charlie')
+  ~meow
+
+  🐱 purr()
+    bring 'meow meow!'
+  ~meow
+~meow
+
+mew charlie = new Charlie()
+meow charlie -- prints: 'meow meow!'
 ```
 
 ----
