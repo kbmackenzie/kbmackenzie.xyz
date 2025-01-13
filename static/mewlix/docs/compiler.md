@@ -8,11 +8,12 @@ The compiler is a self-contained binary executable. Pre-compiled binaries for Li
 
 1. [Command-Line Interface](#command-line-interface)
 2. [Project Management](#project-management)
-  1. [Building a Project](#building-a-project)
-  2. [Running a Project](#running-a-project)
-  3. [Packaging a Project](#packaging-a-project)
-  4. [Cleaning](#cleaning)
-  5. [Building Without A Project File](#building-without-a-project-file)
+    1. [Building a Project](#building-a-project)
+    2. [Running a Project](#running-a-project)
+    3. [Packaging a Project](#packaging-a-project)
+    4. [Cleaning](#cleaning)
+    5. [Building Without A Project File](#building-without-a-project-file)
+3. [Project Templates](#project-templates)
 
 ----
 
@@ -274,7 +275,7 @@ There are **three** available project modes:
 | console | A virtual console.                                           |
 | graphic | A little game framework for pixel games.                     |
 | node    | No HTML/CSS; bundle scripts for use in Node.js.              |
-| blank   | No HTML/CSS; fully blank template for use on web projects.   |
+| blank   | No HTML/CSS; fully blank template for use in web projects.   |
 
 To learn more, read the documentation page for each project mode:
 - [Console template](@mewlix/console)
@@ -432,6 +433,27 @@ You can still pass in additional compiler flags to configure your project:
 ```bash
 mewlix build -s "main.mews" --name "example project" --console
 ```
+
+----
+
+### Project Templates
+
+The Mewlix compiler comes with a number of project templates you can use:
+
+| Mode    | Description                                                  |
+|---------|--------------------------------------------------------------|
+| console | A virtual console.                                           |
+| graphic | A little game framework for pixel games.                     |
+| node    | No HTML/CSS; bundle scripts for use in Node.js.              |
+| blank   | No HTML/CSS; fully blank template for use in web projects.   |
+
+To learn more, read the documentation page for each project template:
+- [Console template](@mewlix/console)
+- [Graphic template](@mewlix/graphic)
+
+Additionally, project templates can be extended by overriding the **index.js** file for each template.
+
+To learn more, [read the documentation page on language extensions](@mewlix/extensions).
 
 [1]: https://yaml.org/
 [2]: https://man7.org/linux/man-pages/man7/glob.7.html
