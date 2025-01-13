@@ -10,19 +10,23 @@ The **graphic** project template is designed for creating **small pixel games**.
 The best way to learn how to use the graphic project mode is to look at the [example project showcase](#)!
 
 #### `meow`
+
 When using the `graphic` project mode, the `meow` expressions gains a special definition: It writes text to the canvas. The text options for the `meow` statement—such as font, color and alignment—can be set with the `meow_options()` function from `std.graphic`.
 
 #### Pixel Canvas
+
 The pixel canvas' dimensions are **128 x 128 pixels**. In practice, the HTML5 canvas used is much bigger for the sake of ensuring image quality, but you shouldn't worry about that.
 
 ----
 
 ### The `std.graphic` Yarn Ball
+
 The `std.graphic` yarn ball is an extension of the standard library that's included when you build your project with the `graphic` project mode. When imported without an alias, its default name is `graphic`.
 
 A [curried](https://en.wikipedia.org/wiki/Currying) variant of the `std.graphic` yarn ball is available, as explained [here](@mewlix/functional-patterns#std-graphic-curry).
 
 #### Table of Contents
+
 1. [Core](#core)
 2. [Drawing](#drawing)
 3. [Writing Text](#writing-text)
@@ -37,6 +41,7 @@ A [curried](https://en.wikipedia.org/wiki/Currying) variant of the `std.graphic`
 A set of core functions for loading resources and initializing the canvas game loop.
 
 #### graphic.init
+
 **type:** `((number?) -> nothing) -> nothing`
 
 Initialize the canvas, passing your game loop function as argument.
@@ -48,6 +53,7 @@ Additionally, the game loop function can accept an optional numeric argument: th
 In the event of an exception inside of the game loop, an error screen will be shown.
 
 #### graphic.init_
+
 **type:** `((number?) -> nothing) -> nothing`
 
 Like [graphic.init](#graphic-init), but calls [graphic.thumbnail](#graphic-thumbnail) first.
@@ -55,6 +61,7 @@ Like [graphic.init](#graphic-init), but calls [graphic.thumbnail](#graphic-thumb
 It passes the same game loop function to both.
 
 #### graphic.delta
+
 **type:** `() -> number`
 
 Get the *'delta time'*: the amount of time that has elapsed since the previous frame, in seconds.
@@ -64,6 +71,7 @@ This function should only ever be called inside the game loop.
 Additionally, the delta time value will always be 0 in the first frame, as there's no *'previous'* frame. It will also be 0 if `init()` hasn't been called yet.
 
 #### graphic.load
+
 **type:** `(string, string, box?) -> nothing`
 
 Load a resource and bind it to a string key. It accepts the following arguments:
@@ -93,6 +101,7 @@ graphic.load("crop_example", "res/spritesheet.png", new Rectangle(0, 0, 16, 16))
 **Note:** This function enqueues resources to be loaded, but resources are only truly loaded when **graphic.init** is called.
 
 #### graphic.thumbnail
+
 **type:** `(() -> nothing) -> nothing`
 
 Accepts a callback function for drawing a *'thumbnail'* for the game while it's waiting for permission to start.
@@ -128,6 +137,7 @@ spritesheet("res/spritesheet.png", [
 A set of functions for drawing sprites and rectangles to the canvas.
 
 #### graphic.draw
+
 **type:** `(string, number?, number?) -> nothing`
 
 Draw a sprite on the screen at a specified (x, y) position. This function expects the following arguments:
@@ -136,6 +146,7 @@ Draw a sprite on the screen at a specified (x, y) position. This function expect
 3. The y coordinate to draw the sprite in. When omitted, it defaults to 0.
 
 #### graphic.measure
+
 **type:** `(string) -> box`
 
 Asks the dimensions of a sprite.
@@ -176,6 +187,7 @@ Fill the canvas with a solid color. This function expects the following argument
 A set of functions for writing text to the canvas.
 
 #### graphic.write
+
 **type:** `(any, number?, number?, box?) -> nothing`
 
 Draw text on the screen at a specified (x, y) position. This function expects the following arguments:
@@ -191,6 +203,7 @@ The optional box parameter can contain any of these fields:
 You can omit any of the options above from the box, and a default value will be used for the omitted field.
 
 #### graphic.measure_text
+
 **type:** `(any, box?) -> box`
 
 Measure the width and height of text in the canvas, in pixels. This function doesn't *draw* any text; it only measures how much space the text would take up if it *was* drawn.
@@ -204,6 +217,28 @@ The optional box parameter follows the same rules as the one in [graphic.write](
 This function returns a box with the following properties:
 1. **width**: The text width, in pixels.
 2. **height**: The text height, in pixels.
+
+#### graphic.load_text
+
+**type:** `(string) -> nothing`
+
+Load text from a file and store it as a **text asset** (available inside the game loop).
+
+This function expects the following arguments:
+1. **path**: Path to a text file.
+
+**Note:** Text assets are **only read once**—when all assets are loaded, before the game loop runs.
+
+#### graphic.get_text
+
+**type:** `(string) -> string`
+
+Get **text asset**. This function should only be called inside the game loop.
+
+This function expects the following arguments:
+1. **path**: The filepath used when loading the text asset with [graphic.load_asset](#graphic-load_asset).
+
+It returns the contents of the text file read.
 
 #### graphic.meow_options
 
