@@ -184,6 +184,10 @@ Enable **release mode**. In practice, this means [**assertions**](@mewlix/langua
 
 You should use this when building a release of your project.
 
+##### `-c / --config PATH`
+
+Specify a custom path for your [project file](#project-file). This option always expects an **argument**.
+
 ##### `--no-std`
 
 Tells the compiler not to implicitly import the `std` module when compiling yarn balls.
