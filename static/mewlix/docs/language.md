@@ -342,6 +342,25 @@ This is how it works across for each project mode:
 | console  | The `meow` expression writes a new line to the console. |
 | graphic  | The `meow` expression writes text to the canvas.        |
 | node     | The `meow` expression functions the same as `std.log`.  |
+| blank    | The `meow` expression has no default implementation.    |
+
+#### Multiline Strings
+
+Multiline strings literals can be written with triple quotes; either `"""` or `'''`:
+
+```mewlix
+-- Single-quote multiline strings:
+'''
+meow meow!
+'''
+
+-- Double-quote multiline strings:
+"""
+meow meow!
+"""
+```
+
+**Note:** The first character in a multiline string is ignored if it's a newline.
 
 ----
 
