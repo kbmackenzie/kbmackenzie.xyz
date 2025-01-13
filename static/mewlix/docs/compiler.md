@@ -64,7 +64,7 @@ Available commands:
 ##### `init --help`
 
 ```none
-Usage: mewlix init [NAME] [--console | --graphic | --node]
+Usage: mewlix init [NAME] [--console | --graphic | --node | --blank]
 
   Create a new project in the current directory
 
@@ -72,6 +72,7 @@ Available options:
   --console                Use console template
   --graphic                Use graphic template
   --node                   Use Node.js template
+  --blank                  Use blank template
   -h,--help                Show this help text
 ```
 
@@ -79,7 +80,7 @@ Available options:
 
 ```none
 Usage: mewlix build [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                    [--console | --graphic | --node] [-a|--asset PATH] 
+                    [--console | --graphic | --node | --blank] [-a|--asset PATH]
                     [-p|--pretty] [-n|--release] [--no-std] [--no-readme]
 
   Build project
@@ -90,6 +91,7 @@ Available options:
   --console                Use console template
   --graphic                Use graphic template
   --node                   Use Node.js template
+  --blank                  Use blank template
   -a,--asset PATH          Add project asset
   -p,--pretty              Prettify compiler output
   -n,--release             Enable release mode
@@ -102,7 +104,7 @@ Available options:
 
 ```none
 Usage: mewlix run [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                  [--console | --graphic | --node] [-a|--asset PATH] 
+                  [--console | --graphic | --node | --blank] [-a|--asset PATH] 
                   [-p|--pretty] [-n|--release] [--no-std] [--no-readme] 
                   [--port INT] [-r|--rebuild] [--no-browser]
 
@@ -114,6 +116,7 @@ Available options:
   --console                Use console template
   --graphic                Use graphic template
   --node                   Use Node.js template
+  --blank                  Use blank template
   -a,--asset PATH          Add project asset
   -p,--pretty              Prettify compiler output
   -n,--release             Enable release mode
@@ -129,8 +132,9 @@ Available options:
 
 ```none
 Usage: mewlix package [FILES] [-o|--name STRING] [-e|--entrypoint KEY] 
-                      [--console | --graphic | --node] [-a|--asset PATH] 
-                      [-p|--pretty] [-n|--release] [--no-std] [--no-readme]
+                      [--console | --graphic | --node | --blank] 
+                      [-a|--asset PATH] [-p|--pretty] [-n|--release] [--no-std] 
+                      [--no-readme]
 
   Package project's build output into a .zip archive
 
@@ -140,6 +144,7 @@ Available options:
   --console                Use console template
   --graphic                Use graphic template
   --node                   Use Node.js template
+  --blank                  Use blank template
   -a,--asset PATH          Add project asset
   -p,--pretty              Prettify compiler output
   -n,--release             Enable release mode
@@ -265,6 +270,7 @@ There are **three** available project modes:
 | console | A virtual console.                                           |
 | graphic | A little game framework for pixel games.                     |
 | node    | No HTML/CSS; bundle scripts for use in Node.js.              |
+| blank   | No HTML/CSS; fully blank template for use on web projects.   |
 
 To learn more, read the documentation page for each project mode:
 - [Console template](@mewlix/console)
@@ -379,6 +385,7 @@ Its behavior differs based on project mode:
 | console | Runs the project in a local HTTP server.                     |
 | graphic | Runs the project in a local HTTP server.                     |
 | node    | Runs the project using Node.js, if available.                |
+| blank   | Does nothing; throws an error and exits.                     |
 
 When you run this command, the compiler will look for a project file, read it, build the project if it hasn't yet been built, and then run the built project.
 
