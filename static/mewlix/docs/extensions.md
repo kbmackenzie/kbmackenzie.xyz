@@ -41,3 +41,5 @@ export default () => init(mewlix => {
   });
 });
 ```
+
+**Note:** The callback function passed to the initializer function is allowed to return a Promise, and that Promise will be awaited.
