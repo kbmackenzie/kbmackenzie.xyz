@@ -13,7 +13,7 @@ It can be done in 3 simple steps:
 
 A simple example of a language extension can be found below.
 
-```js
+```javascript
 /* A small language extension that makes the 'meow' expression use window.alert().
  * It will only work in web project modes (console, graphic and blank). */
 import init from './init.js';
@@ -30,7 +30,7 @@ The `Mewlix` object also exposes a few useful API functions under `Mewlix.api`, 
 - `Mewlix.api.shelf(...items)`: A variadic function that creates a shelf from its arguments.
 - `Mewlix.api.inject(key, object)`: An API function for creating yarn balls. The object passed as a second argument should contain all fields you want your yarn ball to export.
 
-```js
+```javascript
 /* A small language extension that adds a silly example yarn ball.
  * It will only work in web project modes (console, graphic and blank). */
 import init from './init.js';
