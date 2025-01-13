@@ -19,6 +19,7 @@ const docs: ReadonlyArray<string> = [
   'graphic',
   'console',
   'functional-patterns',
+  'extensions',
   'faq',
 ];
 
