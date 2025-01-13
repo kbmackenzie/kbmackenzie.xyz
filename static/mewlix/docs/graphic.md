@@ -452,35 +452,6 @@ It contains the following methods:
 | contains | `(Vector2) -> boolean`   | Asks whether a point is inside a Rectangle.         |
 | collides | `(Rectangle) -> Vector2` | Asks whether a Rectangle is colliding with another. |
 
-#### graphic.GridSlot
-
-**clowder constructor:** `(number, number) -> GridSlot`
-
-A grid slot clowder. Its constructor expects the following arguments:
-1. A row index. Indices start at 0.
-2. A column index. Indices start at 0.
-
-The pixel canvas can be divided into a grid of **16 x 16 pixel tiles**, with **8 rows** and **8 columns**. This clowder represents a slot in said grid. Thinking about the canvas as a grid can make positioning sprites a lot easier!
-
-***None*** of its methods mutate the clowder itself.
-
-It contains the following methods:
-| Method   | Type            | Description                             |
-|----------|-----------------|-----------------------------------------|
-| position | `() -> Vector2` | Get the world position for a grid slot. |
-
-#### graphic.grid_slot
-
-**type:** `(Vector2) -> GridSlot`
-
-Converts a [Vector2](#graphic-vector2) world point to a grid slot stored as a [GridSlot](#graphic-gridslot) box.
-
-#### graphic.slot_point
-
-**type:** `(GridSlot) -> Vector2`
-
-Converts a [GridSlot](#graphic-gridslot) grid slot to a world point stored as a [Vector2](#graphic-vector2) box.
-
 #### graphic.Color
 
 **clowder constructor:** `(number, number, number, number?) -> box`
