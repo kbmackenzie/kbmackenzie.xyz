@@ -236,7 +236,7 @@ This function expects the following arguments:
 Get **text asset**. This function should only be called inside the game loop.
 
 This function expects the following arguments:
-1. **path**: The filepath used when loading the text asset with [graphic.load_asset](#graphic-load_asset).
+1. **path**: The filepath used when loading the text asset with [graphic.load_text](#graphic-load_text).
 
 It returns the contents of the text file read.
 
