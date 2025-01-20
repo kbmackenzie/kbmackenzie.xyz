@@ -1,6 +1,6 @@
 ## Graphic Mode 🐱
 
-![Animated GIF of a little Snake game clone written in Mewlix.](/mewlix-previews/mewlix-snake.webp)
+![Animated GIF of a little Snake game clone written in Mewlix.](/mewlix/previews/mewlix-snake.webp)
 
 The **graphic** project template is designed for creating **small pixel games**. It includes:
 1. A **128 x 128** pixel canvas.

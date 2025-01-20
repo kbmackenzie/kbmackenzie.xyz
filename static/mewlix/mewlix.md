@@ -1,4 +1,4 @@
-![Looping animation of a cartoon cat playing with a ball of yarn.](/mewlix-images/cat-yarnball.webp)
+![Looping animation of a cartoon cat playing with a ball of yarn.](/mewlix/images/cat-yarnball.webp)
 
 Mewlix is a cat-themed esoteric programming language designed for creating small pixel games! It compiles to vanilla JavaScript and runs natively on a browser.
 

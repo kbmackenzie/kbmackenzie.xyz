@@ -594,7 +594,7 @@ This operation is **O(n)**.
 
 ### Shelf
 
-![Looping animation of a cat resting on a shelf.](/mewlix-images/cat-shelf.webp)
+![Looping animation of a cat resting on a shelf.](/mewlix/images/cat-shelf.webp)
 
 Mewlix doesn't have arrays nor lists. Instead, it has a stack-like, LIFO [persistent data structure](https://en.wikipedia.org/wiki/Persistent_data_structure)—affectionately nicknamed a *'shelf'*—with O(1) appending and O(1) deletion operations.
 

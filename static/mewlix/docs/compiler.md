@@ -223,7 +223,7 @@ Do not auto-generate a `README.md` file in the output folder when building a pro
 
 ### Project Management
 
-![Looping animation of a cartoon cat playing with a ball of yarn.](/mewlix-images/cat-shelf.webp)
+![Looping animation of a cartoon cat playing with a ball of yarn.](/mewlix/images/cat-shelf.webp)
 
 A Mewlix project is a collection of yarn balls, resource files and compiler flags + options. All of this should be specified in a `mewlix.yaml` project configuration file in the project's root.
 
