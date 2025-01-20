@@ -309,7 +309,7 @@ You can pass arguments to a `new` expression when instantiating a clowder:
 mew garden = new Garden("cattails", "petunias", "buttercups")
 ```
 
-To learn more, read the [documentation page on clowders](#clowders)
+To learn more, read the [documentation page on clowders.](#clowders)
 
 #### Yarn Strings
 
