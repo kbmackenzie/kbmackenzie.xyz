@@ -330,7 +330,7 @@ meow "Hello world!"
 ```
 
 The value passed to the `meow` expression is always converted to a string.
-The `meow` expression returns the value that was passed to it.
+The `meow` expression returns its value converted to a string.
 
 ##### Implementation
 
