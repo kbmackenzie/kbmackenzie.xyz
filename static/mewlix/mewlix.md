@@ -237,6 +237,9 @@ To interpolate expressions into a yarn string, put them between square brackets 
 mew name = 'princess'
 meow :3"hi, i'm [name]!" -- prints: 'hi, i'm princess!'
 
+-- Any expression can go in yarn strings, including function calls:
+meow :3"2 + 2 = [do sum <- 2, 2]"
+
 ~( ^.x.^)>
 Multiline strings are supported, too!
 They can also use either single quotes (') or double quotes (").
