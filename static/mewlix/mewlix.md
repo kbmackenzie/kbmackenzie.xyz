@@ -510,9 +510,14 @@ All the source code for Mewlix's **base library and templates** can be found [he
 
 **Example projects** can be found [here][3]!
 
-### Tools
+Additionally:
 
-- A **Vim plugin** that provides **syntax highlighting** for `.mews` files can be found [here][6].
+- A **Vim plugin** that provides Mewlix syntax highlighting can be found [here][6].
+- A [**Highlight.js**][9] syntax highlighter definition for Mewlix can be found [here][8].
+
+### Special Thanks
+
+A big special thanks to my friend Jade for helping me stay sane through this project and for letting me talk endlessly about it these past few months. I wouldn't have been able to finish it without you, thank you! ♡
 
 [1]: https://github.com/kbmackenzie/mewlix
 [2]: https://github.com/kbmackenzie/mewlix-base
@@ -521,3 +526,5 @@ All the source code for Mewlix's **base library and templates** can be found [he
 [5]: https://learnxinyminutes.com/
 [6]: https://github.com/kbmackenzie/mewlix.vim
 [7]: https://github.com/kbmackenzie/mewlix/blob/main/INSTALL.md
+[8]: https://github.com/kbmackenzie/mewlix-highlight
+[9]: https://github.com/highlightjs/highlight.js
