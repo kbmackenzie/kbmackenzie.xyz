@@ -10,7 +10,7 @@ import bash       from 'highlight.js/lib/languages/bash'
 import c          from 'highlight.js/lib/languages/c'
 import csharp     from 'highlight.js/lib/languages/csharp'
 import yaml       from 'highlight.js/lib/languages/yaml';
-import { mewlix } from 'mewlix-highlight';
+import { mewlix } from 'mewlix';
 
 hljs.registerLanguage('haskell'    , haskell    );
 hljs.registerLanguage('javascript' , javascript );
