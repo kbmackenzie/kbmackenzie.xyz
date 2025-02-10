@@ -9,9 +9,8 @@ A fun, brief guide to Mewlix can be found [in this section](#learn-mewlix-in-y-m
 ### Table of Contents
 
 1. [Documentation](#documentation)
-2. [Install Guide](#installation)
+2. [Installation](#installation)
 3. [Related Links](#related-links)
-4. [Tools](#tools)
 
 ### Documentation
 
@@ -25,7 +24,8 @@ A list of example projects with fully available source code can be found [here][
 4. [Graphic Template](@mewlix/graphic)
 5. [Console Template](@mewlix/console)
 6. [Functional Patterns](@mewlix/functional-patterns)
-7. [FAQ](@mewlix/faq)
+7. [Language Extensions](@mewlix/extensions)
+8. [FAQ](@mewlix/faq)
 
 #### Learn Mewlix in Y Minutes
 
