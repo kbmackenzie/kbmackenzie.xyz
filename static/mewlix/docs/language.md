@@ -319,7 +319,20 @@ A yarn string is a special string literal that can contain expressions within it
 meow :3"Cats have [10 - 1] lives!"
 -- prints: "Cats have 9 lives!"
 ```
+
 The expressions between square brackets are evaluated at runtime, and their results become part of the string.
+
+Any expression can go between square brackets, including function calls:
+
+```mewlix
+meow :3"2 + 2 is [do sum <- 2, 2]!"
+```
+
+Additionally, yarn strings can use single quotes, too!
+
+```mewlix
+meow :3'3 + 3 is [do sum <- 3, 3]!'
+```
 
 #### `meow`
 
@@ -336,7 +349,8 @@ The `meow` expression returns its value converted to a string.
 
 The `meow` expression is special: It behaves differently depending on the **project mode**, as it relies on the template to implement it.
 
-This is how it works across for each project mode:
+This is how it works across each project mode:
+
 | Mode     | Description                                             |
 |----------|---------------------------------------------------------|
 | console  | The `meow` expression writes a new line to the console. |
