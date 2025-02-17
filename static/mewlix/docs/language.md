@@ -992,25 +992,33 @@ Mewlix has support for a select few features from object-oriented programming: n
 In Mewlix, classes are called **clowders**. If you're wondering: [a clowder is a group of cats](https://www.merriam-webster.com/dictionary/clowder)!
 
 We can define a new clowder with the `clowder` statement:
+
 ```mewlix
 clowder Cat
   🐱 wake(name)
     home.name = name
   ~meow
 
-  🐱 introduction()
-    bring "meow, i'm " .. home.name
+  🐱 greet()
+    bring :3'meow, i'm [home.name]!'
   ~meow
 ~meow
 ```
 
-The `wake()` method is our clowder's **constructor**. When you create a new instance of a clowder with a `new` expression, the constructor is called on that instance.
+In the example above, we've defined a clowder `Cat` with the methods `wake` and `greet`.
 
-The `home` keyword can be used inside methods to refer to the clowder instance that owns that method. A method is always bound to the clowder instance that owns it upon instantiation. This keyword is **only valid inside methods**. To learn more, read [this section](#method-ownership).
+Clowders have a few special rules that differentiate them from boxes:
 
-The `outside` keyword can be used to refer to the clowder instance's parent instance. This keyword is **only valid inside methods**.
+- Clowders have constructors.
+- Clowders can inherit from other clowders.
+- Methods are **always bound to the clowder instance they're being invoked from.**.
 
-The `look outside()` expression can be used to invoke a parent clowder's constructor.
+**Within a clowder**, a few special keywords gain meaning:
+
+- The `wake()` method is a clowder's **constructor**. When you [create a new instance of a clowder](#instantiation), the constructor is called to initialize it.
+- The `home` keyword can be used within a method to refer to the clowder instance that method was invoked from.
+- The `outside` keyword can be used to refer to a clowder instance's parent clowder and its methods.
+- The `look outside()` expression can be used to invoke a parent clowder's constructor.
 
 #### Instantiation
 
@@ -1018,19 +1026,19 @@ You can create a new instance of a clowder with the `new` expression:
 
 ```mewlix
 mew cat = new Cat('charlie')
-meow cat.introduction()  -- prints: 'meow, i'm charlie"
+meow cat.greet() -- prints: 'meow, i'm charlie!"
 ```
 
 You can also use the arrow syntax to instantiate clowders:
 
 ```mewlix
 mew cat = new Cat <- 'charlie'
-meow do cat.introduction -- prints: 'meow, i'm charlie'
+meow do cat.greet -- prints: 'meow, i'm charlie!'
 ```
 
 #### Inheritance
 
-When defining a clowder, we can specify inheritance with the `is` keyword:
+When defining a clowder, you can specify inheritance with the `is` keyword:
 
 ```mewlix
 clowder Charlie is Cat
@@ -1039,6 +1047,8 @@ clowder Charlie is Cat
   ~meow
 ~meow
 ```
+
+In the example above, the clowder `Charlie` inherits from the clowder `Cat`.
 
 As you can see, you can call the parent clowder's constructor with `look outside()`.
 
@@ -1052,14 +1062,15 @@ meow charlie is Cat     -- prints: true
 ```
 
 #### Method Ownership
-A clowder's instance methods are always bound to the clowder instance that owns them. This means a method *always knows* what its owner is, and the `home` keyword in a method will **never** change meaning.
+
+A clowder's methods are always bound to the clowder instance they're invoked from. This means a method *always knows* what its owner is, and the `home` keyword in a method will **never** change meaning.
 
 Thus, it's completely safe to alias methods or pass them as arguments to functions.
 
 ```mewlix
-mew charlie = new Charlie()     -- instantiate clowder.
-mew hi = charlie.introduction   -- create alias.
-meow hi()                       -- prints: 'meow, i'm charlie'
+mew charlie = new Charlie() -- instantiate clowder.
+mew hi = charlie.greet      -- create alias.
+meow hi()                   -- prints: 'meow, i'm charlie!'
 ```
 
 #### Method Overriding
@@ -1069,17 +1080,41 @@ A clowder that inherits from another clowder can override its parent clowder's m
 ```mewlix
 clowder Bob is Cat
   🐱 wake()
-    outside('bob')
+    look outside('bob')
   ~meow
 
-  -- override 'introduction' method
-  🐱 introduction()
+  -- override 'greet' method
+  🐱 greet()
     bring "bob does not like introducing himself."
   ~meow
 ~meow
 
 mew bob = new Bob()
-meow bob.introduction() -- prints: 'bob does not like introducing himself.'
+meow bob.greet() -- prints: 'bob does not like introducing himself.'
+```
+
+You can still access the parent clowder's methods even after overriding them. Just use `outside`:
+
+```mewlix
+clowder Bob is Cat
+  🐱 wake()
+    look outside('bob')
+  ~meow
+
+  -- override 'greet' method
+  🐱 greet()
+    bring "bob does not like introducing himself."
+  ~meow
+
+  -- bob gives in to pressure.
+  🐱 please_greet()
+    bring outside.greet()
+  ~meow
+~meow
+
+mew bob = new Bob()
+meow bob.greet()        -- prints: 'bob does not like introducing himself.'
+meow bob.please_greet() -- prints: 'meow, i'm bob!'
 ```
 
 #### String Representation
