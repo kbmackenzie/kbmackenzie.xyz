@@ -1000,7 +1000,7 @@ clowder Cat
   ~meow
 
   🐱 greet()
-    bring :3'meow, i'm [home.name]!'
+    bring :3"meow, i'm [home.name]!"
   ~meow
 ~meow
 ```
@@ -1026,14 +1026,14 @@ You can create a new instance of a clowder with the `new` expression:
 
 ```mewlix
 mew cat = new Cat('charlie')
-meow cat.greet() -- prints: 'meow, i'm charlie!"
+meow cat.greet() -- prints: "meow, i'm charlie!"
 ```
 
 You can also use the arrow syntax to instantiate clowders:
 
 ```mewlix
 mew cat = new Cat <- 'charlie'
-meow do cat.greet -- prints: 'meow, i'm charlie!'
+meow do cat.greet -- prints: "meow, i'm charlie!"
 ```
 
 #### Inheritance
@@ -1043,7 +1043,7 @@ When defining a clowder, you can specify inheritance with the `is` keyword:
 ```mewlix
 clowder Charlie is Cat
   🐱 wake()
-    look outside("charlie")
+    look outside('charlie')
   ~meow
 ~meow
 ```
@@ -1070,7 +1070,7 @@ Thus, it's completely safe to alias methods or pass them as arguments to functio
 ```mewlix
 mew charlie = new Charlie() -- instantiate clowder.
 mew hi = charlie.greet      -- create alias.
-meow hi()                   -- prints: 'meow, i'm charlie!'
+meow hi()                   -- prints: "meow, i'm charlie!"
 ```
 
 #### Method Overriding
@@ -1113,8 +1113,8 @@ clowder Bob is Cat
 ~meow
 
 mew bob = new Bob()
-meow bob.greet()        -- prints: 'bob does not like introducing himself.'
-meow bob.please_greet() -- prints: 'meow, i'm bob!'
+meow bob.greet()        -- prints: "bob does not like introducing himself."
+meow bob.please_greet() -- prints: "meow, i'm bob!"
 ```
 
 #### String Representation
