@@ -11,6 +11,7 @@ All Mewlix yarn balls implicitly import the `std` yarn ball by default. To keep 
 ### Table of Contents
 
 - [Shelves and Strings](#shelves-and-strings)
+- [Bits and Bytes](#bits-and-bytes)
 - [Collections](#collections)
 - [Numbers](#numbers)
 - [Storage](#storage)
@@ -122,20 +123,6 @@ std.poke("cat", 1)            -- "a"
 std.poke(["c", "a", "t"], -1) -- "c"
 std.poke("cat", -1)           -- "t"
 ```
-
-#### std.char
-**type:** `(number) -> string`
-
-Converts a numeric value representing a UTF-16 code unit to a single-character string.
-
-If the numeric value is outside of the range `0 <= value <= 65535`, an exception is thrown.
-
-#### std.bap
-**type:** `(string) -> number`
-
-Returns a numeric value representing the first UTF-16 code unit in the string.
-
-It calls JavaScript's [String.prototype.charCodeAt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt) method under the hood.
 
 #### std.nuzzle
 
@@ -410,6 +397,49 @@ This function expects the following arguments:
 Invoke a function `n` times. It works like [std.repeat](#std-repeat), but discards return values.
 
 It accepts the same arguments as [std.repeat](#std-repeat).
+
+#### std.char
+**type:** `(number) -> string`
+
+Converts a numeric value representing a UTF-16 code unit to a single-character string.
+
+If the numeric value is outside of the range `0 <= value <= 65535`, an exception is thrown.
+
+#### std.bap
+**type:** `(string) -> number`
+
+Returns a numeric value representing the first UTF-16 code unit in the string.
+
+It calls JavaScript's [String.prototype.charCodeAt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt) method under the hood.
+
+----
+
+### Bits and Bytes
+
+#### std.itty
+**type:** `(number) -> number`
+
+Bitwise not.
+
+#### std.bitty
+**type:** `(number, number) -> number`
+
+Bitwise or.
+
+#### std.kitty
+**type:** `(number, number) -> number`
+
+Bitwise and.
+
+#### std.to_bytes()
+**type:** `(string) -> [number]`
+
+Encode a string to a shelf of bytes (UTF-8).
+
+#### std.from_bytes()
+**type:** `([number]) -> string`
+
+Decode a shelf of bytes (UTF-8) to a string.
 
 ----
 
