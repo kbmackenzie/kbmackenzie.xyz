@@ -1,4 +1,4 @@
-//import Image from "next/image";
+import Link from 'next/link';
 import { AboutMe } from '@/features/about-me';
 import { SkillHoneycomb } from '@/features/skill-honeycomb';
 import { ProjectShowcase } from '@/features/project-showcase';
@@ -25,6 +25,9 @@ export default async function Home() {
         <Observer threshold={0.2}>
           <ProjectShowcase
             className={styles.projects} />
+          <p className={styles['more-projects']}>
+            ... and <Link href="/projects">more</Link>.
+          </p>
         </Observer>
       </TitledSection>
       <TitledSection title="Latest Posts">
