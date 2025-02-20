@@ -6,6 +6,7 @@ import { TitledSection } from '@/components/titled-section';
 import { BrowsePosts } from '@/features/browse-posts';
 import { Observer } from '@/components/observer';
 import { BubblegumButton } from '@/components/bubblegum-button';
+import { projects } from '@/features/projects';
 import { fetchPostMetadata } from '@/blog/fetch-post';
 import styles from '@/app/page.module.sass';
 
@@ -24,6 +25,7 @@ export default async function Home() {
       <TitledSection title="Projects">
         <Observer threshold={0.2}>
           <ProjectShowcase
+            projects={projects.slice(0, 4)}
             className={styles.projects} />
           <p className={styles['more-projects']}>
             ... and <Link href="/projects">more</Link>.
