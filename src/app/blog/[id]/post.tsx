@@ -15,7 +15,7 @@ export function Post({ post, className }: Props) {
   const tagCount = post.metadata.tags.length;
 
   return (
-    <div className={styleClasses(styles.post, className)}>
+    <article className={styleClasses(styles.post, className)}>
       <h2 className={styles.title}>
         {post.metadata.title}
       </h2>
@@ -42,6 +42,6 @@ export function Post({ post, className }: Props) {
       <BubblegumButton href="/blog" className={styles.seeall}>
         See All Posts
       </BubblegumButton>
-    </div>
+    </article>
   );
 }
