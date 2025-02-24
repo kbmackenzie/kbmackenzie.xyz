@@ -1,15 +1,27 @@
 @use '@styles/colors'
 
-.doc
+.container
   width: 100%
   height: 48rem
-  overflow-y: scroll
+  border-radius: 1rem
 
   padding: 1rem
-  border-radius: 1rem
 
   background: linear-gradient(45deg, transparent, colors.$moon-light 80%, transparent)
   box-shadow: 5px 5px 15px colors.$deep-space
+
+  display: flex
+  flex-flow: row nowrap
+  gap: 1rem
+
+.icon
+  width: 8rem
+  height: 8rem
+  margin: 0.5rem
+
+.documentation
+  height: 100%
+  overflow-y: scroll
 
 .title
   color: white
