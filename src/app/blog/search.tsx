@@ -1,41 +1,31 @@
 'use client';
 
 import { ComponentProps, useCallback, useRef, KeyboardEvent} from 'react';
-import { useRouter, usePathname } from 'next/navigation';
-import { useSearchParams } from 'next/navigation';
+import { useSearchTransform } from '@/hooks/use-search-transform';
 
 export function Search(props: ComponentProps<'div'>) {
-  const input = useRef<HTMLInputElement | null>(null);
-
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  
-  const addTagParam = useCallback(
-    (input: string): URLSearchParams => {
-      const params = new URLSearchParams(searchParams);
-      const tag = input.trim();
-      if (tag !== '') {
-        params.set('tagged', tag);
-      }
-      else {
-        params.delete('tagged');
-      }
-      return params;
-    },
-    [searchParams]
-  );
+  const input  = useRef<HTMLInputElement | null>(null);
+  const search = useSearchTransform();
 
   const onKeyDown = useCallback(
     (event: KeyboardEvent<HTMLDivElement>) => {
       if (event.repeat || event.key !== 'Enter' || !input.current) return;
       event.preventDefault();
 
-      const params = addTagParam(input.current.value);
+      const tag = input.current.value.trim();
       input.current.value = '';
-      router.push(`${pathname}?${params.toString()}`);
+
+      search(params => {
+        if (tag !== '') {
+          params.set('tagged', tag);
+        }
+        else {
+          params.delete('tagged');
+        }
+        return params;
+      });
     },
-    [input, router, pathname, addTagParam]
+    [search]
   );
 
   return (
