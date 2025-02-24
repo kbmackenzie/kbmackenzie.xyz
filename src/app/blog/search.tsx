@@ -12,16 +12,16 @@ export function Search(props: ComponentProps<'div'>) {
   const searchParams = useSearchParams();
   
   const addTagParam = useCallback(
-    (input: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      const tag= input.trim();
+    (input: string): URLSearchParams => {
+      const params = new URLSearchParams(searchParams);
+      const tag = input.trim();
       if (tag !== '') {
         params.set('tagged', tag);
       }
       else {
         params.delete('tagged');
       }
-      return params.toString();
+      return params;
     },
     [searchParams]
   );
