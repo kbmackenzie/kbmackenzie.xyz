@@ -15,18 +15,20 @@ import '@styles/hljs.sass';
 type Props = {
   className?: string;
   children: string;
+  customStyles?: boolean;
   additionalComponents?: Components;
 };
 
-export function MarkdownStylish({ className, children, additionalComponents }: Props) {
+export function MarkdownStylish({ className, children, additionalComponents, customStyles }: Props) {
   const components: Components = {
     ...anchorAlias,
     ...codeBlock,
     ...headingAnchors,
     ...additionalComponents
   };
+  const classes = styleClasses(className, !customStyles && 'alpaca-markdown');
   return (
-    <ReactMarkdown components={components} className={styleClasses(className)} remarkPlugins={[remarkGfm]}>
+    <ReactMarkdown components={components} className={classes} remarkPlugins={[remarkGfm]}>
       {children}
     </ReactMarkdown>
   );

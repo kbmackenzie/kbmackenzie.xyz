@@ -35,7 +35,7 @@ export function Post({ post, className }: Props) {
         </p>
       </div>
       <hr className={styles.divider} />
-      <MarkdownStylish className={styleClasses('alpaca-markdown', styles.body)}>
+      <MarkdownStylish className={styles.body}>
         {post.body}
       </MarkdownStylish>
       <hr className={styles.divider} />

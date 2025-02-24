@@ -57,9 +57,7 @@ export async function ProjectCard({ project, className }: ProjectCardProps) {
             </li>
           ))}
         </ul>
-        <MarkdownDoc
-          docPath={project.datafile}
-          className="alpaca-markdown" />
+        <MarkdownDoc docPath={project.datafile} />
         <ProjectLink
           project={project}
           className={styleClasses(styles.button, firaMono.className)}>
