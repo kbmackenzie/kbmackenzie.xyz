@@ -19,7 +19,7 @@ export function Navigation({ projects, className }: NavigationProps) {
    * - Pass 'setCurrent' to Tabs component. :) */
   return (
     <div className={styleClasses(styles.navigation, className)}>
-      <Tabs projects={projects} setProject={setCurrent} />
+      <Tabs projects={projects} current={current} setCurrent={setCurrent} />
       <Documentation project={current} />
     </div>
   );

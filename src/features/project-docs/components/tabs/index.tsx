@@ -4,19 +4,23 @@ import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/project-docs/components/tabs/index.module.sass';
 
 type TabsProps = {
-  className?: string;
+  setCurrent(project: ProjectDoc): void;
+  current: ProjectDoc;
   projects: ProjectDoc[];
-  setProject(project: ProjectDoc): void;
+  className?: string;
 };
 
 type TabProps = {
   project: ProjectDoc;
-  setProject(project: ProjectDoc): void;
+  isCurrent: boolean;
+  setCurrent(project: ProjectDoc): void;
 };
 
-function Tab({ project, setProject }: TabProps) {
+function Tab({ project, setCurrent, isCurrent }: TabProps) {
+  const classes = styleClasses(styles.project, isCurrent && styles.selected);
+  const onClick = () => isCurrent || setCurrent(project);
   return (
-    <button className={styles.project} onClick={() => setProject(project)}>
+    <button className={classes} onClick={onClick}>
       <Image
         src={project.image.src}
         alt={project.image.alt}
@@ -27,7 +31,7 @@ function Tab({ project, setProject }: TabProps) {
   );
 }
 
-export function Tabs({ projects, setProject, className }: TabsProps) {
+export function Tabs({ projects, setCurrent, current, className }: TabsProps) {
   return (
     <nav className={styleClasses(styles.container, className)}>
       <button className={styleClasses(styles.arrow, styles.left)}>
@@ -36,7 +40,10 @@ export function Tabs({ projects, setProject, className }: TabsProps) {
       <ul className={styles.tabs}>
         {projects.map(project => (
           <li className={styles.tab} key={project.id}>
-            <Tab project={project} setProject={setProject} />
+            <Tab
+              project={project}
+              isCurrent={project.id === current.id}
+              setCurrent={setCurrent} />
           </li>
         ))}
       </ul>

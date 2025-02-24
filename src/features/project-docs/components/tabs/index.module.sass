@@ -24,12 +24,12 @@ $arrow-size: 3rem
   font-size: 1.3rem
   font-weight: bold
 
-  color: white
   transition: background-color 0.5s
-  background-color: colors.$moon-light
+  color: white
+  background-color: transparent
   &:hover
     cursor: pointer
-    background-color: colors.$star-light
+    background-color: colors.$moon-light
 
 .tabs
   width: 100%
@@ -37,7 +37,9 @@ $arrow-size: 3rem
   overflow-x: scroll
 
   display: flex
+  gap: 0.5rem
   flex-flow: row nowrap
+
   justify-content: start
   align-items: center
 
@@ -47,17 +49,20 @@ $arrow-size: 3rem
 
   flex-shrink: 0
 
-.project, .icon
+.project
+  position: relative
   width: 100%
   height: 100%
 
-.project
-  position: relative
   border: none
   border-radius: 1rem
 
   background-color: transparent
   transition: background-color 0.5s
+
+  &.selected
+    background-color: colors.$moon-light
+
   &:hover
     cursor: pointer
     background-color: colors.$moon-light
@@ -66,4 +71,6 @@ $arrow-size: 3rem
   position: absolute
   inset: 0
   margin: auto
-  padding: 0.5rem
+
+  width: 65%
+  height: 65%
