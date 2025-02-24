@@ -1,7 +1,10 @@
+'use client';
+
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { styleClasses } from '@/utils/style-classes';
-import { clamp } from '@/utils/math';
+import { wrapAround } from '@/utils/math';
 import styles from '@/features/project-docs/components/tabs/index.module.sass';
 
 type TabsProps = {
@@ -37,9 +40,21 @@ export function Tabs({ projects, setCurrent, current, className }: TabsProps) {
    * I could use a linked list, but I enjoy keeping it simple. */
   function moveByOffset(offset: number): void {
     const index    = projects.indexOf(current) + offset;
-    const selected = projects[clamp(index, 0, projects.length - 1)];
+    const selected = projects[wrapAround(index, 0, projects.length - 1)];
     setCurrent(selected);
   }
+
+  /* Keyboard shortcuts. c: */
+  useEffect(() => {
+    function tabShortcut(event: KeyboardEvent): void {
+      if (event.repeat) return;
+
+      if (event.key === 'ArrowLeft')  { moveByOffset(-1); }
+      if (event.key === 'ArrowRight') { moveByOffset(1);  }
+    }
+    document.addEventListener('keydown', tabShortcut);
+    return () => document.removeEventListener('keydown', tabShortcut);
+  }, [moveByOffset]);
 
   return (
     <nav className={styleClasses(styles.container, className)}>
