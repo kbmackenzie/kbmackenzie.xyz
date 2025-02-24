@@ -30,6 +30,9 @@ function Tab({ project, setProject }: TabProps) {
 export function Tabs({ projects, setProject, className }: TabsProps) {
   return (
     <nav className={styleClasses(styles.container, className)}>
+      <button className={styleClasses(styles.arrow, styles.left)}>
+        &lt;
+      </button>
       <ul className={styles.tabs}>
         {projects.map(project => (
           <li className={styles.tab} key={project.id}>
@@ -37,6 +40,9 @@ export function Tabs({ projects, setProject, className }: TabsProps) {
           </li>
         ))}
       </ul>
+      <button className={styleClasses(styles.arrow, styles.right)}>
+        &gt;
+      </button>
     </nav>
   );
 }

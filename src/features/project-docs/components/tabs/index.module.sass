@@ -1,6 +1,35 @@
 @use '@styles/colors'
 
 $icon-size: 5rem
+$arrow-size: 3rem
+
+.container
+  display: flex
+  flex: row nowrap
+
+  justify-content: space-between
+  align-items: center
+  gap: 1rem
+
+  margin: 0.5rem 0
+
+.arrow
+  width: $arrow-size
+  height: $arrow-size
+  flex-shrink: 0
+
+  border: none
+  border-radius: 50%
+
+  font-size: 1.3rem
+  font-weight: bold
+
+  color: white
+  transition: background-color 0.5s
+  background-color: colors.$moon-light
+  &:hover
+    cursor: pointer
+    background-color: colors.$star-light
 
 .tabs
   width: 100%
@@ -11,9 +40,6 @@ $icon-size: 5rem
   flex-flow: row nowrap
   justify-content: start
   align-items: center
-  gap: 1rem
-
-  margin: 0.5rem 0
 
 .tab
   width: $icon-size
