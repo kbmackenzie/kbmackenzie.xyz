@@ -1,19 +1,19 @@
 import Image from 'next/image';
-import { ProjectDoc } from '@/features/project-docs/types/project-doc';
+import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/project-docs/components/tabs/index.module.sass';
 
 type TabsProps = {
-  setCurrent(project: ProjectDoc): void;
-  current: ProjectDoc;
-  projects: ProjectDoc[];
+  setCurrent(project: ProjectTab): void;
+  current: ProjectTab;
+  projects: ProjectTab[];
   className?: string;
 };
 
 type TabProps = {
-  project: ProjectDoc;
+  project: ProjectTab;
   isCurrent: boolean;
-  setCurrent(project: ProjectDoc): void;
+  setCurrent(project: ProjectTab): void;
 };
 
 function Tab({ project, setCurrent, isCurrent }: TabProps) {

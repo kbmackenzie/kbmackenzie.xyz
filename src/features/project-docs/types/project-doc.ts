@@ -1,3 +1,5 @@
 import { Project } from '@/types/project';
 
-export type ProjectDoc = Project & { documentation: string; };
+export type ProjectTab = Project & {
+  documentation: string;
+};

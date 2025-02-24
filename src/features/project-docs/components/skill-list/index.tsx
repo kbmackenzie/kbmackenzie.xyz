@@ -1,11 +1,11 @@
 import { SkillIcon } from '@/features/skill-icon';
-import { ProjectDoc } from '@/features/project-docs/types/project-doc';
+import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { styleClasses } from '@/utils/style-classes';
 import styles from '@/features/project-docs/components/skill-list/index.module.sass';
 
 type SkillListProps = {
   className?: string;
-  project: ProjectDoc;
+  project: ProjectTab;
 };
 
 export function SkillList({ project, className }: SkillListProps) {

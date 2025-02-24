@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ProjectDoc } from '@/features/project-docs/types/project-doc';
+import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { Tabs } from '@/features/project-docs/components/tabs';
 import { Documentation } from '@/features/project-docs/components/documentation';
 import { styleClasses } from '@/utils/style-classes';
@@ -9,11 +9,11 @@ import styles from '@/features/project-docs/components/navigation/index.module.s
 
 type NavigationProps = {
   className?: string;
-  projects: ProjectDoc[];
+  projects: ProjectTab[];
 };
 
 export function Navigation({ projects, className }: NavigationProps) {
-  const [current, setCurrent] = useState<ProjectDoc>(projects[0]);
+  const [current, setCurrent] = useState<ProjectTab>(projects[0]);
   /* The plan of action is:
    * - Pass 'current' to Documentation component.
    * - Pass 'setCurrent' to Tabs component. :) */

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ProjectDoc } from '@/features/project-docs/types/project-doc';
+import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { SkillList } from '@/features/project-docs/components/skill-list';
 import { MarkdownStylish } from '@/components/markdown-stylish';
 import { styleClasses } from '@/utils/style-classes';
@@ -7,7 +7,7 @@ import styles from '@/features/project-docs/components/documentation/index.modul
 
 type DocumentationProps = {
   className?: string;
-  project: ProjectDoc;
+  project: ProjectTab;
 };
 
 export function Documentation({ project, className }: DocumentationProps) {

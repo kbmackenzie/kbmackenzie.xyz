@@ -1,5 +1,5 @@
 import { Project } from '@/types/project';
-import { ProjectDoc } from '@/features/project-docs/types/project-doc';
+import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { Navigation } from '@/features/project-docs/components/navigation';
 import fs from 'node:fs/promises';
 
@@ -8,7 +8,7 @@ type ProjectDocsProps = {
   projects: Project[];
 };
 
-async function readProject(project: Project): Promise<ProjectDoc> {
+async function readProject(project: Project): Promise<ProjectTab> {
   const buffer = await fs.readFile(
     project.datafile,
     { encoding: 'utf8' }
