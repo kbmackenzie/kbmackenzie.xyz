@@ -21,7 +21,13 @@ export function RoundIcons({ icons, iconWidth, iconHeight, className }: Props) {
   return (
     <nav className={styleClasses(styles.container, className)}>
       {icons.map(icon => (
-        <a href={icon.url} key={icon.alt} className={styles.icon} target="_blank" rel="noopener noreferrer">
+        <a
+          href={icon.url}
+          key={icon.alt}
+          title={icon.alt}
+          className={styles.icon}
+          target="_blank"
+          rel="noopener noreferrer">
           <Image
             src={icon.src}
             alt={icon.alt}
