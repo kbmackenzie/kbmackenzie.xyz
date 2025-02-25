@@ -57,13 +57,15 @@ $animate-order: 'icon', 'title', 'skills', 'body', 'link'
   border: 2px solid transparent
   border-radius: 2rem
 
-  color: white
-  background-color: colors.$bubblegum
-
   font-size: 1.1rem
   text-decoration: none
 
-  transition: background-color 0.5s, border-color 0.5s
+  color: white
+  background-color: colors.$bubblegum
+
+  transform: scale(100%)
+  transition: color 0.5s, background-color 0.5s, transform 0.5s
   &:hover
-    border-color: colors.$bubblegum
-    background-color: transparent
+    background-color: white
+    color: colors.$bubblegum
+    transform: scale(105%)
