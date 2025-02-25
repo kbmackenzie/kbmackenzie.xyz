@@ -7,7 +7,7 @@ import styles from '@/features/alpaca-layout/components/buttons/index.module.sas
 function Button({ data }: { data: ButtonData }) {
   const { type, text, url } = data;
   const classes = styleClasses(styles.button, styles[type]);
-  return <Link className={classes} href={url}>{text}</Link>;
+  return <Link className={classes} title={text} href={url}>{text}</Link>;
 }
 
 export function Buttons({ buttons }: { buttons: ButtonData[] }) {
