@@ -1,6 +1,6 @@
-import { ProjectCard } from '@/app/projects/project-card';
-import { projects } from '@/features/projects';
 import { Markdown } from '@/components/markdown';
+import { projects } from '@/features/projects';
+import { ProjectDocs } from '@/features/project-docs';
 import styles from '@/app/projects/page.module.sass';
 import { Metadata } from 'next';
 import { makeMetadata, makePageTitle } from '@/app/metadata';
@@ -15,18 +15,15 @@ const introduction: string = 'A list of my favorite projects I have worked on, i
 export default function Projects() {
   return (
     <main className={styles.projects}>
-      <h2 className={styles.title}>Projects</h2>
+      <h2 id="projects" className={styles.title}>
+        Projects
+      </h2>
       <Markdown className={styles.description}>
         {introduction}
       </Markdown>
       <hr className={styles.divider} />
-      <ul className={styles.list}>
-        {projects.map(project => (
-          <li key={project.name}>
-            <ProjectCard project={project} />
-          </li>
-        ))}
-      </ul>
+      <ProjectDocs projects={projects} />
     </main>
   );
 }
+
