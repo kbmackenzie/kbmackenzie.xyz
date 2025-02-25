@@ -26,7 +26,7 @@ function Tab({ project, setCurrent, isCurrent }: TabProps) {
   const classes = styleClasses(styles.project, isCurrent && styles.selected);
   const onClick = () => isCurrent || setCurrent(project);
   return (
-    <button className={classes} onClick={onClick}>
+    <button title={project.name} className={classes} onClick={onClick}>
       <Image
         src={project.image.src}
         alt={project.image.alt}
