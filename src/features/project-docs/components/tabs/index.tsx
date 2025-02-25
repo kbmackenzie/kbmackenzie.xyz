@@ -6,6 +6,8 @@ import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { styleClasses } from '@/utils/style-classes';
 import { wrapAround } from '@/utils/math';
 import styles from '@/features/project-docs/components/tabs/index.module.sass';
+import arrowLeft from '@/features/project-docs/assets/arrow-left.svg';
+import arrowRight from '@/features/project-docs/assets/arrow-right.svg';
 
 type TabsProps = {
   setCurrent(project: ProjectTab): void;
@@ -61,7 +63,10 @@ export function Tabs({ projects, setCurrent, current, className }: TabsProps) {
       <button
         onClick={() => moveByOffset(-1)}
         className={styleClasses(styles.arrow, styles.left)}>
-        &lt;
+        <Image
+          src={arrowLeft}
+          alt="previous project"
+          className={styles['arrow-icon']} />
       </button>
       <ul className={styles.tabs}>
         {projects.map(project => (
@@ -76,7 +81,10 @@ export function Tabs({ projects, setCurrent, current, className }: TabsProps) {
       <button
         onClick={() => moveByOffset(1)}
         className={styleClasses(styles.arrow, styles.right)}>
-        &gt;
+        <Image
+          src={arrowRight}
+          alt="next project"
+          className={styles['arrow-icon']} />
       </button>
     </nav>
   );

@@ -14,19 +14,26 @@ $arrow-size: 3rem
   margin: 0.5rem 0
 
 .arrow
+  position: relative
   width: $arrow-size
   height: $arrow-size
-  flex-shrink: 0
 
+  flex-shrink: 0
   border: none
   border-radius: 50%
 
   font-size: 1.3rem
   font-weight: bold
 
-  transition: background-color 0.5s
+  transition: background-color 0.5s, transform 0.5s
   color: white
   background-color: transparent
+
+  &-icon
+    position: absolute
+    inset: 0
+    margin: auto
+
   &:hover
     cursor: pointer
     background-color: colors.$moon-light
