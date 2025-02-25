@@ -22,7 +22,7 @@ export default function Projects() {
         {introduction}
       </Markdown>
       <hr className={styles.divider} />
-      <ProjectDocs projects={projects} />
+      <ProjectDocs projects={projects} className={styles.documentation} />
     </main>
   );
 }
