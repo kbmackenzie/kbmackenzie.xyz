@@ -14,7 +14,7 @@ type DocumentationProps = {
 
 export function Documentation({ project, className }: DocumentationProps) {
   return (
-    <article className={styleClasses(styles.container, className)}>
+    <article key={project.id} className={styleClasses(styles.container, className)}>
       <Image
         src={project.image.src}
         alt={project.image.alt}
@@ -26,7 +26,7 @@ export function Documentation({ project, className }: DocumentationProps) {
           {project.name}
         </h3>
         <SkillList className={styles.skills} project={project} />
-        <MarkdownStylish>
+        <MarkdownStylish className={styles.body}>
           {project.documentation}
         </MarkdownStylish>
         <ProjectLink project={project} className={styleClasses(styles.link, firaMono.className)}>

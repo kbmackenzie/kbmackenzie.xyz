@@ -1,4 +1,20 @@
 @use '@styles/colors'
+@use '@styles/easing'
+@use 'sass:list'
+
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 100%
+
+$animate-order: 'icon', 'title', 'skills', 'body', 'link'
+
+@for $i from 1 to list.length($animate-order) + 1
+  $elem: list.nth($animate-order, $i)
+  .#{$elem}
+    opacity: 0
+    animation: 0.5s linear (0.1s * $i) fade-in forwards
 
 .container
   width: 100%
