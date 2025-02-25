@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Project } from '@/types/project';
 import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { Navigation } from '@/features/project-docs/components/navigation';
@@ -23,5 +24,9 @@ export async function ProjectDocs({ projects, className }: ProjectDocsProps) {
   const docs = await Promise.all(
     projects.map(readProject)
   );
-  return <Navigation projects={docs} className={className} />
+  return (
+    <Suspense>
+      <Navigation projects={docs} className={className} />
+    </Suspense>
+  );
 }
