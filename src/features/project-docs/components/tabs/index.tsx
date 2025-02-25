@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { styleClasses } from '@/utils/style-classes';
@@ -23,10 +23,20 @@ type TabProps = {
 };
 
 function Tab({ project, setCurrent, isCurrent }: TabProps) {
+  const ref = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (!isCurrent || !ref.current) return;
+    ref.current.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'nearest',
+    });
+  }, [isCurrent]);
+
   const classes = styleClasses(styles.project, isCurrent && styles.selected);
   const onClick = () => isCurrent || setCurrent(project);
   return (
-    <button title={project.name} className={classes} onClick={onClick}>
+    <button ref={ref} title={project.name} className={classes} onClick={onClick}>
       <Image
         src={project.image.src}
         alt={project.image.alt}
