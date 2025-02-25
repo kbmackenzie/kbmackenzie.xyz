@@ -11,7 +11,7 @@ type Props = {
 };
 
 export function ProjectCard({ project, className }: Props) {
-  const projectUrl = `/projects#${project.id}`;
+  const projectUrl = `/projects?project=${project.id}#projects`;
   return (
     <Link className={styleClasses(styles.card, className)} href={projectUrl}>
       <div className={styles.image}>
