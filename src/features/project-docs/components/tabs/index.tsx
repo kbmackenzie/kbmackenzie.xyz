@@ -61,11 +61,12 @@ export function Tabs({ projects, setCurrent, current, className }: TabsProps) {
   return (
     <nav className={styleClasses(styles.container, className)}>
       <button
+        title="Previous project"
         onClick={() => moveByOffset(-1)}
         className={styleClasses(styles.arrow, styles.left)}>
         <Image
           src={arrowLeft}
-          alt="previous project"
+          alt="Previous project"
           className={styles['arrow-icon']} />
       </button>
       <ul className={styles.tabs}>
@@ -79,11 +80,12 @@ export function Tabs({ projects, setCurrent, current, className }: TabsProps) {
         ))}
       </ul>
       <button
+        title="Next project"
         onClick={() => moveByOffset(1)}
         className={styleClasses(styles.arrow, styles.right)}>
         <Image
           src={arrowRight}
-          alt="next project"
+          alt="Next project"
           className={styles['arrow-icon']} />
       </button>
     </nav>
