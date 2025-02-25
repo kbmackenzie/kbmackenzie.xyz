@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { ProjectTab } from '@/features/project-docs/types/project-doc';
 import { styleClasses } from '@/utils/style-classes';
@@ -40,11 +40,11 @@ function Tab({ project, setCurrent, isCurrent }: TabProps) {
 export function Tabs({ projects, setCurrent, current, className }: TabsProps) {
   /* An O(n) solution, but it shouldn't matter. :)
    * I could use a linked list, but I enjoy keeping it simple. */
-  function moveByOffset(offset: number): void {
+  const moveByOffset = useCallback((offset: number): void => {
     const index    = projects.indexOf(current) + offset;
     const selected = projects[wrapAround(index, 0, projects.length - 1)];
     setCurrent(selected);
-  }
+  }, [projects, current, setCurrent]);
 
   /* Keyboard shortcuts. c: */
   useEffect(() => {
