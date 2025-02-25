@@ -6,12 +6,14 @@
   border-radius: 1rem
 
   padding: 1rem
+  overflow: hidden
 
-  background: linear-gradient(45deg, colors.$moon-dark, colors.$moon-light 80%, colors.$moon-dark)
+  background: linear-gradient(45deg, colors.$deep-space, colors.$moon-light 80%, colors.$deep-space)
   box-shadow: 5px 5px 15px colors.$deep-space
 
   display: flex
-  flex-flow: row nowrap
+  flex-flow: row wrap
+  justify-content: center
   gap: 1rem
 
 .icon
@@ -20,6 +22,7 @@
   margin: 0.5rem
 
 .documentation
+  flex: 60%
   height: 100%
   overflow-y: scroll
 
