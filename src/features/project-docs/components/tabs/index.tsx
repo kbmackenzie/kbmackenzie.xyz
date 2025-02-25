@@ -29,6 +29,7 @@ function Tab({ project, setCurrent, isCurrent }: TabProps) {
     if (!isCurrent || !ref.current) return;
     ref.current.scrollIntoView({
       behavior: 'smooth',
+      block: 'nearest',
       inline: 'nearest',
     });
   }, [isCurrent]);
