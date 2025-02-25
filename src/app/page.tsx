@@ -28,7 +28,7 @@ export default async function Home() {
             projects={projects.slice(0, 4)}
             className={styles.projects} />
           <p className={styles['more-projects']}>
-            ... and <Link href="/projects">more</Link>.
+            ... and <Link href="/projects#projects">more</Link>.
           </p>
         </Observer>
       </TitledSection>
